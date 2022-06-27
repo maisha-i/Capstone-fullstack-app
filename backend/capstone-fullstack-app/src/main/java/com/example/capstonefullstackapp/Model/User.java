@@ -9,13 +9,18 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+    @Column
     private String name;
+    @Column
     private String email;
+    @Column
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -26,6 +31,7 @@ public class User {
     }
 
     public User(String name, String email, String password, List<Category> categories) {
+        this.id = 0L;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -71,4 +77,6 @@ public class User {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
+
+    public void addNewCategory(Category category) {this.categories.add(category);}
 }

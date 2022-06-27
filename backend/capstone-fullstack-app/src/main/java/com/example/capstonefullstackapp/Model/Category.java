@@ -13,7 +13,8 @@ public class Category {
     private Long id;
     private String title;
 
-    @OneToMany
+    // cascade - delete category then it would delete all the pages relating to it
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Page>pages;
 
     @ManyToOne
@@ -52,4 +53,7 @@ public class Category {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public void addNewPageToCategory(Page page) {this.pages.add(page);}
+
 }
