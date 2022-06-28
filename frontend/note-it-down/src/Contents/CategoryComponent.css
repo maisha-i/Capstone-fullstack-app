@@ -1,0 +1,13 @@
+.contents-page--page-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    -webkit-column-count: 2;
+    column-count: 2;
+}
+
+li{
+    padding: 10px;
+    margin: 5px;
+    height: 30px;
+}
