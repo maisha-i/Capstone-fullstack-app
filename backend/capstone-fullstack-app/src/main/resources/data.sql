@@ -3,9 +3,9 @@
 
 
 INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test1', 'test1@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test2', 'test1@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test3', 'test1@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test4', 'test1@hotmail.com', 'test123');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test2', 'test2@hotmail.com', 'test123');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test3', 'test3@hotmail.com', 'test123');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test4', 'test4@hotmail.com', 'test123');
 
 INSERT INTO CATEGORIES (TITLE, USER_ID) VALUES ('Work', '1');
 INSERT INTO CATEGORIES (TITLE, USER_ID) VALUES ('Work', '2');
