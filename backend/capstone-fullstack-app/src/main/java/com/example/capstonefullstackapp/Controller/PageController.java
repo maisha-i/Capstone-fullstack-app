@@ -7,6 +7,7 @@ import com.example.capstonefullstackapp.Service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.webjars.NotFoundException;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -19,7 +20,7 @@ public class PageController {
     PageService pageService;
 
     @GetMapping
-    public ResponseEntity<List<Page>>getAllPages(){
+    public ResponseEntity<List<Page>> getAllPages() {
         List<Page> pages = pageService.getAllPages();
         return ResponseEntity.ok().body(pages);
     }
@@ -38,9 +39,9 @@ public class PageController {
 //    }
 
     @DeleteMapping("/deletePage/{id}")
-    public void deletePage(@PathVariable Long id){pageService.deletePage(pageService.getPage(id));
+    public void deletePage(@PathVariable Long id) {
+        pageService.deletePage(pageService.getPage(id));
     }
-
 
 
     @PostMapping("/createpage")
@@ -50,4 +51,11 @@ public class PageController {
         Page newPage = new Page();
         pageService.savePage(newPage);
     }
+
+    @PutMapping("updatePage/{id}")
+    public ResponseEntity<Page> updatePage(@PathVariable Long id, @RequestBody Page updatedPages) {
+        Page updatedPage = pageService.updatePage(id, updatedPages);
+        return ResponseEntity.ok().body(updatedPage);
+    }
+
 }
