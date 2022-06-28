@@ -3,15 +3,20 @@ package com.example.capstonefullstackapp.Model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "pages")
 public class Page {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+    @Column
     private String title;
+    @Column
     private String content;
+    @Column
     @Enumerated
-    private Background background;
+    private Backgrounds background;
 
     @ManyToOne
     private Category category;
@@ -19,7 +24,7 @@ public class Page {
     public Page() {
     }
 
-    public Page(String title, String content, Background background, Category category) {
+    public Page(String title, String content, Backgrounds background, Category category) {
         this.title = title;
         this.content = content;
         this.background = background;
@@ -50,11 +55,11 @@ public class Page {
         this.content = content;
     }
 
-    public Background getBackground() {
+    public Backgrounds getBackground() {
         return background;
     }
 
-    public void setBackground(Background background) {
+    public void setBackground(Backgrounds background) {
         this.background = background;
     }
 
