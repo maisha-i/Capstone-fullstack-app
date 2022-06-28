@@ -23,10 +23,12 @@ public class CategoryService {
         return categoryRepository.save(category);
     }
 
-    public Category addNewPageToCategory(Long newPageId, Long categoryId) {
+    public Category addNewPageToCategory(Long categoryId, Long newPageId) {
         Category category = categoryRepository.findById(categoryId).get();
         Page newPage = pageRepository.findById(newPageId).get();
         category.addNewPageToCategory(newPage);
+        newPage.setCategory(category);
+        pageRepository.save(newPage);
         return categoryRepository.save(category);
     }
 
