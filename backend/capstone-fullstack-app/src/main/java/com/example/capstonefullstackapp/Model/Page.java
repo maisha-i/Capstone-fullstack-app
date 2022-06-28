@@ -1,5 +1,7 @@
 package com.example.capstonefullstackapp.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,6 +16,7 @@ public class Page {
     private Background background;
 
     @ManyToOne
+    @JsonIgnoreProperties(value = "pages")
     private Category category;
 
     public Page() {

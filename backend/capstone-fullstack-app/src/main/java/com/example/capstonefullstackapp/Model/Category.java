@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "CATEGORIES")
 public class Category {
 
     @Id
@@ -25,9 +26,18 @@ public class Category {
     }
 
     public Category(String title, List<Page> pages, User user) {
+        this.id = 0L;
         this.title = title;
         this.pages = pages;
         this.user = user;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
