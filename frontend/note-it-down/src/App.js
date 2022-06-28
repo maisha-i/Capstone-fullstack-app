@@ -1,13 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import ContentPage from './Contents/ContentPage';
 
 function App() {
   return (
     <>
-      <div className="cover">
+      {/* <div className="cover">
         <h1>NoteItDown</h1>
       </div>
-      <div className="cover page1"></div>
+      <div className="cover page1"></div> */}
+
+      <ContentPage />
     
     </>
   );
