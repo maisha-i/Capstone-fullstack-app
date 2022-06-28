@@ -1,5 +1,7 @@
 package com.example.capstonefullstackapp.Controller;
 
+import com.example.capstonefullstackapp.Model.Category;
+import com.example.capstonefullstackapp.Model.Page;
 import com.example.capstonefullstackapp.Model.User;
 import com.example.capstonefullstackapp.Repository.UserRepository;
 import com.example.capstonefullstackapp.Service.UserService;
@@ -23,6 +25,12 @@ public class UserController {
     public ResponseEntity<List<User>>getAllUsers() {
         List<User> users = userService.getAllUsers();
         return ResponseEntity.ok().body(users);
+    }
+
+    @GetMapping("/{userId}/categories")
+    public ResponseEntity<List<Category>> getAllCategoriesByUser(@PathVariable Long userId){
+        List<Category> categories = userService.getCategoriesByUser(userId);
+        return ResponseEntity.ok().body(categories);
     }
 
     @PostMapping

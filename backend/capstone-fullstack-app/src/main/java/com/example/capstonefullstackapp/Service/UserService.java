@@ -1,6 +1,7 @@
 package com.example.capstonefullstackapp.Service;
 
 import com.example.capstonefullstackapp.Model.Category;
+import com.example.capstonefullstackapp.Model.Page;
 import com.example.capstonefullstackapp.Model.User;
 import com.example.capstonefullstackapp.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,10 @@ public class UserService {
         oldUser.setEmail(updatedUserDetails.getEmail());
         oldUser.setPassword(updatedUserDetails.getPassword());
         return userRepository.save(oldUser);
+    }
+
+    public List<Category> getCategoriesByUser(Long userId) {
+        User user = userRepository.findById(userId).get();
+        return user.getCategories();
     }
 }
