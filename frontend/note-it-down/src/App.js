@@ -1,9 +1,6 @@
 import './App.css';
-<<<<<<< HEAD
 import LoginPage from './loginPage/LoginPage';
-=======
 import ContentPage from './Contents/ContentPage';
->>>>>>> 5a69be152392eabf2a8ddd2c5a7f2e5e4312476b
 
 function App() {
   return (
