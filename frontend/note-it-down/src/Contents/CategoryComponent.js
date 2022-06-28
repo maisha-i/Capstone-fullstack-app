@@ -9,7 +9,7 @@ const CategoryComponent = ({category}) => {
             <h1>{title}</h1>
             <ul className="contents-page--page-list">
             {pages.map(page => { return(
-                <li>{page.title}</li>
+                <li key={page.id}>{page.title}</li>
             )
 
             })}
