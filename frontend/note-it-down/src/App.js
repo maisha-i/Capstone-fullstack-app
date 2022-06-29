@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import './App.css';
-<<<<<<< HEAD
 // import LoginPage from './loginPage/LoginPage';
-=======
->>>>>>> edd13eba4a6f3b980cea37b707a7da8a5ab2f887
-import ContentPage from './Contents/ContentPage';
+// import ContentPage from './Contents/ContentPage';
+import NotesMain from './NotesPage/NotesMain';
+// import Notes from './NotesPage/Notes';
+import NotesSide from './NotesPage/NotesSide';
 
 function App() {
+
+
+
+
   return (
     <>
       {/* <div className="cover">
@@ -14,7 +19,10 @@ function App() {
       </div>
       <div className="cover page1"></div> */}
 
-      <ContentPage />
+      {/* <ContentPage /> */}
+      {/* <Notes /> */}
+      <NotesSide  />
+      <NotesMain />
     
     </>
   );
