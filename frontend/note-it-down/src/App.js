@@ -1,5 +1,8 @@
 import './App.css';
+<<<<<<< HEAD
 // import LoginPage from './loginPage/LoginPage';
+=======
+>>>>>>> edd13eba4a6f3b980cea37b707a7da8a5ab2f887
 import ContentPage from './Contents/ContentPage';
 
 function App() {
