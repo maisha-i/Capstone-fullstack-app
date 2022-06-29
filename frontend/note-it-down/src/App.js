@@ -39,7 +39,7 @@ function App() {
       <NotesSide notes = {notes}  onAddNote={onAddNote}  onDeleteNote={onDeleteNote} />
       <NotesMain />
     
-      <ContentPage />
+      {/* <ContentPage /> */}
     </>
   );
 }
