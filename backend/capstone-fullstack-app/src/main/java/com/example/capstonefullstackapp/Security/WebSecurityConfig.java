@@ -11,6 +11,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -37,18 +40,30 @@ public class WebSecurityConfig{
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.cors()
+//                .configurationSource(request -> {
+//                    var cors = new CorsConfiguration();
+//                    cors.setAllowedOrigins(List.of("http://localhost:3000", "http://127.0.0.1:80"));
+//                    cors.setAllowedMethods(List.of("*"));
+//                    cors.setAllowedHeaders(List.of("*"));
+//                    return cors;
+//                })
+                .and()
+                .authorizeRequests()
                 .antMatchers("/v3/api-docs/**",
-                        "/swagger-ui/**","h2-console/**",
+                        "/swagger-ui/**","/h2-console/**",
                         "/user/**","/category/**","/page/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable()
+                .headers().frameOptions().disable()
+                .and()
                 .formLogin()
                 .permitAll()
                 .and()
                 .logout().permitAll()
                 .and()
+                .authenticationProvider(authenticationProvider())
                 .httpBasic();
         return http.build();
     }

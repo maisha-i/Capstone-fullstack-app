@@ -42,9 +42,10 @@ public class UserService implements UserDetailsService {
         return userRepository.save(user);
     }
 
+    //method has to be called load by username but for us username == email
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> record = userRepository.findByName(username);
+        Optional<User> record = userRepository.findByEmail(username);
 
         if (record.isEmpty()){
             throw new UsernameNotFoundException("User not found - " + username);
@@ -53,7 +54,7 @@ public class UserService implements UserDetailsService {
         User user = record.get();
 
         return new org.springframework.security.core.userdetails.User(
-                user.getName(),
+                user.getEmail(),
                 user.getPassword(),
                 Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"))
         );
@@ -64,10 +65,12 @@ public class UserService implements UserDetailsService {
 
 
     public User updateUser(Long id, User updatedUserDetails) {
+        PasswordEncoder encoder = new BCryptPasswordEncoder();
+        String encodedPassword = encoder.encode(updatedUserDetails.getPassword());
         User oldUser = userRepository.findById(id).get();
         oldUser.setName(updatedUserDetails.getName());
         oldUser.setEmail(updatedUserDetails.getEmail());
-        oldUser.setPassword(updatedUserDetails.getPassword());
+        oldUser.setPassword(encodedPassword);
         return userRepository.save(oldUser);
     }
 

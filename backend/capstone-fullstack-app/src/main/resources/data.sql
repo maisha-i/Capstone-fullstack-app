@@ -1,11 +1,11 @@
 --DELETE FROM USERS;
 --ALTER SEQUENCE USERS_ID_SEQ RESTART WITH 1;
 
-
+--passwords are all still 'test123' just have been hashed to save securely in the database
 INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test1', 'test1@hotmail.com', '$2a$10$ujnV293g64u8ftlW.R5m/eM7MztoWxlHRTtgBQmjUHLBKwNc18bsa');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test2', 'test1@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test3', 'test1@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test4', 'test1@hotmail.com', 'test123');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test2', 'test2@hotmail.com', '$2a$10$buQJ66kak6IPHwJJE4ZeDOQtX4tlHNrlHRzNJOy5myYC3KnBUBOVW');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test3', 'test3@hotmail.com', '$2a$10$KgNzg5xeAiZkfs6hwhoWVu0N3cGE2GZmyfRoTA0TTnVFn6BVkErj6');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test4', 'test4@hotmail.com', '$2a$10$Izgk4fS9i/p7D/A04RWSA.uqP16kAY6RTFxhc3rF/SbEjBNgkEk3a');
 
 INSERT INTO CATEGORIES (TITLE, USER_ID) VALUES ('Work', '1');
 INSERT INTO CATEGORIES (TITLE, USER_ID) VALUES ('Work', '2');
