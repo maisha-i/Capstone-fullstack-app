@@ -30,7 +30,7 @@ function App() {
     <>
       {/* <div className="cover">
         <h1>NoteItDown</h1>
-        <LoginPage/>
+        <Login/>
       </div>
       <div className="cover page1"></div> */}
 
@@ -39,6 +39,7 @@ function App() {
       <NotesSide notes = {notes}  onAddNote={onAddNote}  onDeleteNote={onDeleteNote} />
       <NotesMain />
     
+      <ContentPage />
     </>
   );
 }

@@ -6,9 +6,15 @@
 
 //     const [newTitle, setNewTitle] = useState("");
 
+<<<<<<< HEAD
 //     const handleCategoryAdd = (event) => {
 //         addNewCategoryToState(newTitle);
 //     }
+=======
+    const handleCategoryAdd = () => {
+        addNewCategoryToState(newTitle);
+    }
+>>>>>>> main
 
 //     const handleCoverClick = () => {
 //         const form = document.querySelector(".addNewCategory-form");

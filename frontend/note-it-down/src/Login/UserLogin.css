@@ -1,0 +1,26 @@
+.login-box{
+    display: flex;
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    background-color: #f5f1ed;
+    top: 200px;
+    left: 150px;
+    border-style: inset;
+    border-color: rgba(193, 173, 173, 0.508);
+    box-shadow: whitesmoke;
+    border-radius: 5%;
+}
+
+.login-form{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+.submit-button{
+    position: absolute;
+    top: 50px;
+    left: 100px; 
+}
+
