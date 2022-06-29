@@ -1,6 +1,6 @@
 import "./Notes.css"
 
-function NotesSide({notes, onAddNote}){
+function NotesSide({notes, onAddNote, onDeleteNote}){
     return (
         <div className="notes-sidebar">
           <div className="app-sidebar-header">
@@ -15,13 +15,13 @@ function NotesSide({notes, onAddNote}){
             
             <div className="sidebar-note-title"> 
             
-            <strong>Title</strong>
+            <strong>{note.title}</strong>
 
-            <button>Delete</button>
+            <button onClick={() => onDeleteNote(note.id)}>Delete</button>
 
             </div>
 
-            <p>Note preview</p>
+            <p>{note.content}</p>
 
             </div>
             ))}

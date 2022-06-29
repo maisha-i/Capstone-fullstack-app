@@ -21,6 +21,10 @@ function App() {
     setNotes([newNote, ...notes])
   };
 
+  const onDeleteNote = (idToDelete) => {
+    setNotes(notes.filter((note)=> note.idToDelete));
+  }
+
 
   return (
     <>
@@ -32,7 +36,7 @@ function App() {
 
       {/* <ContentPage /> */}
     
-      <NotesSide notes = {notes}  onAddNote={onAddNote} />
+      <NotesSide notes = {notes}  onAddNote={onAddNote}  onDeleteNote={onDeleteNote} />
       <NotesMain />
     
     </>
