@@ -5,13 +5,13 @@ import Login from './Login/Login';
 function App() {
   return (
     <>
-      <div className="cover">
+      {/* <div className="cover">
         <h1>NoteItDown</h1>
         <Login/>
       </div>
-      <div className="cover page1"></div>
+      <div className="cover page1"></div> */}
 
-      {/* <ContentPage /> */}
+      <ContentPage />
     </>
   );
 }
