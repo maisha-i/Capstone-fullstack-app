@@ -1,6 +1,9 @@
 package com.example.capstonefullstackapp.Controller;
 
+import com.example.capstonefullstackapp.Model.Category;
+import com.example.capstonefullstackapp.Model.Page;
 import com.example.capstonefullstackapp.Model.User;
+import com.example.capstonefullstackapp.Repository.UserRepository;
 import com.example.capstonefullstackapp.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +18,19 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    UserRepository userRepository;
+
     @GetMapping
     public ResponseEntity<List<User>>getAllUsers() {
         List<User> users = userService.getAllUsers();
         return ResponseEntity.ok().body(users);
+    }
+
+    @GetMapping("/{userId}/categories")
+    public ResponseEntity<List<Category>> getAllCategoriesByUser(@PathVariable Long userId){
+        List<Category> categories = userService.getCategoriesByUser(userId);
+        return ResponseEntity.ok().body(categories);
     }
 
     @PostMapping
@@ -27,5 +39,22 @@ public class UserController {
         User user = userService.addNewUser(newUser);
         return ResponseEntity.ok().body(user);
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<User> updateUser(
+            @PathVariable Long id,
+            @RequestBody User updatedUserDetails){
+        User updatedUser = userService.updateUser(id, updatedUserDetails);
+        return ResponseEntity.ok().body(updatedUser);
+    }
+
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity<String> deleteUserById(
+            @PathVariable Long id
+    ) {
+        userService.deleteUserById(id);
+        return ResponseEntity.ok("User with id " + id + " has been removed from the database.");
+    }
+
 
 }

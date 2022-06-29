@@ -1,0 +1,32 @@
+body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  perspective: 1000px;
+  background-color: whitesmoke;
+}
+
+.cover{
+  height: 1000px;
+  width: 700px;
+  position: absolute;
+  background-color: #f2e5d9;
+  top: 50px;
+  left: 80px;
+  box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
+
+}
+
+.page1{
+  box-shadow: 40px 0 100px rgba(0, 0, 0, 1);
+  z-index: -1;
+  top: 55px;
+  left: 85px;
+}
+
+h1{
+  text-align: center;
+  
+}

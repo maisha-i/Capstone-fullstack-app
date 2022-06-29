@@ -1,0 +1,23 @@
+.form-cover{
+    height: 100px;
+    width: 100%;
+    background: lightgoldenrodyellow;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.addNewCategory-form{
+    height: 100px;
+    width: 100%;
+    display: none;
+    border: 1px solid black;
+}
+
+.title-input{
+    display: block;
+    margin: 5px;
+}

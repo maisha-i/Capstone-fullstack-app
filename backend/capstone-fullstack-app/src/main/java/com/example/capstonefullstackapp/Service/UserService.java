@@ -1,6 +1,7 @@
 package com.example.capstonefullstackapp.Service;
 
 import com.example.capstonefullstackapp.Model.Category;
+import com.example.capstonefullstackapp.Model.Page;
 import com.example.capstonefullstackapp.Model.User;
 import com.example.capstonefullstackapp.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.DoubleStream;
+import java.util.stream.Stream;
 import java.util.Optional;
 
 @Service
@@ -56,4 +59,20 @@ public class UserService implements UserDetailsService {
         );
     }
 
+    public void deleteUserById(Long id) { userRepository.deleteById(id);
+    }
+
+
+    public User updateUser(Long id, User updatedUserDetails) {
+        User oldUser = userRepository.findById(id).get();
+        oldUser.setName(updatedUserDetails.getName());
+        oldUser.setEmail(updatedUserDetails.getEmail());
+        oldUser.setPassword(updatedUserDetails.getPassword());
+        return userRepository.save(oldUser);
+    }
+
+    public List<Category> getCategoriesByUser(Long userId) {
+        User user = userRepository.findById(userId).get();
+        return user.getCategories();
+    }
 }
