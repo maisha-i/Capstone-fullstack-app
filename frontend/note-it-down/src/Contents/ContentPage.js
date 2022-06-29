@@ -37,13 +37,26 @@ const ContentPage = () => {
     }
 
 
+    const addNewPageToState = (categoryId, title) => {
+        if(title === "") return;
+
+        const content = "";
+        
+        
+        fetch(`http://127.0.0.1:8080/page/createpage?title=${title}&content=${content}&background=WHITE&category_id=${categoryId}`, {method: "POST"})
+            .then(console.log("Adding new page"))
+            .catch(err => console.log(err))
+
+
+    }
+
 
     return(
         <>
             {/* Categories section */}
                 {categories.map( category => {
                     return(
-                        <CategoryComponent key={category.id} category={category}/>
+                        <CategoryComponent key={category.id} category={category} addNewPageToState={addNewPageToState}/>
                     )
                 })}
             
