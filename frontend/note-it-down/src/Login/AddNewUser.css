@@ -1,0 +1,26 @@
+.new-user-box{
+    display: flex;
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    background-color: #f6f5f4;
+    top: 500px;
+    left: 150px;
+    border-style: solid;
+    border-color: rgb(193, 173, 173);
+    box-shadow: whitesmoke;
+    border-radius: 5%;
+}
+
+.new-user-form{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+.login-middle-text{
+    position: absolute;
+    top: -100px;
+    left: 120px;
+    text-align: center;
+}

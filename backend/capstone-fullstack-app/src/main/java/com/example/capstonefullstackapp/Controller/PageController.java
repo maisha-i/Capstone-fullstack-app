@@ -3,6 +3,7 @@ package com.example.capstonefullstackapp.Controller;
 import com.example.capstonefullstackapp.Model.Backgrounds;
 import com.example.capstonefullstackapp.Model.Category;
 import com.example.capstonefullstackapp.Model.Page;
+import com.example.capstonefullstackapp.Repository.CategoryRepository;
 import com.example.capstonefullstackapp.Service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,9 @@ public class PageController {
 
     @Autowired
     PageService pageService;
+
+    @Autowired
+    CategoryRepository categoryRepository;
 
     @GetMapping
     public ResponseEntity<List<Page>> getAllPages() {
@@ -47,8 +51,11 @@ public class PageController {
     @PostMapping("/createpage")
     public void createPage(@RequestParam String title,
                            @RequestParam String content,
-                           @RequestParam(required = false) Backgrounds background) {
-        Page newPage = new Page();
+                           @RequestParam(required = false) Backgrounds background,
+                           @RequestParam(required = false) Long category_id) {
+        Category category = categoryRepository.findById(category_id).get();
+        Page newPage = new Page(title, content, background, category);
+        category.addNewPageToCategory(newPage);
         pageService.savePage(newPage);
     }
 

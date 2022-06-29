@@ -1,18 +1,17 @@
 import './App.css';
-// import LoginPage from './loginPage/LoginPage';
 import ContentPage from './Contents/ContentPage';
+import Login from './Login/Login';
 
 function App() {
   return (
     <>
       {/* <div className="cover">
         <h1>NoteItDown</h1>
-        <LoginPage/>
+        <Login/>
       </div>
       <div className="cover page1"></div> */}
 
       <ContentPage />
-    
     </>
   );
 }
