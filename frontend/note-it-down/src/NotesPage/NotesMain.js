@@ -5,7 +5,7 @@ function NotesMain(){
     return <div className="notes-main">
         <div className="app-main-note-edit">
 
-        <input type="text" id="title" autoFocus />
+        <input class= 'input' type="text" id="title" autoFocus />
 
         <textarea id="body" placeholder="Write your note here..." />
 

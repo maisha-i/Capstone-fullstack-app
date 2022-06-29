@@ -3,12 +3,23 @@ import './App.css';
 // import LoginPage from './loginPage/LoginPage';
 // import ContentPage from './Contents/ContentPage';
 import NotesMain from './NotesPage/NotesMain';
-// import Notes from './NotesPage/Notes';
 import NotesSide from './NotesPage/NotesSide';
+import uuid from 'react-uuid';
 
 function App() {
 
+  const [notes, setNotes] = useState([])
 
+  const onAddNote = () => {
+    
+    const newNote = {
+      id: uuid(),
+      title: "new note",
+      content:"...",
+    };
+
+    setNotes([newNote, ...notes])
+  };
 
 
   return (
@@ -20,8 +31,8 @@ function App() {
       <div className="cover page1"></div> */}
 
       {/* <ContentPage /> */}
-      {/* <Notes /> */}
-      <NotesSide  />
+    
+      <NotesSide notes = {notes}  onAddNote={onAddNote} />
       <NotesMain />
     
     </>

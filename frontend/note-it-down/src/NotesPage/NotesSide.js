@@ -1,15 +1,18 @@
 import "./Notes.css"
 
-function NotesSide({ notes}){
+function NotesSide({notes, onAddNote}){
     return (
         <div className="notes-sidebar">
           <div className="app-sidebar-header">
             <h1>Notes</h1>
-            <button>Add New Note</button>
+
+            <button onClick={onAddNote}>Add New Note</button>
         </div>
 
         <div className="app-sidebar-notes">
-            <div className="app-sidebar-note"> 
+            {notes.map((note) => (
+                 <div className="app-sidebar-note"> 
+            
             <div className="sidebar-note-title"> 
             
             <strong>Title</strong>
@@ -21,6 +24,9 @@ function NotesSide({ notes}){
             <p>Note preview</p>
 
             </div>
+            ))}
+
+           
         </div>
         </div>
 
