@@ -2,7 +2,7 @@
 --ALTER SEQUENCE USERS_ID_SEQ RESTART WITH 1;
 
 
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test1', 'test1@hotmail.com', 'test123');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test1', 'test1@hotmail.com', '$2a$10$ujnV293g64u8ftlW.R5m/eM7MztoWxlHRTtgBQmjUHLBKwNc18bsa');
 INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test2', 'test1@hotmail.com', 'test123');
 INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test3', 'test1@hotmail.com', 'test123');
 INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test4', 'test1@hotmail.com', 'test123');
