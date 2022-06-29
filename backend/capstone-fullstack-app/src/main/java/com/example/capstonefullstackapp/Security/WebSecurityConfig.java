@@ -40,7 +40,8 @@ public class WebSecurityConfig{
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.cors()
+        http
+                .cors()
 //                .configurationSource(request -> {
 //                    var cors = new CorsConfiguration();
 //                    cors.setAllowedOrigins(List.of("http://localhost:3000", "http://127.0.0.1:80"));
@@ -56,7 +57,7 @@ public class WebSecurityConfig{
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable()
-                .headers().frameOptions().disable()
+                .headers().frameOptions().disable() //allows h2 database to work properly
                 .and()
                 .formLogin()
                 .permitAll()
