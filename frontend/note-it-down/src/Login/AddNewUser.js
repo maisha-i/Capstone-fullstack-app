@@ -17,10 +17,10 @@ const AddNewUser = ({addNewUserToState}) => {
         <>
             <div className="new-user-box">
                 <div className="login-middle-text">
-                    <p>OR</p>
-                    <p>Create New Account </p>   
+                    <p id="or"> OR </p>
                 </div>
                 <div  className="new-user-form">
+                    <p id="create-new-account-msg">Create New Account </p>   
                 <form className=""onSubmit={handleUserAdd}>
 
                     <label htmlFor="email">Name</label>
