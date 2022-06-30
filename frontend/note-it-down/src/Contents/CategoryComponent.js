@@ -27,9 +27,9 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle}) => {
     }
 
     
-    const offClick = (event, newThing) => {
+    const offClick = (event) => {
         if(event.target.id !== "newEditInput"){
-                console.log("clicked off", newThing);
+                console.log("clicked off", newTitle);
                 document.removeEventListener("click", offClick)
                 updateTitleInDatabase(newTitle)
         }
