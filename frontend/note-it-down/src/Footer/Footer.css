@@ -1,4 +1,4 @@
-body{ height:fit-content; flex-direction: column;}
+body{ height:fit-content; flex-direction: column; margin: 0px;}
 
 footer {
     /* display: flex;
@@ -8,6 +8,7 @@ footer {
     width: 100%;
     background: rgb(164, 204, 196);
     height: 200px;
+    margin-left: 0px;
     margin-top: 50px;
 }
 

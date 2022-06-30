@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 import Footer from './Footer/Footer';
-// import LoginPage from './loginPage/LoginPage';
+import Login from './Login/Login';
 // import ContentPage from './Contents/ContentPage';
 import NotesMain from './NotesPage/NotesMain';
 import NotesSide from './NotesPage/NotesSide';
@@ -30,16 +30,16 @@ function App() {
 
   return (
     <>
-      {/* <div className="cover">
+      <div className="cover">
         <h1>noteItDown</h1>
         <Login/>
       </div>
-      <div className="cover page1"></div> */}
+      <div className="cover page1"></div>
 
       {/* <ContentPage /> */}
     
-      <NotesSide notes = {notes}  onAddNote={onAddNote}  onDeleteNote={onDeleteNote} />
-      <NotesMain />
+      {/* <NotesSide notes = {notes}  onAddNote={onAddNote}  onDeleteNote={onDeleteNote} />
+      <NotesMain /> */}
         </>
   );
 }
