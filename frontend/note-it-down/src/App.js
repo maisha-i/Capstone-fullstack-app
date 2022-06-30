@@ -22,7 +22,7 @@ function App() {
   };
 
   const onDeleteNote = (idToDelete) => {
-    setNotes(notes.filter((note)=> note.idToDelete));
+    setNotes(notes.filter((note)=> note.id !== idToDelete));
   }
 
 
