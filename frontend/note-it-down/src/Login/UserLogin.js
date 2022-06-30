@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./UserLogin.css"
 
 
 const Login = () => {
@@ -32,32 +31,30 @@ const Login = () => {
     return(
        <>   <div className="login-box">
                 <div className="login-form"> 
-                    <p>Sign In </p>   
+                    {/* <p>Log In </p>    */}
 
                     <div className="email">
-                        <label htmlFor="email">Email</label>
                         {/* value = username set out inline 4  - bind the username and password to the text boxes 
                         value of username = value of text box*/}
                         <input 
-                        type="email" id="email" 
+                        type="email" placeholder="Email" id="email" 
                         value={email} 
                         onChange={(event) => setEmail(event.target.value)}
                         /> 
                     </div>
 
                     <div className="password">
-                        <label htmlFor="password">Password</label>
                         <input 
-                        type="password" 
+                        type="password" placeholder="Password"
                         id="password" 
                         value={password}
                         onChange={(event) => setPassword(event.target.value)} 
                         /> 
-                        
-                    <div className="submit">
-                        <button className="submit-button" id="submit" type="button">Submit</button> 
-                    </div>
-                    </div>    
+                    </div> 
+
+                    <div className="btn">
+                        <button className="submit-button" id="submit" type="button">Log In</button> 
+                    </div>   
                 </div>
             </div>
        </> 

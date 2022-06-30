@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    outline: none;
+    color: #000000;
+
+
+}
+
+.login-body{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(-45deg,#00d5fc, #046) */
+
+}
+
+.container{
+    position: relative;
+    align-items: center;
+    padding: 20px 30px;
+    width: 400px;
+    border-color: rgba(193, 173, 173, 0.508);
+    background-color: #f6f5f4;
+    box-shadow: whitesmoke;
+    border-radius: 5%;
+    border-style: inset;
+
+}
+
+.switch{
+    position: absolute;
+    right: 30px;
+    display: flex;
+    border-bottom: 1px solid #a14758ab;
+
+}
+
+.switch:after{
+    content: '';
+    height: 6px;
+    width: 60px;
+    background: #a14758ab;
+    border-radius: 60px 60px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+}
+
+.login{
+    padding: 5px 12px;
+    background: linear-gradient(45deg,#d0e6de, #336247);
+    margin-bottom: 10px;
+    border-radius: 50px;
+    text-align: right;
+    margin-left: 4px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+
+.signup{
+    padding: 5px 12px;
+    /* background: linear-gradient(45deg,#d0e6de, #336247); */
+    margin-bottom: 10px;
+    border-radius: 50px;
+    text-align: right;
+    margin-left: 4px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+
+.container .outer{
+    /*  moved the sign up form out to the side  */
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    /* hides other form */
+    overflow: hidden;
+
+}
+
+.outer #form{
+    width: 200%;
+    position: relative;
+    display: flex;
+    margin: auto;
+    transition: 0.2s ease-in-out;
+}
+
+#page{
+    margin: auto;
+    width: 100%;
+    
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.element{
+    position: relative;
+
+}
+
+.element input{
+    width: 80%;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background: #e8ddddb9;
+    border: 1px solid #948484;
+    padding-left: 40px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    
+}
+
+input::placeholder{
+    color: #7a7272;
+    font-size: 20px;
+}
+
+/* icon next to email password */
+/* .element span{
+    position: absolute;
+    left: 30px;
+    top: 12px;
+    font-size: 18px;
+} */
+
+/* btn not defined in each component- each component have their own button*/
+#btn{
+    padding: 5px 25px;
+    background: linear-gradient(45deg,#d0e6de, #336247);
+    border-radius: 50px;
+    font-size: 25px;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#btn:active{
+    transform: scale(1.01);
+}
+

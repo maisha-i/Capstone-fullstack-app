@@ -2,6 +2,8 @@ import userEvent from "@testing-library/user-event";
 import UserLogin from "./UserLogin";
 import { useEffect, useState } from "react";
 import AddNewUser from "./AddNewUser";
+import "./Login.css"
+
  
 
 const Login = () => {
@@ -39,10 +41,59 @@ const Login = () => {
             .then(console.log("User has been successfully registered."))
     }
 
+const login = document.querySelector(".login");
+const signup = document.querySelector(".signup");
+const form = document.querySelector("#form")
+const switchs = document.querySelector(".switch");
+
+let current = 1;
+
+function tab2(){
+    form.style.marginLeft = "-100%";
+    login.style.background = "none";
+    signup.style.background = " linear-gradient(45deg,#d0e6de, #336247);";
+
+}
+
+function tab1(){
+    form.style.marginLeft = "0";
+    login.style.background = "none";
+    signup.style.background = " linear-gradient(45deg,#d0e6de, #336247);";
+
+}
+
     return(
         <>
-        <UserLogin/>
-        <AddNewUser addNewUserToState={addNewUserToState}/>
+            <div className="login-body"> 
+                <div className="container">
+                    <div className="switch"> 
+                        <div className="login" onClick="tab1();"> Login  </div>
+                        <div className="signup" onClick="tab2();"> Sign Up</div>   
+                    </div>
+                    <div className="outer">
+                        <form id="form">
+                            <div id="page">
+                                <label>Login Form</label>
+                                <div className="element">
+                                    <UserLogin/>
+                                </div>
+                                <button id="btn">Log In</button>
+
+                            </div>
+
+                            <div id="page">                                    
+                                <label>Sign Up Form</label>
+                                <div className="element"> 
+                                    <AddNewUser addNewUserToState={addNewUserToState}/> 
+                                </div>    
+                                <button id="btn">Sign Up</button>
+                            </div>
+                        </form>
+
+                    </div> 
+                    
+                </div>
+            </div>
         </>
     )
 }
