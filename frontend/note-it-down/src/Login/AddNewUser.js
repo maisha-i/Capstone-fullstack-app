@@ -1,6 +1,4 @@
 import { useState } from "react";
-import "./AddNewUser.css"
-
 
 const AddNewUser = ({addNewUserToState}) => {
 
@@ -16,34 +14,36 @@ const AddNewUser = ({addNewUserToState}) => {
     return(
         <>
             <div className="new-user-box">
-                <div className="login-middle-text">
-                    <p id="or"> OR </p>
-                </div>
                 <div  className="new-user-form">
-                    <p id="create-new-account-msg">Create New Account </p>   
                 <form className=""onSubmit={handleUserAdd}>
 
-                    <label htmlFor="email">Name</label>
-                    <input 
-                    type="text" 
-                    onChange={(event) => setNewName(event.target.value)} 
-                    value={newName}
-                    />
+                    <div className="form-group"> 
+                        <input 
+                        type="text" placeholder="Full Name"
+                        onChange={(event) => setNewName(event.target.value)} 
+                        value={newName}
+                        />
+                    </div>
 
-                    <label htmlFor="email">Email</label>
-                    <input 
-                    type="text" 
-                    onChange={(event) => setNewEmail(event.target.value)} 
-                    value={newEmail}
-                    />
+                    <div className="form-group"> 
+                        <input 
+                        type="text" placeholder="Email"
+                        onChange={(event) => setNewEmail(event.target.value)} 
+                        value={newEmail}
+                        />
+                    </div>
 
-                    <label htmlFor="email">Password</label>
-                    <input 
-                    type="text" 
-                    onChange={(event) => setNewPassword(event.target.value)} 
-                    value={newPassword}
-                    />
+                    <div className="form-group"> 
+                        <input 
+                        type="text" placeholder="Password"
+                        onChange={(event) => setNewPassword(event.target.value)} 
+                        value={newPassword}
+                        />
+                    </div>
+                    
+                    <div> 
                     <input type="submit" value="Sign Up" />
+                    </div>
                 </form>
                 </div>            
             </div>

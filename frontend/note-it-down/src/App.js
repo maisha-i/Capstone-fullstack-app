@@ -1,43 +1,43 @@
 import { useState } from 'react';
 import './App.css';
-// import LoginPage from './loginPage/LoginPage';
+import Login from './Login/Login';
 // import ContentPage from './Contents/ContentPage';
-import NotesMain from './NotesPage/NotesMain';
-import NotesSide from './NotesPage/NotesSide';
-import uuid from 'react-uuid';
+// import NotesMain from './NotesPage/NotesMain';
+// import NotesSide from './NotesPage/NotesSide';
+// import uuid from 'react-uuid';
 
 function App() {
 
-  const [notes, setNotes] = useState([])
+  // const [notes, setNotes] = useState([])
 
-  const onAddNote = () => {
+  // const onAddNote = () => {
     
-    const newNote = {
-      id: uuid(),
-      title: "new note",
-      content:"...",
-    };
+  //   const newNote = {
+  //     id: uuid(),
+  //     title: "new note",
+  //     content:"...",
+  //   };
 
-    setNotes([newNote, ...notes])
-  };
+  //   setNotes([newNote, ...notes])
+  // };
 
-  const onDeleteNote = (idToDelete) => {
-    setNotes(notes.filter((note)=> note.idToDelete));
-  }
+  // const onDeleteNote = (idToDelete) => {
+  //   setNotes(notes.filter((note)=> note.idToDelete));
+  // }
 
 
   return (
     <>
-      {/* <div className="cover">
+      <div className="cover">
         <h1>noteItDown</h1>
         <Login/>
       </div>
-      <div className="cover page1"></div> */}
+      <div className="cover page1"></div>
 
       {/* <ContentPage /> */}
-    
+{/*     
       <NotesSide notes = {notes}  onAddNote={onAddNote}  onDeleteNote={onDeleteNote} />
-      <NotesMain />
+      <NotesMain /> */}
         </>
   );
 }
