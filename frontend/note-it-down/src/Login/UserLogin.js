@@ -32,6 +32,8 @@ const Login = () => {
     return(
        <>   <div className="login-box">
                 <div className="login-form"> 
+                    <p>Sign In </p>   
+
                     <div className="email">
                         <label htmlFor="email">Email</label>
                         {/* value = username set out inline 4  - bind the username and password to the text boxes 
@@ -50,13 +52,12 @@ const Login = () => {
                         id="password" 
                         value={password}
                         onChange={(event) => setPassword(event.target.value)} 
-                        />
-                    </div>    
-                    
+                        /> 
+                        
                     <div className="submit">
                         <button className="submit-button" id="submit" type="button">Submit</button> 
                     </div>
-
+                    </div>    
                 </div>
             </div>
        </> 
