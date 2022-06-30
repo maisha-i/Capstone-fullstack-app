@@ -1,4 +1,5 @@
 import './App.css';
+// import LoginPage from './loginPage/LoginPage';
 import ContentPage from './Contents/ContentPage';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       {/* <div className="cover">
         <h1>NoteItDown</h1>
+        <LoginPage/>
       </div>
       <div className="cover page1"></div> */}
 

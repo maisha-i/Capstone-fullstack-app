@@ -1,5 +1,6 @@
 package com.example.capstonefullstackapp.Service;
 
+import com.example.capstonefullstackapp.Model.Backgrounds;
 import com.example.capstonefullstackapp.Model.Category;
 import com.example.capstonefullstackapp.Model.Page;
 import com.example.capstonefullstackapp.Model.User;
@@ -7,6 +8,7 @@ import com.example.capstonefullstackapp.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
@@ -22,6 +24,10 @@ public class UserService {
     }
 
     public User addNewUser(User user) {
+        Category toDoList = new Category("To Do List", new ArrayList<>(), user);
+        Page newPage = new Page("My first to do", null, Backgrounds.WHITE, toDoList);
+        toDoList.addNewPageToCategory(newPage);
+        user.addNewCategory(toDoList);
         return userRepository.save(user);
     }
 

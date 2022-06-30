@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AddNewCategory from "./AddNewCategory";
 import CategoryComponent from "./CategoryComponent";
+import ToDoList from "./ToDoList";
 
 
 
@@ -53,6 +54,9 @@ const ContentPage = () => {
 
     return(
         <>
+            {/* To Do List */}
+            <ToDoList />
+
             {/* Categories section */}
                 {categories.map( category => {
                     return(
