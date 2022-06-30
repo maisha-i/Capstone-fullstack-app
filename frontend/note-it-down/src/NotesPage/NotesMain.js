@@ -16,10 +16,10 @@ function NotesMain({noteShown, onUpdateNote}){
     };
 
     if(!noteShown)
-    return <div className="no-note-shown">Please select a note</div>
+    return <div className="no-note-shown">No note shown</div>
 
     return <div className="notes-main">
-        <div className="app-main-note-edit">
+        <div className="main-note-edit">
 
         <input class= 'title-input' type="text" id="title" value={noteShown.title} onChange={(e) => onEditField("title", e.target.value)} autoFocus />
 
@@ -28,11 +28,11 @@ function NotesMain({noteShown, onUpdateNote}){
             
         </div>
 
-        <div className="app-main-note-preview">
+        <div className="main-note-preview">
 
             <h1 className="preview-title">{noteShown.title}</h1>
 
-            <div className="preview">{noteShown.content}</div>
+            <div className="preview-content">{noteShown.content}</div>
 
         </div>
     </div>

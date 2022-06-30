@@ -1,4 +1,4 @@
-.notes-sidebar{
+.sidebar{
     border: solid black 2px;
     width: 230px;
     height: 1000px;
@@ -14,7 +14,7 @@
    
 }
 
-.app-sidebar-header {
+.sidebar-header {
     display: flex;
     justify-content: space-between;
     padding: 25px;
@@ -24,11 +24,8 @@
     margin: 0;
   }
 
-  .app-sidebar-notes {
-    height: calc(100vh - 78px);
-    overflow-y: scroll;
-  }
-  .app-sidebar-note {
+  
+  .sidebar-note {
     padding: 25px;
     cursor: pointer;
   }
@@ -36,10 +33,10 @@
     display: flex;
     justify-content: space-between;
   }
-  .app-sidebar-note button {
+  .sidebar-note button {
     color: red;
   }
-  .app-sidebar-note p {
+  .sidebar-note p {
     margin: 10px 0;
   }
   
@@ -52,10 +49,10 @@
       
   }
 
-  .app-sidebar-note:hover {
+  .sidebar-note:hover {
     background: white;
   }
-  .app-sidebar-note.active{
+  .sidebar-note.active{
     background: rgb(71, 120, 227);
     color: white;
   }
