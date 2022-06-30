@@ -18,7 +18,7 @@ const ContentPage = () => {
     ,[categories])
 
     const addNewCategoryToState = (title) => {
-        if(title === ""){
+        if(title === "" || title === "To Do List"){
             return
         }
         const category = {
@@ -51,6 +51,11 @@ const ContentPage = () => {
 
     }
 
+    const updateTitle = (categoryId, newTitle) => {
+        const something = categories.filter(category => category.id === categoryId)[0].title = newTitle;
+        console.log(something);
+    }
+
 
     return(
         <>
@@ -62,7 +67,7 @@ const ContentPage = () => {
             {/* Categories section */}
                 {categories.filter(category => category.title !== "To Do List").map( category => {
                     return(
-                        <CategoryComponent key={category.id} category={category} addNewPageToState={addNewPageToState}/>
+                        <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState}/>
                     )
                 })}
             

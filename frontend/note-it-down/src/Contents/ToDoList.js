@@ -46,6 +46,12 @@ const ToDoList = ({list, addNewPageToState}) => {
     }
 
 
+    const handleToDoDelete = (event) => {
+        const pageId = event.target.dataset.id;
+
+        fetch(`http://127.0.0.1:8080/page/deletePage/${pageId}`, {method: "DELETE"})
+            .then(console.log("Bye!"))
+    }
 
 
     return(
@@ -57,6 +63,7 @@ const ToDoList = ({list, addNewPageToState}) => {
                         <li key={page.id}>
                             <label id={`toDoList--label-id${page.id}`} htmlFor={`toDoList--checkbox-id${page.id}`}>{page.title}</label>
                             <input data-id={page.id} type="checkbox" name={page.title} id={`toDoList--checkbox-id${page.id}`} onClick={(event) => handleToDoCheck(event, page.title, page.id)}/>
+                            <p data-id={page.id} onClick={handleToDoDelete} className="cross-symbol">&#10005;</p>
                         </li>
                     )
                 }
@@ -65,12 +72,13 @@ const ToDoList = ({list, addNewPageToState}) => {
                         <li key={page.id}>
                             <label style={{textDecoration: "line-through", color: "grey"}} id={`toDoList--label-id${page.id}`} htmlFor={`toDoList--checkbox-id${page.id}`}>{page.title}</label>
                             <input checked = "true" data-id={page.id} type="checkbox" name={page.title} id={`toDoList--checkbox-id${page.id}`} onClick={(event) => handleToDoCheck(event, page.title, page.id)}/>
+                            <p data-id={page.id} onClick={handleToDoDelete} className="cross-symbol">&#10005;</p>
                         </li>
                     )
                 }
 
             })}
-            <AddNewPage category={list} addNewPageToState={addNewPageToState}/>
+            <AddNewPage name = {"Add new ToDo"} category={list} addNewPageToState={addNewPageToState}/>
         
         
         
