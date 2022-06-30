@@ -1,4 +1,4 @@
-.notes-sidebar{
+.sidebar{
     border: solid black 2px;
     width: 230px;
     height: 1000px;
@@ -14,21 +14,27 @@
    
 }
 
-.app-sidebar-header {
+.sidebar-header {
     display: flex;
     justify-content: space-between;
-    padding: 25px;
+    padding: 10px;
+  }
+
+  .add-note-button{
+    display: block;
+    height: 50px;
+    width: 130px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+  
   }
 
   .app-sidebar-header h1 {
     margin: 0;
   }
 
-  .app-sidebar-notes {
-    height: calc(100vh - 78px);
-    overflow-y: scroll;
-  }
-  .app-sidebar-note {
+  
+  .sidebar-note {
     padding: 25px;
     cursor: pointer;
   }
@@ -36,14 +42,46 @@
     display: flex;
     justify-content: space-between;
   }
-  .app-sidebar-note button {
-    color: crimson;
+  .sidebar-note button {
+    color: red;
   }
-  .app-sidebar-note p {
+  .sidebar-note p {
     margin: 10px 0;
   }
   
-  .input{
-      display: block
+  .title-input{
+      display: block;
+      width: 500px;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      
   }
-  
+
+  .sidebar-note:hover {
+    background: white;
+  }
+  .sidebar-note.active{
+    background: rgb(71, 120, 227);
+    color: white;
+  }
+
+  .content-input{
+    margin-left: 20px;
+    width: 500px;
+    height: 300px
+  }
+
+  .preview-title{
+    margin-left: 20px;
+  }
+
+  .preview-content{
+    margin-left: 20px;
+  }
+
+  .no-note-shown{
+    display: inline-block;
+    font-size: 40px;
+    margin-left: 140px;
+  }
