@@ -1,6 +1,7 @@
 import './App.css';
 import ContentPage from './Contents/ContentPage';
 import Login from './Login/Login';
+import Footer from './Footer/Footer';
 
 function App() {
   return (
