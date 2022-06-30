@@ -1,26 +1,36 @@
 import "./Notes.css"
 
-function NotesMain(){
+function NotesMain({noteShown, onUpdateNote}){
+
+    const onEditField = (key, value) => {
+
+        onUpdateNote({
+
+            ...noteShown,
+            [key]: value,
+    
+        })
+
+    };
+
+    if(!noteShown)
+    return <div className="no-note-shown">No note shown</div>
 
     return <div className="notes-main">
-        <div className="app-main-note-edit">
+        <div className="main-note-edit">
 
-        <input class= 'input' type="text" id="title" autoFocus />
+        <input class= 'title-input' type="text" id="title" value={noteShown.title} onChange={(e) => onEditField("title", e.target.value)} autoFocus />
 
-        <textarea id="body" placeholder="Write your note here..." />
+        <textarea class= 'content-input'id="body" placeholder="Write your note here..." value={noteShown.content} onChange={(e) => onEditField("content", e.target.value)}/>
 
-    
-
-        
             
-
         </div>
 
-        <div className="app-main-note-preview">
+        <div className="main-note-preview">
 
-            <h1 className="preview-title">Title</h1>
+            <h1 className="preview-title">{noteShown.title}</h1>
 
-            <div className="preview">note preview</div>
+            <div className="preview-content">{noteShown.content}</div>
 
         </div>
     </div>

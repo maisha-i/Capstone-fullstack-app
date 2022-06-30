@@ -1,17 +1,20 @@
 import "./Notes.css"
 
-function NotesSide({notes, onAddNote, onDeleteNote}){
+function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
     return (
-        <div className="notes-sidebar">
-          <div className="app-sidebar-header">
+        <div className="sidebar">
+          <div className="sidebar-header">
             <h1>Notes</h1>
-
-            <button onClick={onAddNote}>Add New Note</button>
+            </div>
+            <div>
+            <button class ='add-note-button' onClick={onAddNote}>Add New Note</button>
         </div>
 
-        <div className="app-sidebar-notes">
+        <div className="sidebar-notes"> 
             {notes.map((note) => (
-                 <div className="app-sidebar-note"> 
+
+                 <div className={`sidebar-note ${note.id === noteShown && "active"} `}
+                 onClick={() => setNoteShown(note.id)}> 
             
             <div className="sidebar-note-title"> 
             
@@ -21,7 +24,7 @@ function NotesSide({notes, onAddNote, onDeleteNote}){
 
             </div>
 
-            <p>{note.content}</p>
+            <p>{note.content && note.content.substr(0, 22)+ "..."}</p>
 
             </div>
             ))}
