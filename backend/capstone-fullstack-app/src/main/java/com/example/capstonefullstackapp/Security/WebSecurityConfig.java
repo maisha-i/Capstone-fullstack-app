@@ -58,11 +58,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
                 // allow access to swagger and h2
-                .antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/h2-console").permitAll()
+                .antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/h2-console/**").permitAll()
                 // allow access to methods in swagger to check endpoints
                 .antMatchers("/user/**", "/page/**","/category/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .anyRequest().authenticated().and()
+                // lets h2 display correctly
+                .headers().frameOptions().disable().and()
                 .exceptionHandling()
                 .authenticationEntryPoint(exceptionHandler).and()
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
