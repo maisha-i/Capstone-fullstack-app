@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 // import Login from './Login/Login';
 
-// import Footer from './Footer/Footer';
+import Footer from './Footer/Footer';
 // import ContentPage from './Contents/ContentPage';
 import NotesMain from './NotesPage/NotesMain';
 import NotesSide from './NotesPage/NotesSide';
