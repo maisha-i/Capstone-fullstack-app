@@ -42,22 +42,23 @@ public class UserService implements UserDetailsService {
         return userRepository.save(user);
     }
 
-    //method has to be called load by username but for us username == email
+    //method has to be called load by username but for us username == email (unique identifier + what a user will use to login)
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> record = userRepository.findByEmail(username);
 
+        org.springframework.security.core.userdetails.User.UserBuilder builder = null;
         if (record.isEmpty()){
             throw new UsernameNotFoundException("User not found - " + username);
         }
 
         User user = record.get();
 
-        return new org.springframework.security.core.userdetails.User(
-                user.getEmail(),
-                user.getPassword(),
-                Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"))
-        );
+        builder = org.springframework.security.core.userdetails.User.withUsername(username);
+        builder.password(user.getPassword());
+        builder.roles("");
+
+        return builder.build();
     }
 
     public void deleteUserById(Long id) { userRepository.deleteById(id);
