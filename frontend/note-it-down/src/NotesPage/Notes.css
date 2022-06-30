@@ -62,3 +62,11 @@
     width: 500px;
     height: 300px
   }
+
+  .preview-title{
+    margin-left: 20px;
+  }
+
+  .preview-content{
+    margin-left: 20px;
+  }
