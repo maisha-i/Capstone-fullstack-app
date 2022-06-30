@@ -55,10 +55,12 @@ const ContentPage = () => {
     return(
         <>
             {/* To Do List */}
-            <ToDoList />
+            {categories.filter(categories => categories.title === "To Do List").map(category => {
+                return <ToDoList key={category.id} list={category} addNewPageToState={addNewPageToState}/> 
+            })}
 
             {/* Categories section */}
-                {categories.map( category => {
+                {categories.filter(category => category.title !== "To Do List").map( category => {
                     return(
                         <CategoryComponent key={category.id} category={category} addNewPageToState={addNewPageToState}/>
                     )
