@@ -79,3 +79,9 @@
   .preview-content{
     margin-left: 20px;
   }
+
+  .no-note-shown{
+    display: inline-block;
+    font-size: 40px;
+    margin-left: 140px;
+  }

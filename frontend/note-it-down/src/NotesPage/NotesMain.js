@@ -9,8 +9,6 @@ function NotesMain({noteShown, onUpdateNote}){
             ...noteShown,
             [key]: value,
     
-
-
         })
 
     };
