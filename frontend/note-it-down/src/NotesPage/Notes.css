@@ -1,0 +1,49 @@
+.notes-sidebar{
+    border: solid black 2px;
+    width: 230px;
+    height: 1000px;
+    display: inline-block;
+}
+
+.notes-main{
+    border: solid black 2px;
+    width: 550px;
+    height: 1000px;
+   
+    float: right;
+   
+}
+
+.app-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+  }
+
+  .app-sidebar-header h1 {
+    margin: 0;
+  }
+
+  .app-sidebar-notes {
+    height: calc(100vh - 78px);
+    overflow-y: scroll;
+  }
+  .app-sidebar-note {
+    padding: 25px;
+    cursor: pointer;
+  }
+  .sidebar-note-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .app-sidebar-note button {
+    color: crimson;
+  }
+  .app-sidebar-note p {
+    margin: 10px 0;
+  }
+  
+  .input{
+      display: block
+  }
+  
