@@ -37,13 +37,31 @@
     justify-content: space-between;
   }
   .app-sidebar-note button {
-    color: crimson;
+    color: red;
   }
   .app-sidebar-note p {
     margin: 10px 0;
   }
   
-  .input{
-      display: block
+  .title-input{
+      display: block;
+      width: 500px;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      
   }
-  
+
+  .app-sidebar-note:hover {
+    background: white;
+  }
+  .app-sidebar-note.active{
+    background: rgb(71, 120, 227);
+    color: white;
+  }
+
+  .content-input{
+    margin-left: 20px;
+    width: 500px;
+    height: 300px
+  }

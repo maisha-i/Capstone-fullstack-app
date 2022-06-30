@@ -10,6 +10,8 @@ function App() {
 
   const [notes, setNotes] = useState([])
 
+  const [noteShown, setNoteShown] = useState(false);
+
   const onAddNote = () => {
     
     const newNote = {
@@ -21,13 +23,34 @@ function App() {
     setNotes([newNote, ...notes])
   };
 
+  const onUpdateNote = (updatedNote) => {
+
+    const updatedNotesArray = notes.map((note) => {
+
+      if(note.id === noteShown){
+        return updatedNote;
+      }
+
+      return note;
+
+    });
+
+    setNotes(updatedNotesArray);
+
+  }
+
   const onDeleteNote = (idToDelete) => {
     setNotes(notes.filter((note)=> note.id !== idToDelete));
-  }
+  };
+
+  const getNoteShown = () => {
+    return notes.find((note) => note.id === noteShown);
+  };
 
 
   return (
-    <>
+    <div className='App'>
+       
       {/* <div className="cover">
         <h1>noteItDown</h1>
         <Login/>
@@ -36,10 +59,22 @@ function App() {
 
       {/* <ContentPage /> */}
     
-      <NotesSide notes = {notes}  onAddNote={onAddNote}  onDeleteNote={onDeleteNote} />
-      <NotesMain />
-        </>
+      <NotesSide 
+      notes = {notes}  
+      onAddNote={onAddNote}  
+      onDeleteNote={onDeleteNote} 
+      noteShown={noteShown} 
+      setNoteShown={setNoteShown} />
+
+
+      <NotesMain 
+      noteShown={getNoteShown()}
+      onUpdateNote={onUpdateNote}/>
+    </div>
+
   );
+    
+   
 }
 
 export default App;
