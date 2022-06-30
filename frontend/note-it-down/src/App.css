@@ -1,11 +1,11 @@
-body{
+/* body{
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   perspective: 1000px;
-  background-color: whitesmoke;
+  background-color: rgb(245, 245, 245);
 }
 
 .cover{
@@ -13,6 +13,7 @@ body{
   width: 700px;
   position: absolute;
   background-color: #f2e5d9;
+  background-image: url(/Users/maisha/capstone-fullstack-app/frontend/note-it-down/src/Images/background.png);
   top: 50px;
   left: 80px;
   box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
@@ -24,4 +25,12 @@ body{
   z-index: -1;
   top: 55px;
   left: 85px;
+  background-color: #f2e5d9;
 }
+
+h1{
+    text-align: center;
+    font-family: 'Square Peg', cursive, sans-serif, monospace;
+    font-size: 50px;
+  }
+*/

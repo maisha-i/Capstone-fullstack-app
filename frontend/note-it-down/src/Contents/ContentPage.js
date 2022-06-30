@@ -64,11 +64,11 @@ const ContentPage = () => {
                     )
                 })}
             
-            {/* Add a new category form: */}
+             {/* Add a new category form: */}
 
-            <AddNewCategory addNewCategoryToState={addNewCategoryToState}/>
+             <AddNewCategory addNewCategoryToState={addNewCategoryToState}/>
         
-        </>
+         </>
     );
 
 

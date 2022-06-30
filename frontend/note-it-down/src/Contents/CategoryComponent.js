@@ -10,7 +10,7 @@ const CategoryComponent = ({category, addNewPageToState}) => {
             <h1>{title}</h1>
             <ul className="contents-page--page-list">
                 {pages.map(page => { return(
-                    <li key={page.id}>{page.title}</li>
+                    <li className="contents-page--list-item" key={page.id}>{page.title}</li>
                 )
 
                 })}
@@ -20,7 +20,7 @@ const CategoryComponent = ({category, addNewPageToState}) => {
         
         
         
-        </section>
+         </section>
     )
 }
 

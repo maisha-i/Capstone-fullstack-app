@@ -6,7 +6,7 @@ const AddNewCategory = ({addNewCategoryToState}) => {
 
     const [newTitle, setNewTitle] = useState("");
 
-    const handleCategoryAdd = () => {
+    const handleCategoryAdd = (event) => {
         addNewCategoryToState(newTitle);
     }
 
