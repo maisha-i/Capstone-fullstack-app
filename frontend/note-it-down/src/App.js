@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './Footer/Footer';
 import AuthChecker from './Navigation/AuthChecker';
 
 function App() {
@@ -7,6 +8,10 @@ function App() {
        
       <AuthChecker />
      
+
+     <Footer />
+
+   
     </div>
   );
 }

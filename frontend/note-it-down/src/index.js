@@ -14,12 +14,12 @@ root.render(
 );
 
 
-const footer = ReactDOM.createRoot(document.getElementById('footer'));
-footer.render(
-  <React.StrictMode>
-    <Footer />
-  </React.StrictMode>
-)
+// const footer = ReactDOM.createRoot(document.getElementById('footer'));
+// footer.render(
+//   <React.StrictMode>
+//     <Footer />
+//   </React.StrictMode>
+// )
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

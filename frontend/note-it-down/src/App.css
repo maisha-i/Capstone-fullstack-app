@@ -5,9 +5,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   perspective: 1000px;
   background-color: rgb(245, 245, 245);
+  height: 1180px;
+  width: 100vw;
 }
 
 .cover{
