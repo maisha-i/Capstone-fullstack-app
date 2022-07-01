@@ -5,9 +5,9 @@ import ToDoList from "./ToDoList";
 
 
 
-const ContentPage = () => {
+const ContentPage = ({selectPage}) => {
 
-    const currentUserId = 1;
+    const currentUserId = sessionStorage.getItem("userId");
     const [categories, setCategories] = useState([]);
 
     useEffect( () => {

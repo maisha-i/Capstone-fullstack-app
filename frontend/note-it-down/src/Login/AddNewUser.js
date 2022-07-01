@@ -1,5 +1,8 @@
 import { useState } from "react";
-import "./AddNewUser.css"
+import { RiLockPasswordFill, RiUser3Fill} from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
+
+
 
 
 const AddNewUser = ({addNewUserToState}) => {
@@ -9,46 +12,50 @@ const AddNewUser = ({addNewUserToState}) => {
     const[newPassword, setNewPassword] = useState("");
 
     const handleUserAdd = (event) => {
-        event.preventDefault()
+        // event.preventDefault()
         addNewUserToState(newName, newEmail, newPassword);
     }
 
     return(
         <>
             <div className="new-user-box">
-                <div className="login-middle-text">
-                    <p id="or"> OR </p>
-                </div>
                 <div  className="new-user-form">
-                    <p id="create-new-account-msg">Create New Account </p>   
                 <form className=""onSubmit={handleUserAdd}>
 
-                    <label htmlFor="email">Name</label>
-                    <input 
-                    type="text" 
-                    onChange={(event) => setNewName(event.target.value)} 
-                    value={newName}
-                    />
+                    <div className="form-group"> 
+                        <RiUser3Fill id="icon-a-name"/><input 
+                        type="text" placeholder="Full Name"
+                        onChange={(event) => setNewName(event.target.value)} 
+                        value={newName}
+                        />
+                    </div>
 
-                    <label htmlFor="email">Email</label>
-                    <input 
-                    type="text" 
-                    onChange={(event) => setNewEmail(event.target.value)} 
-                    value={newEmail}
-                    />
+                    <div className="form-group"> 
+                        <MdEmail id="icon-a-email"/><input 
+                        type="email" placeholder="Email"
+                        onChange={(event) => setNewEmail(event.target.value)} 
+                        value={newEmail}
+                        />
+                    </div>
 
-                    <label htmlFor="email">Password</label>
-                    <input 
-                    type="text" 
-                    onChange={(event) => setNewPassword(event.target.value)} 
-                    value={newPassword}
-                    />
-                    <input type="submit" value="Sign Up" />
+                    <div className="form-group"> 
+                        <RiLockPasswordFill id="icon-a-password"/><input 
+                        type="password" placeholder="Password"
+                        onChange={(event) => setNewPassword(event.target.value)} 
+                        value={newPassword}
+                        />
+                    </div>
+                    
+                    <div> 
+                     <button  type="submit"id="btn-signup">Sign Up</button> 
+
+                    </div>
                 </form>
                 </div>            
             </div>
 
         </>
     )
+
 }
 export default AddNewUser;

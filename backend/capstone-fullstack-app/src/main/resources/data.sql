@@ -1,11 +1,9 @@
---DELETE FROM USERS;
---ALTER SEQUENCE USERS_ID_SEQ RESTART WITH 1;
 
-
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test1', 'test1@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test2', 'test2@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test3', 'test3@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test4', 'test4@hotmail.com', 'test123');
+-- passwords are all name123 but need to be saved encrypted to work
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'James Stillman', 'james@hotmail.com', '$2a$10$N5BtVlBRMXsoM.Q.WQfpWuGBa8yYspDj7ecfIjBLLxLtkirGHqsV.');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Katya Grenier', 'katya@hotmail.com', '$2a$10$WCGeZXm6jek.tLU9Q825G.hmB0izX9E9o3.flKL3iRrXgwlh3xsiC');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Maisha Islam', 'maisha@hotmail.com', '$2a$10$HhACZIvSF1U60QMMR1UJg.Tl3tYcVNrxqxXQZFRETudA738xDYeue');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Nikesh Mistri', 'nikesh@hotmail.com', '$2a$10$g6LrF0be3/lghJ0HsowGUu4eMvnJU6SLt9.CHhuwj92JhuGJ/z6zu');
 
 INSERT INTO CATEGORIES (TITLE, USER_ID) VALUES ('Work', '1');
 INSERT INTO CATEGORIES (TITLE, USER_ID) VALUES ('Work', '2');
@@ -46,4 +44,3 @@ INSERT INTO PAGES (TITLE, CONTENT, BACKGROUND, CATEGORY_ID) VALUES ('Page17', 'T
 INSERT INTO PAGES (TITLE, CONTENT, BACKGROUND, CATEGORY_ID) VALUES ('Page18', 'Test content', 0, 7);
 INSERT INTO PAGES (TITLE, CONTENT, BACKGROUND, CATEGORY_ID) VALUES ('Page19', 'Test content', 0, 6);
 INSERT INTO PAGES (TITLE, CONTENT, BACKGROUND, CATEGORY_ID) VALUES ('Page20', 'Test content', 0, 5);
-
