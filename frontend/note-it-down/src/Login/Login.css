@@ -147,12 +147,38 @@ input::placeholder{
 }
 
 /* icon next to email password */
-/* .element span{
+#icon-l-email{
     position: absolute;
     left: 30px;
     top: 12px;
     font-size: 18px;
-} */
+}
+#icon-l-password{
+    position: absolute;
+    left: 30px;
+    top: 75px;
+    font-size: 18px;
+}
+#icon-a-name{
+    position: absolute;
+    left: 30px;
+    top: 12px;
+    font-size: 18px;
+}
+
+#icon-a-email{
+    position: absolute;
+    left: 30px;
+    top: 75px;
+    font-size: 18px;
+}
+
+#icon-a-password{
+    position: absolute;
+    left: 30px;
+    top: 140px;
+    font-size: 18px;
+}
 
 /* btn not defined in each component- each component have their own button*/
 #btn-signup{

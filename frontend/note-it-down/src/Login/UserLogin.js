@@ -40,7 +40,7 @@ const UserLogin = () => {
                     <div className="email">
                         {/* value = username set out inline 4  - bind the username and password to the text boxes 
                         value of username = value of text box*/}
-                        <MdEmail/><input 
+                        <MdEmail id="icon-l-email"/><input 
                         type="email" placeholder="Email" id="email" 
                         value={email} 
                         onChange={(event) => setEmail(event.target.value)}
@@ -48,7 +48,7 @@ const UserLogin = () => {
                     </div>
 
                     <div className="password">
-                    <RiLockPasswordFill/><input 
+                    <RiLockPasswordFill id="icon-l-password"/><input 
                         type="password" placeholder="Password"
                         id="password" 
                         value={password}
