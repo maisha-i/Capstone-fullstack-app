@@ -52,9 +52,7 @@ const UserLogin = () => {
                         /> 
                     </div> 
 
-                    <div className="btn">
                         <button id="btn-login" type="submit">Log In</button> 
-                    </div>   
                 </div>
             </div>
        </> 

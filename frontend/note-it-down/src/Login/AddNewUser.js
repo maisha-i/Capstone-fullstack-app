@@ -42,7 +42,8 @@ const AddNewUser = ({addNewUserToState}) => {
                     </div>
                     
                     <div> 
-                    <input type="submit" value="Sign Up" id="btn-signup"/>
+                     <button  type="submit"id="btn-signup">Sign Up</button> 
+
                     </div>
                 </form>
                 </div>            
@@ -50,5 +51,6 @@ const AddNewUser = ({addNewUserToState}) => {
 
         </>
     )
+
 }
 export default AddNewUser;
