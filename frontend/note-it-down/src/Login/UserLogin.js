@@ -53,7 +53,7 @@ const UserLogin = () => {
                     </div> 
 
                     <div className="btn">
-                        <button className="submit-button" id="submit" type="button">Log In</button> 
+                        <button id="btn-login" type="submit">Log In</button> 
                     </div>   
                 </div>
             </div>

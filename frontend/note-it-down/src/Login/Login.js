@@ -50,14 +50,14 @@ const switchs = document.querySelectorAll(".switch");
 const tab2 = (form, login, signup, switchs) => {
     form.current.style.marginLeft = "-100%";
     login.current.style.background = "none";
-    signup.current.style.background = " linear-gradient(45deg,#d0e6de, #336247);";
+    signup.current.style.background = "linear-gradient(45deg,#d0e6de, #336247)";
     switchs.current.classList.add("active");
 }
 
 const tab1 = (form, login, signup, switchs) => {
     form.current.style.marginLeft = "0";
-    login.current.style.background = "none";
-    signup.current.style.background = " linear-gradient(45deg,#d0e6de, #336247);";
+    signup.current.style.background = "none";
+    login.current.style.background = "linear-gradient(45deg,#d8bac0ab, #a14758ab)";
     switchs.current.classList.remove("active");
 
 }
@@ -78,7 +78,6 @@ const tab1 = (form, login, signup, switchs) => {
                                 <div className="element">
                                     <UserLogin/>
                                 </div>
-                                <button id="btn">Log In</button>
                             </div>
 
                             <div id="page">                                    
@@ -86,7 +85,6 @@ const tab1 = (form, login, signup, switchs) => {
                                 <div className="element"> 
                                     <AddNewUser addNewUserToState={addNewUserToState}/> 
                                 </div>    
-                                <button id="btn">Sign Up</button>
                             </div>
                         </div>
 
