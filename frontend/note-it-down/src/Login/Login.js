@@ -1,6 +1,6 @@
 import userEvent from "@testing-library/user-event";
 import UserLogin from "./UserLogin";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import AddNewUser from "./AddNewUser";
 import "./Login.css"
 
@@ -9,13 +9,6 @@ import "./Login.css"
 const Login = ({handleChange, loginFunction}) => {
 
     const [user, setUser] = useState([]);
-
-    // useEffect( () => {
-    //     fetch(`http://127.0.0.1:8080/user`)
-    //         .then(response => response.json())
-    //         .then(data => setUser(data))
-    // }
-    // ,[user])
 
     const addNewUserToState = (name, email, password) => {
         if(name === "", email === "", password === ""){
@@ -39,46 +32,53 @@ const Login = ({handleChange, loginFunction}) => {
 
         fetch("http://127.0.0.1:8080/user", options)
             .then(console.log("User has been successfully registered."))
+            
     }
+
+    const formRef = useRef()
+    const formLogin = useRef()
+    const formSignup = useRef()
+    const formSwitch = useRef()
+
 
 const login = document.querySelector(".login");
 const signup = document.querySelector(".signup");
-const form = document.querySelector("#form")
-const switchs = document.querySelector(".switch");
+const form = document.querySelector("#form");
+const switchs = document.querySelectorAll(".switch");
 
-let current = 1;
 
-function tab2(){
-    form.style.marginLeft = "-100%";
-    login.style.background = "none";
-    signup.style.background = " linear-gradient(45deg,#d0e6de, #336247);";
-
+const tab2 = (form, login, signup, switchs) => {
+    form.current.style.marginLeft = "-100%";
+    login.current.style.background = "none";
+    signup.current.style.background = " linear-gradient(45deg,#d0e6de, #336247);";
+    switchs.current.classList.add("active");
 }
 
-function tab1(){
-    form.style.marginLeft = "0";
-    login.style.background = "none";
-    signup.style.background = " linear-gradient(45deg,#d0e6de, #336247);";
+const tab1 = (form, login, signup, switchs) => {
+    form.current.style.marginLeft = "0";
+    login.current.style.background = "none";
+    signup.current.style.background = " linear-gradient(45deg,#d0e6de, #336247);";
+    switchs.current.classList.remove("active");
 
 }
 
     return(
         <>
+            
             <div className="login-body"> 
                 <div className="container">
-                    {/* <div className="switch"> 
-                        <div className="login" onClick={tab1()}> Login  </div>
-                        <div className="signup" onClick={tab2()}> Sign Up</div>   
-                    </div> */}
+                    <div className="switch" ref={formSwitch}> 
+                        <div className="login" onClick={() => tab1(formRef, formLogin, formSignup, formSwitch)} ref={formLogin}> Login  </div>
+                        <div className="signup" onClick={() => tab2(formRef, formLogin, formSignup, formSwitch)} ref={formSignup}> Sign Up</div>   
+                    </div>
                     <div className="outer">
-                        <form id="form">
+                        <div id="form" ref={formRef}>
                             <div id="page">
                                 <label>Login Form</label>
                                 <div className="element">
                                     <UserLogin handleChange={handleChange} loginFunction={loginFunction} />
                                 </div>
                                 <button id="btn">Log In</button>
-
                             </div>
 
                             <div id="page">                                    
@@ -88,7 +88,7 @@ function tab1(){
                                 </div>    
                                 <button id="btn">Sign Up</button>
                             </div>
-                        </form>
+                        </div>
 
                     </div> 
                     
@@ -96,6 +96,10 @@ function tab1(){
             </div>
         </>
     )
+
+
+
+    
 }
 
  export default Login;

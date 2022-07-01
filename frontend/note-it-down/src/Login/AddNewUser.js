@@ -7,7 +7,7 @@ const AddNewUser = ({addNewUserToState}) => {
     const[newPassword, setNewPassword] = useState("");
 
     const handleUserAdd = (event) => {
-        event.preventDefault()
+        // event.preventDefault()
         addNewUserToState(newName, newEmail, newPassword);
     }
 
@@ -27,7 +27,7 @@ const AddNewUser = ({addNewUserToState}) => {
 
                     <div className="form-group"> 
                         <input 
-                        type="text" placeholder="Email"
+                        type="email" placeholder="Email"
                         onChange={(event) => setNewEmail(event.target.value)} 
                         value={newEmail}
                         />
@@ -35,7 +35,7 @@ const AddNewUser = ({addNewUserToState}) => {
 
                     <div className="form-group"> 
                         <input 
-                        type="text" placeholder="Password"
+                        type="password" placeholder="Password"
                         onChange={(event) => setNewPassword(event.target.value)} 
                         value={newPassword}
                         />
