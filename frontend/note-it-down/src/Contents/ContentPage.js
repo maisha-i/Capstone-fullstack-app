@@ -14,8 +14,7 @@ const ContentPage = () => {
         fetch(`http://127.0.0.1:8080/user/${currentUserId}/categories`)
             .then(response => response.json())
             .then(data => setCategories(data))
-    }
-    ,[])
+    }, [])
 
     const addNewCategoryToState = (title) => {
         if(title === "" || title === "To Do List"){
@@ -66,6 +65,15 @@ const ContentPage = () => {
             <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState}/>
         )
     })
+
+    const deletePageFromState = (pageId) => {
+        const categoryWithDesiredPage = categories.filter(category => category.pages.filter(    //Check each category
+            page => page.id === pageId).length !== 0)[0]
+            
+        const desiredPage =     
+            .pages.filter( //Find the category with the desired page
+                page => page.id === pageId)       //Find the desired page within that category
+    }
 
     return(
         <>

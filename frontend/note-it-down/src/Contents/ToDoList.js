@@ -2,7 +2,7 @@ import { useState } from "react";
 import AddNewPage from "./AddNewPage";
 
 
-const ToDoList = ({list, addNewPageToState}) => {
+const ToDoList = ({list, addNewPageToState, deletePageFromState}) => {
 
     const {title, pages} = list;
 
@@ -51,13 +51,11 @@ const ToDoList = ({list, addNewPageToState}) => {
 
         fetch(`http://127.0.0.1:8080/page/deletePage/${pageId}`, {method: "DELETE"})
             .then(console.log("Bye!"))
+
+        deletePageFromState(pageId);
     }
 
-
-    return(
-        <>
-            <h1>{title}</h1>
-            {pages.map(page => {
+    const toDoItem = pages.map(page => {
                 if(page.content !== "checked"){
                     return(
                         <li key={page.id}>
@@ -77,7 +75,13 @@ const ToDoList = ({list, addNewPageToState}) => {
                     )
                 }
 
-            })}
+            })
+
+    return(
+        <>
+            <h1>{title}</h1>
+            {toDoItem}
+            
             <AddNewPage name = {"Add new ToDo"} category={list} addNewPageToState={addNewPageToState}/>
         
         
