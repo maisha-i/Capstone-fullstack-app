@@ -1,5 +1,6 @@
 package com.example.capstonefullstackapp.Service;
 
+import com.example.capstonefullstackapp.Model.Backgrounds;
 import com.example.capstonefullstackapp.Model.Category;
 import com.example.capstonefullstackapp.Model.Page;
 import com.example.capstonefullstackapp.Model.User;
@@ -14,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.DoubleStream;
@@ -31,6 +33,10 @@ public class UserService implements UserDetailsService {
     }
 
     public User addNewUser(User user) {
+        Category toDoList = new Category("To Do List", new ArrayList<>(), user);
+        Page newPage = new Page("My first to do", null, Backgrounds.WHITE, toDoList);
+        toDoList.addNewPageToCategory(newPage);
+        user.addNewCategory(toDoList);
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);

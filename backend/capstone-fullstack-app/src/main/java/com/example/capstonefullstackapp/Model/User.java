@@ -1,12 +1,10 @@
 package com.example.capstonefullstackapp.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -27,15 +25,19 @@ public class User {
     @JsonIgnoreProperties(value = "user")
     private List<Category>categories = new ArrayList<>();
 
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "toDoList_id", referencedColumnName = "id")
+//    private ToDoList toDoList;
+
     public User() {
     }
 
-    public User(String name, String email, String password, List<Category> categories) {
+    public User(String name, String email, String password) {
         this.id = 0L;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.categories = categories;
+//        this.toDoList = new ToDoList();
     }
 
     public Long getId() {
@@ -77,6 +79,14 @@ public class User {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
+
+//    public ToDoList getToDoList() {
+//        return toDoList;
+//    }
+//
+//    public void setToDoList(ToDoList toDoList) {
+//        this.toDoList = toDoList;
+//    }
 
     public void addNewCategory(Category category) {this.categories.add(category);}
 }

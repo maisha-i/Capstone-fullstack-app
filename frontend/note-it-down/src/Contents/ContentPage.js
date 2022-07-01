@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AddNewCategory from "./AddNewCategory";
 import CategoryComponent from "./CategoryComponent";
+import ToDoList from "./ToDoList";
 
 
 
@@ -13,11 +14,10 @@ const ContentPage = ({selectPage}) => {
         fetch(`http://127.0.0.1:8080/user/${currentUserId}/categories`)
             .then(response => response.json())
             .then(data => setCategories(data))
-    }
-    ,[categories])
+    }, [])
 
     const addNewCategoryToState = (title) => {
-        if(title === ""){
+        if(title === "" || title === "To Do List"){
             return
         }
         const category = {
@@ -50,15 +50,38 @@ const ContentPage = ({selectPage}) => {
 
     }
 
+    const updateTitle = (categoryId, newTitle) => {
+        const something = categories.filter(category => category.id === categoryId)[0].title = newTitle;
+        console.log(something);
+    }
+
+
+    const toDoListComponent = categories.filter(categories => categories.title === "To Do List").map(category => {
+        return <ToDoList key={category.id} list={category} addNewPageToState={addNewPageToState}/> 
+    })
+
+    const categoriesSection = categories.filter(category => category.title !== "To Do List").map( category => {
+        return(
+            <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState} selectPage={selectPage}/>
+        )
+    })
+
+    // const deletePageFromState = (pageId) => {
+    //     const categoryWithDesiredPage = categories.filter(category => category.pages.filter(    //Check each category
+    //         page => page.id === pageId).length !== 0)[0]
+            
+    //     const desiredPage =     
+    //         .pages.filter( //Find the category with the desired page
+    //             page => page.id === pageId)       //Find the desired page within that category
+    // }
 
     return(
         <>
+            {/* To Do List */}
+            {toDoListComponent}
+
             {/* Categories section */}
-                {categories.map( category => {
-                    return(
-                        <CategoryComponent key={category.id} category={category} addNewPageToState={addNewPageToState} selectPage={selectPage} />
-                    )
-                })}
+            {categoriesSection}
             
              {/* Add a new category form: */}
 

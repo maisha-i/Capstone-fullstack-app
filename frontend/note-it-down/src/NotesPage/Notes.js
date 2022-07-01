@@ -3,8 +3,7 @@ import NotesSide from "./NotesSide";
 import { useState } from 'react';
 import uuid from 'react-uuid';
 
-const Notes = () => {
-
+const Notes = ({selectedPageId, returnToContents}) => {
 
 
 
@@ -50,7 +49,8 @@ const [notes, setNotes] = useState([])
 
   return(
       <>
-<NotesSide 
+      <button onClick={returnToContents}>Back to Contents</button>
+      <NotesSide 
       notes = {notes}  
       onAddNote={onAddNote}  
       onDeleteNote={onDeleteNote} 

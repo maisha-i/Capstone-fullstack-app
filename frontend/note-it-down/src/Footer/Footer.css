@@ -1,11 +1,16 @@
-body{ height:fit-content; flex-direction: column; margin: 0px;}
+body{
+    height: 100vh;
+    flex-direction: column; 
+    justify-content: end;
+    margin: 0px;
+    }
 
 footer {
     /* display: flex;
     flex-direction: column;
     align-content: flex-end; */
     /* margin-left: 0px; */
-    width: 100%;
+    width: 100vw;
     background: rgb(164, 204, 196);
     height: 200px;
     margin-left: 0px;

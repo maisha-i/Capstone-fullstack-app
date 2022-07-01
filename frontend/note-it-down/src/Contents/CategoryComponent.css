@@ -1,4 +1,4 @@
-/* .contents-page--page-list{
+.contents-page--page-list{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -6,9 +6,12 @@
     column-count: 2;
 }
 
-li{
+.contents-page--list-item{
     padding: 10px;
     margin: 5px;
     height: 30px;
 }
- */
+
+.cross-symbol{
+    display: inline;
+}
