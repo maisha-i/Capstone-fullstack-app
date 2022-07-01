@@ -18,12 +18,17 @@ const LoggedInNavigation = ({ logout}) => {
         console.log(selectedPageId);
     }
 
+    const returnToContents = () => {
+        setSelectedPageId(null);
+    }
+
 
 
  return(
      <> 
         <button onClick={logout}>Logout</button>
-        {selectedPageId ? <Notes selectedPageId={selectedPageId} /> : <ContentPage selectPage={selectPage} />}
+        {selectedPageId ? <Notes selectedPageId={selectedPageId} returnToContents={returnToContents} /> 
+        : <ContentPage selectPage={selectPage} />}
      </>
  )
 }
