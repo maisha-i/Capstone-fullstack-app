@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import AddNewPage from './AddNewPage';
 import './CategoryComponent.css'
 
-const CategoryComponent = ({category, addNewPageToState, updateTitle}) => {
+const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage}) => {
 
     const {id, title, pages} = category;
 
@@ -63,7 +63,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle}) => {
     }
 
     const pageListItem = pages.map(page => { return(
-                    <li className="contents-page--list-item" key={page.id}>{page.title}</li>
+                    <li className="contents-page--list-item" key={page.id} id={page.id} onClick={selectPage}>{page.title}</li>
                 )
 
                 })

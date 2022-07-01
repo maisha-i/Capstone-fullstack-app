@@ -62,7 +62,7 @@ const ContentPage = ({selectPage}) => {
 
     const categoriesSection = categories.filter(category => category.title !== "To Do List").map( category => {
         return(
-            <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState}/>
+            <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState} selectPage={selectPage}/>
         )
     })
 
