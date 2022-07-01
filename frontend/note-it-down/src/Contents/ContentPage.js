@@ -4,7 +4,7 @@ import CategoryComponent from "./CategoryComponent";
 
 
 
-const ContentPage = ({user}) => {
+const ContentPage = ({user, selectPage}) => {
 
     const currentUserId = 1;
     const [categories, setCategories] = useState([]);
@@ -56,7 +56,7 @@ const ContentPage = ({user}) => {
             {/* Categories section */}
                 {categories.map( category => {
                     return(
-                        <CategoryComponent key={category.id} category={category} addNewPageToState={addNewPageToState}/>
+                        <CategoryComponent key={category.id} category={category} addNewPageToState={addNewPageToState} selectPage={selectPage} />
                     )
                 })}
             
