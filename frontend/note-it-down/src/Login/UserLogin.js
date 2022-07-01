@@ -2,31 +2,31 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 
-const Login = () => {
+const UserLogin = ({handleChange, loginFunction}) => {
 
-        const [users, setUsers] = useState("");
+        // const [users, setUsers] = useState("");
 
     // use state - tracks the state of the browser i.e. chanegs in the browser for every key stroke. 
-    const[email, setEmail] = useState("");
-    const[password, setPassword] = useState("");
+    // const[email, setEmail] = useState("");
+    // const[password, setPassword] = useState("");
 
-    const handleEmail = event => setEmail(event.target.value);
-    const handlePassword = event => setPassword(event.target.value);
+    // const handleEmail = event => setEmail(event.target.value);
+    // const handlePassword = event => setPassword(event.target.value);
     
 
-    const handleSubmit = event =>{
-        event.preventDefault();
+    // const handleSubmit = event =>{
+    //     event.preventDefault();
 
-        const user = {
-            "email":email,
-            "password":password
-        }  
+    //     const user = {
+    //         "email":email,
+    //         "password":password
+    //     }  
 
-        axios.post("http://127.0.0.1:8080/user", users)
-      .then(res => {
-          console.log(res);
-      }).catch((err) => console.log(err));
-    }
+    //     axios.post("http://127.0.0.1:8080/user", users)
+    //   .then(res => {
+    //       console.log(res);
+    //   }).catch((err) => console.log(err));
+    // }
 
     return(
        <>   <div className="login-box">
@@ -37,27 +37,29 @@ const Login = () => {
                         {/* value = username set out inline 4  - bind the username and password to the text boxes 
                         value of username = value of text box*/}
                         <input 
-                        type="email" placeholder="Email" id="email" 
-                        value={email} 
-                        onChange={(event) => setEmail(event.target.value)}
+                        type="email" placeholder="Email" id="email" name="email"
+                        // value={email} 
+                        // onChange={(event) => setEmail(event.target.value)}
+                        onChange={handleChange}
                         /> 
                     </div>
 
                     <div className="password">
                         <input 
                         type="password" placeholder="Password"
-                        id="password" 
-                        value={password}
-                        onChange={(event) => setPassword(event.target.value)} 
+                        id="password" name="password"
+                        // value={password}
+                        // onChange={(event) => setPassword(event.target.value)}
+                        onChange={handleChange} 
                         /> 
                     </div> 
 
                     <div className="btn">
-                        <button className="submit-button" id="submit" type="button">Log In</button> 
+                        <button className="submit-button" id="submit" type="button" onClick={loginFunction}>Log In</button> 
                     </div>   
                 </div>
             </div>
        </> 
     )
 }
-export default Login;
+export default UserLogin;

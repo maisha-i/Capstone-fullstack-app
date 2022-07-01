@@ -4,7 +4,7 @@ import CategoryComponent from "./CategoryComponent";
 
 
 
-const ContentPage = () => {
+const ContentPage = ({user}) => {
 
     const currentUserId = 1;
     const [categories, setCategories] = useState([]);

@@ -8,6 +8,8 @@ import Login from './Login/Login';
 import uuid from 'react-uuid';
 import Notes from './NotesPage/Notes';
 
+import AuthChecker from './Navigation/AuthChecker';
+
 function App() {
 
   
@@ -16,11 +18,12 @@ function App() {
   return (
     <div className='App'>
        
-      <div className="cover">
+       <AuthChecker />
+      {/* <div className="cover">
         <h1>noteItDown</h1>
         <Login/>
       </div>
-      <div className="cover page1"></div>
+      <div className="cover page1"></div> */}
 
       {/* <ContentPage /> */}
     {/* <Notes /> */}

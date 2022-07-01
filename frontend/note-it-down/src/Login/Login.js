@@ -6,8 +6,8 @@ import "./Login.css"
 
  
 
-const Login = () => {
-    
+const Login = ({handleChange, loginFunction}) => {
+
     const [user, setUser] = useState([]);
 
     // useEffect( () => {
@@ -66,16 +66,16 @@ function tab1(){
         <>
             <div className="login-body"> 
                 <div className="container">
-                    <div className="switch"> 
-                        <div className="login" onClick="tab1();"> Login  </div>
-                        <div className="signup" onClick="tab2();"> Sign Up</div>   
-                    </div>
+                    {/* <div className="switch"> 
+                        <div className="login" onClick={tab1()}> Login  </div>
+                        <div className="signup" onClick={tab2()}> Sign Up</div>   
+                    </div> */}
                     <div className="outer">
                         <form id="form">
                             <div id="page">
                                 <label>Login Form</label>
                                 <div className="element">
-                                    <UserLogin/>
+                                    <UserLogin handleChange={handleChange} loginFunction={loginFunction} />
                                 </div>
                                 <button id="btn">Log In</button>
 
