@@ -9,7 +9,11 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle}) => {
     const [newTitle, setNewTitle] = useState(title);
 
     useEffect(() => {
-        console.log(newTitle)
+        document.addEventListener("click", offClick)
+
+        return(() => {
+            document.removeEventListener("click", offClick)
+        })
     }, [newTitle])
 
     const handleDoubleClick = (event) => {
@@ -22,30 +26,40 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle}) => {
         newInput.addEventListener("keyup", (event) => setNewTitle(event.target.value))
         heading.appendChild(newInput);
 
-        document.addEventListener("click", offClick)
+        // document.addEventListener("click", offClick)
         
     }
 
     
     const offClick = (event) => {
         if(event.target.id !== "newEditInput"){
-                console.log("clicked off", newTitle);
                 document.removeEventListener("click", offClick)
-                // updateTitleInDatabase(newTitle)
-        }
-        
+                updateTitleInDatabase()
+                
+                const inputBox = document.getElementById("newEditInput");
+                inputBox.remove();
 
+                const heading = document.querySelector(`#Category--heading${id}`);
+                heading.innerHTML = "";
+                heading.innerText = newTitle;
+        }
     }
 
 
-    const updateTitleInDatabase = (titleToChange) => {
-        if(title !== titleToChange){
-            console.log("Different title:", titleToChange)
-            // fetch(`http://127.0.0.1/category/${id}`, {method: "PUT", body: JSON.stringify({title: titleToChange})})
-            //     .catch(err => console.log(err))
+    const updateTitleInDatabase = () => {
+        if(title !== newTitle){
+            console.log("Different title:", newTitle)
+
+            fetch(`http://127.0.0.1:8080/category/${id}`, {
+                method: "PUT", 
+                body: JSON.stringify({title: newTitle}),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+                .catch(err => console.log(err))
 
         }
-        console.log("here instead", titleToChange)
     }
 
     const pageListItem = pages.map(page => { return(
@@ -57,7 +71,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle}) => {
     return(
         <section>
 
-            <h1 onDoubleClick={handleDoubleClick} className='Category--heading'>{title}</h1>
+            <h1 onDoubleClick={handleDoubleClick} id={`Category--heading${id}`}>{title}</h1>
             <ul className="contents-page--page-list">
                 {pageListItem}
                 <AddNewPage name={"Add new page"} category={category} addNewPageToState={addNewPageToState}/>
