@@ -7,6 +7,7 @@ import Footer from './Footer/Footer';
 
 import uuid from 'react-uuid';
 import Notes from './NotesPage/Notes';
+import Settings from './Settings/SettingsPage';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
 
       {/* <ContentPage /> */}
     {/* <Notes /> */}
+      {/* <Settings/> */}
      
     </div>
 
