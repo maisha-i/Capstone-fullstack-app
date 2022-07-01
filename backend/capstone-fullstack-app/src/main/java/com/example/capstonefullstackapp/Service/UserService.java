@@ -79,4 +79,9 @@ public class UserService implements UserDetailsService {
         User user = userRepository.findById(userId).get();
         return user.getCategories();
     }
+
+    public Long getUserIdByEmail(String email){
+        Long id = userRepository.findByEmail(email).get().getId();
+        return id;
+    }
 }

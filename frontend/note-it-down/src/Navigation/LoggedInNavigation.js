@@ -1,8 +1,15 @@
 import ContentPage from '../Contents/ContentPage'
 import Notes from '../NotesPage/Notes';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-const LoggedInNavigation = ({user, logout}) => {
+const LoggedInNavigation = ({ logout}) => {
+
+//     const userId = useRef("");
+
+//     useEffect(() => {fetch(`http://localhost:8080/user/email/${userEmail.current}`)
+//     .then(response => response.json())
+//     .then(result => {userId.current = result; console.log("User id : " + userId.current); 
+// console.log(sessionStorage.getItem("jwt"))})}, [userId])
 
     const [selectedPageId, setSelectedPageId] = useState(null);
 
@@ -16,7 +23,7 @@ const LoggedInNavigation = ({user, logout}) => {
  return(
      <> 
         <button onClick={logout}>Logout</button>
-        {selectedPageId ? <Notes selectedPageId={selectedPageId} /> : <ContentPage user={user} selectPage={selectPage} />}
+        {selectedPageId ? <Notes selectedPageId={selectedPageId} /> : <ContentPage selectPage={selectPage} />}
      </>
  )
 }

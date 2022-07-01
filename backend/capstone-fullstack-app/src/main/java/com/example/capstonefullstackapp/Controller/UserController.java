@@ -33,6 +33,12 @@ public class UserController {
         return ResponseEntity.ok().body(categories);
     }
 
+    @GetMapping("/email/{email}")
+    public ResponseEntity<Long> getUserIdByEmail(@PathVariable String email){
+        Long id = userService.getUserIdByEmail(email);
+        return ResponseEntity.ok().body(id);
+    }
+
     @PostMapping
     public ResponseEntity<User> addUser(
             @RequestBody User newUser) {
