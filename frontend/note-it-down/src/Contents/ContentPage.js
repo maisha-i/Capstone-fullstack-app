@@ -66,14 +66,14 @@ const ContentPage = () => {
         )
     })
 
-    const deletePageFromState = (pageId) => {
-        const categoryWithDesiredPage = categories.filter(category => category.pages.filter(    //Check each category
-            page => page.id === pageId).length !== 0)[0]
+    // const deletePageFromState = (pageId) => {
+    //     const categoryWithDesiredPage = categories.filter(category => category.pages.filter(    //Check each category
+    //         page => page.id === pageId).length !== 0)[0]
             
-        const desiredPage =     
-            .pages.filter( //Find the category with the desired page
-                page => page.id === pageId)       //Find the desired page within that category
-    }
+    //     const desiredPage =     
+    //         .pages.filter( //Find the category with the desired page
+    //             page => page.id === pageId)       //Find the desired page within that category
+    // }
 
     return(
         <>
