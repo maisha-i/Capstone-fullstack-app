@@ -4,9 +4,9 @@ import CategoryComponent from "./CategoryComponent";
 
 
 
-const ContentPage = () => {
+const ContentPage = ({selectPage}) => {
 
-    const currentUserId = 1;
+    const currentUserId = sessionStorage.getItem("userId");
     const [categories, setCategories] = useState([]);
 
     useEffect( () => {
@@ -56,7 +56,7 @@ const ContentPage = () => {
             {/* Categories section */}
                 {categories.map( category => {
                     return(
-                        <CategoryComponent key={category.id} category={category} addNewPageToState={addNewPageToState}/>
+                        <CategoryComponent key={category.id} category={category} addNewPageToState={addNewPageToState} selectPage={selectPage} />
                     )
                 })}
             

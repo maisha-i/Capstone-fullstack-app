@@ -1,7 +1,7 @@
 import AddNewPage from './AddNewPage';
 import './CategoryComponent.css'
 
-const CategoryComponent = ({category, addNewPageToState}) => {
+const CategoryComponent = ({category, addNewPageToState, selectPage}) => {
 
     const {title, pages} = category;
 
@@ -10,7 +10,7 @@ const CategoryComponent = ({category, addNewPageToState}) => {
             <h1>{title}</h1>
             <ul className="contents-page--page-list">
                 {pages.map(page => { return(
-                    <li key={page.id}>{page.title}</li>
+                    <li key={page.id} id={page.id} onClick={selectPage} >{page.title}</li>
                 )
 
                 })}

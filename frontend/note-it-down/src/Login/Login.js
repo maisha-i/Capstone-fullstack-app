@@ -6,8 +6,8 @@ import "./Login.css"
 
  
 
-const Login = () => {
-    
+const Login = ({handleChange, loginFunction}) => {
+
     const [user, setUser] = useState([]);
 
     const addNewUserToState = (name, email, password) => {
@@ -76,7 +76,7 @@ const tab1 = (form, login, signup, switchs) => {
                             <div id="page">
                                 <label>Login Form</label>
                                 <div className="element">
-                                    <UserLogin/>
+                                    <UserLogin handleChange={handleChange} loginFunction={loginFunction} />
                                 </div>
                             </div>
 
