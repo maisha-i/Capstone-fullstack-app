@@ -3,7 +3,7 @@ import './CategoryComponent.css'
 
 const CategoryComponent = ({category, addNewPageToState}) => {
 
-//     const {title, pages} = category;
+    const {title, pages} = category;
 
     return(
         <section>
@@ -20,8 +20,8 @@ const CategoryComponent = ({category, addNewPageToState}) => {
         
         
         
-//         </section>
-   )
+         </section>
+    )
 }
 
 export default CategoryComponent;
