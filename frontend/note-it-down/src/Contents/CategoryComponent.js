@@ -22,7 +22,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle}) => {
         newInput.addEventListener("keyup", (event) => setNewTitle(event.target.value))
         heading.appendChild(newInput);
 
-        document.addEventListener("click", (event) => offClick(event))
+        document.addEventListener("click", offClick)
         
     }
 
@@ -31,33 +31,35 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle}) => {
         if(event.target.id !== "newEditInput"){
                 console.log("clicked off", newTitle);
                 document.removeEventListener("click", offClick)
-                updateTitleInDatabase(newTitle)
+                // updateTitleInDatabase(newTitle)
         }
-        console.log(newTitle)
+        
 
     }
 
 
     const updateTitleInDatabase = (titleToChange) => {
         if(title !== titleToChange){
-            console.log("Got to here")
+            console.log("Different title:", titleToChange)
             // fetch(`http://127.0.0.1/category/${id}`, {method: "PUT", body: JSON.stringify({title: titleToChange})})
             //     .catch(err => console.log(err))
 
         }
-        console.log("here instead")
+        console.log("here instead", titleToChange)
     }
+
+    const pageListItem = pages.map(page => { return(
+                    <li className="contents-page--list-item" key={page.id}>{page.title}</li>
+                )
+
+                })
         
     return(
         <section>
 
             <h1 onDoubleClick={handleDoubleClick} className='Category--heading'>{title}</h1>
             <ul className="contents-page--page-list">
-                {pages.map(page => { return(
-                    <li className="contents-page--list-item" key={page.id}>{page.title}</li>
-                )
-
-                })}
+                {pageListItem}
                 <AddNewPage name={"Add new page"} category={category} addNewPageToState={addNewPageToState}/>
             </ul>
         

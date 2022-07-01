@@ -15,7 +15,7 @@ const ContentPage = () => {
             .then(response => response.json())
             .then(data => setCategories(data))
     }
-    ,[categories])
+    ,[])
 
     const addNewCategoryToState = (title) => {
         if(title === "" || title === "To Do List"){
@@ -57,19 +57,23 @@ const ContentPage = () => {
     }
 
 
+    const toDoListComponent = categories.filter(categories => categories.title === "To Do List").map(category => {
+        return <ToDoList key={category.id} list={category} addNewPageToState={addNewPageToState}/> 
+    })
+
+    const categoriesSection = categories.filter(category => category.title !== "To Do List").map( category => {
+        return(
+            <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState}/>
+        )
+    })
+
     return(
         <>
             {/* To Do List */}
-            {categories.filter(categories => categories.title === "To Do List").map(category => {
-                return <ToDoList key={category.id} list={category} addNewPageToState={addNewPageToState}/> 
-            })}
+            {toDoListComponent}
 
             {/* Categories section */}
-                {categories.filter(category => category.title !== "To Do List").map( category => {
-                    return(
-                        <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState}/>
-                    )
-                })}
+            {categoriesSection}
             
              {/* Add a new category form: */}
 
