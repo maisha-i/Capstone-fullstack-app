@@ -1,4 +1,9 @@
 import { useState } from "react";
+import { RiLockPasswordFill, RiUser3Fill} from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
+
+
+
 
 const AddNewUser = ({addNewUserToState}) => {
 
@@ -18,7 +23,7 @@ const AddNewUser = ({addNewUserToState}) => {
                 <form className=""onSubmit={handleUserAdd}>
 
                     <div className="form-group"> 
-                        <input 
+                        <RiUser3Fill/><input 
                         type="text" placeholder="Full Name"
                         onChange={(event) => setNewName(event.target.value)} 
                         value={newName}
@@ -26,7 +31,7 @@ const AddNewUser = ({addNewUserToState}) => {
                     </div>
 
                     <div className="form-group"> 
-                        <input 
+                        <MdEmail/><input 
                         type="email" placeholder="Email"
                         onChange={(event) => setNewEmail(event.target.value)} 
                         value={newEmail}
@@ -34,7 +39,7 @@ const AddNewUser = ({addNewUserToState}) => {
                     </div>
 
                     <div className="form-group"> 
-                        <input 
+                        <RiLockPasswordFill/><input 
                         type="password" placeholder="Password"
                         onChange={(event) => setNewPassword(event.target.value)} 
                         value={newPassword}
