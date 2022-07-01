@@ -2,10 +2,10 @@
 --ALTER SEQUENCE USERS_ID_SEQ RESTART WITH 1;
 
 
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test1', 'test1@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test2', 'test2@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test3', 'test3@hotmail.com', 'test123');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Test4', 'test4@hotmail.com', 'test123');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'James Stillman', 'james@hotmail.com', 'james123');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Katya Grenier', 'katya@hotmail.com', 'katya123');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Maisha Islam', 'maisha@hotmail.com', 'maisha123');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Nikesh Mistri', 'nikesh@hotmail.com', 'nikesh123');
 
 INSERT INTO CATEGORIES (TITLE, USER_ID) VALUES ('Work', '1');
 INSERT INTO CATEGORIES (TITLE, USER_ID) VALUES ('Work', '2');
