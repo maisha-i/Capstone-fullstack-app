@@ -38,6 +38,10 @@
 
 }
 
+.switch.active{
+    border-bottom: 1px solid #75cc8b9f;
+}
+
 .switch:after{
     content: '';
     height: 6px;
@@ -47,6 +51,13 @@
     position: absolute;
     bottom: 0;
     left: 8px;
+    transform: 0.3s ease;
+}
+
+.switch.active:after{
+    left: 82px;
+    width: 70px;
+    background: #c0dcb5;
 }
 
 .login{
