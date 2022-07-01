@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { RiLockPasswordFill, RiUser3Fill} from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
+
+
 
 
 const UserLogin = ({handleChange, loginFunction}) => {
@@ -36,7 +40,8 @@ const UserLogin = ({handleChange, loginFunction}) => {
                     <div className="email">
                         {/* value = username set out inline 4  - bind the username and password to the text boxes 
                         value of username = value of text box*/}
-                        <input 
+                        
+                        <MdEmail id="icon-l-email"/><input 
                         type="email" placeholder="Email" id="email" name="email"
                         // value={email} 
                         // onChange={(event) => setEmail(event.target.value)}
@@ -45,7 +50,7 @@ const UserLogin = ({handleChange, loginFunction}) => {
                     </div>
 
                     <div className="password">
-                        <input 
+                    <RiLockPasswordFill id="icon-l-password"/><input 
                         type="password" placeholder="Password"
                         id="password" name="password"
                         // value={password}
@@ -53,10 +58,7 @@ const UserLogin = ({handleChange, loginFunction}) => {
                         onChange={handleChange} 
                         /> 
                     </div> 
-
-                    <div className="btn">
-                        <button className="submit-button" id="submit" type="button" onClick={loginFunction}>Log In</button> 
-                    </div>   
+                        <button id="btn-login" type="submit" onClick={loginFunction}>Log In</button> 
                 </div>
             </div>
        </> 

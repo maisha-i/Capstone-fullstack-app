@@ -34,19 +34,19 @@
     position: absolute;
     right: 30px;
     display: flex;
-    border-bottom: 1px solid #a14758ab;
+    border-bottom: 1px solid #75cc8b9f;
 
 }
 
 .switch.active{
-    border-bottom: 1px solid #75cc8b9f;
+    border-bottom: 1px solid #a14758ab;
 }
 
 .switch:after{
     content: '';
     height: 6px;
     width: 60px;
-    background: #a14758ab;
+    background: #c0dcb5;
     border-radius: 60px 60px 0 0;
     position: absolute;
     bottom: 0;
@@ -57,7 +57,7 @@
 .switch.active:after{
     left: 82px;
     width: 70px;
-    background: #c0dcb5;
+    background: #a14758ab;
 }
 
 .login{
@@ -147,15 +147,52 @@ input::placeholder{
 }
 
 /* icon next to email password */
-/* .element span{
+#icon-l-email{
     position: absolute;
     left: 30px;
     top: 12px;
     font-size: 18px;
-} */
+}
+#icon-l-password{
+    position: absolute;
+    left: 30px;
+    top: 75px;
+    font-size: 18px;
+}
+#icon-a-name{
+    position: absolute;
+    left: 30px;
+    top: 12px;
+    font-size: 18px;
+}
+
+#icon-a-email{
+    position: absolute;
+    left: 30px;
+    top: 75px;
+    font-size: 18px;
+}
+
+#icon-a-password{
+    position: absolute;
+    left: 30px;
+    top: 140px;
+    font-size: 18px;
+}
 
 /* btn not defined in each component- each component have their own button*/
-#btn{
+#btn-signup{
+    padding: 5px 25px;
+    background: linear-gradient(45deg,#d8bac0ab, #a14758ab);
+    border-radius: 50px;
+    font-size: 25px;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#btn-login{
     padding: 5px 25px;
     background: linear-gradient(45deg,#d0e6de, #336247);
     border-radius: 50px;
