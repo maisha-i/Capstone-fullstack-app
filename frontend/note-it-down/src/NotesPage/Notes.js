@@ -49,7 +49,7 @@ const [notes, setNotes] = useState([])
 
   return(
       <>
-      <button onClick={returnToContents}>Back to Contents</button>
+      <button class = 'back-to-contents' onClick={returnToContents}>Back to Contents</button>
       <NotesSide 
       notes = {notes}  
       onAddNote={onAddNote}  
