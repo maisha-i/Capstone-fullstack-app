@@ -3,6 +3,7 @@ import AddNewCategory from "./AddNewCategory";
 import CategoryComponent from "./CategoryComponent";
 import ToDoList from "./ToDoList";
 import "./ContentPage.css"
+import LoginDummyFile from "../Animation/LoginDummyFile"
 
 
 const ContentPage = ({selectPage}) => {
@@ -15,6 +16,14 @@ const ContentPage = ({selectPage}) => {
             .then(response => response.json())
             .then(data => setCategories(data))
     }, [])
+
+    const dummyCover = <div  className="cover dummy">
+        <h1>noteItDown</h1>
+        <LoginDummyFile />
+        </div>
+
+
+
 
     const addNewCategoryToState = (title) => {
         if(title === "" || title === "To Do List"){
@@ -66,18 +75,14 @@ const ContentPage = ({selectPage}) => {
         )
     })
 
-    // const deletePageFromState = (pageId) => {
-    //     const categoryWithDesiredPage = categories.filter(category => category.pages.filter(    //Check each category
-    //         page => page.id === pageId).length !== 0)[0]
-            
-    //     const desiredPage =     
-    //         .pages.filter( //Find the category with the desired page
-    //             page => page.id === pageId)       //Find the desired page within that category
-    // }
 
 
     return(
+
         <div className="contentPage--container">
+            
+            {dummyCover}
+
             {/* To Do List */}
             {toDoListComponent}
 

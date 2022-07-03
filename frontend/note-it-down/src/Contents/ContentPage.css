@@ -33,6 +33,7 @@
     letter-spacing: normal;
     font-size: inherit;
     text-transform: none;
+    padding: 0;
 }
 
 .toDoList--title{
@@ -42,4 +43,23 @@
 .toDoList--content{
     margin-left: 10px;
     list-style: none;
+}
+
+.cover.dummy{
+    top: 0;
+    left: 0;
+    animation: flip 2s 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    transform-origin: -30px;
+    z-index: 1;
+}
+
+@keyframes flip {
+    from{
+    }
+    to{
+        transform: rotateY(-360deg);
+        z-index: -2;
+    }
 }
