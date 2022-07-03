@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AddNewCategory from "./AddNewCategory";
 import CategoryComponent from "./CategoryComponent";
 import ToDoList from "./ToDoList";
-
+import "./ContentPage.css"
 
 
 const ContentPage = ({selectPage}) => {
@@ -57,7 +57,7 @@ const ContentPage = ({selectPage}) => {
 
 
     const toDoListComponent = categories.filter(categories => categories.title === "To Do List").map(category => {
-        return <ToDoList key={category.id} list={category} addNewPageToState={addNewPageToState}/> 
+        return <ToDoList key={category.id} list={category} categoryId={category.id} addNewPageToState={addNewPageToState}/> 
     })
 
     const categoriesSection = categories.filter(category => category.title !== "To Do List").map( category => {
@@ -75,19 +75,24 @@ const ContentPage = ({selectPage}) => {
     //             page => page.id === pageId)       //Find the desired page within that category
     // }
 
+
     return(
-        <>
+        <div className="contentPage--container">
             {/* To Do List */}
             {toDoListComponent}
 
             {/* Categories section */}
-            {categoriesSection}
+            <section className="categoriesSection">
+                {categoriesSection}
+            </section>
             
              {/* Add a new category form: */}
+            <div className="addNewCategory--component">
+                <AddNewCategory addNewCategoryToState={addNewCategoryToState}/>
+            </div>
 
-             <AddNewCategory addNewCategoryToState={addNewCategoryToState}/>
         
-         </>
+         </div >
     );
 
 

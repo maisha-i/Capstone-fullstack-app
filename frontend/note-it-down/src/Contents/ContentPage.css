@@ -1,0 +1,45 @@
+
+
+.contentPage--container{
+  height: 1000px;
+  width: 700px;
+  position: absolute;
+  background-color: #f2e5d9;
+  top: 50px;
+  left: 80px;
+  box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
+}
+
+.categoriesSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, 250px);
+}
+
+.addNewCategory--component{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.contentPage--container h1{
+    text-align:left;
+}
+
+.toDoList--label{
+    text-align: left;
+    display: inline;
+    font-weight: normal;
+    letter-spacing: normal;
+    font-size: inherit;
+    text-transform: none;
+}
+
+.toDoList--title{
+    text-align: center !important;
+}
+
+.toDoList--content{
+    margin-left: 10px;
+    list-style: none;
+}

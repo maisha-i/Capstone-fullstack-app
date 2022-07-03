@@ -12,7 +12,7 @@ function App() {
       {/* <Notes /> */}
      
 
-     <Footer />
+     {/* <Footer /> */}
 
    
     </div>
