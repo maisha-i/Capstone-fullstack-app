@@ -89,3 +89,11 @@
   .back-to-contents{
     display: block;
   }
+
+  .search{
+    display: flex;
+    align-items: center;
+    
+    padding: 5px;
+   
+  }

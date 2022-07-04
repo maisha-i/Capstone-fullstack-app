@@ -2,6 +2,7 @@ import NotesMain from "./NotesMain";
 import NotesSide from "./NotesSide";
 import { useState } from 'react';
 import uuid from 'react-uuid';
+import NotesSearch from "./NotesSearch";
 
 const Notes = ({selectedPageId, returnToContents}) => {
 
@@ -21,6 +22,11 @@ const [notes, setNotes] = useState([])
 
     setNotes([newNote, ...notes])
   };
+
+
+
+  const [searchNote, setSearchNote] = useState('');
+
 
   const onUpdateNote = (updatedNote) => {
 
@@ -49,9 +55,18 @@ const [notes, setNotes] = useState([])
 
   return(
       <>
+
+      
+
       <button class = 'back-to-contents' onClick={returnToContents}>Back to Contents</button>
+
+      <NotesSearch handleSearchNote={setSearchNote} />  
+      
       <NotesSide 
-      notes = {notes}  
+
+      //filter searchnotes
+      notes = {notes.filter((note) => notes.title)}  
+      
       onAddNote={onAddNote}  
       onDeleteNote={onDeleteNote} 
       noteShown={noteShown} 
@@ -61,6 +76,8 @@ const [notes, setNotes] = useState([])
       <NotesMain 
       noteShown={getNoteShown()}
       onUpdateNote={onUpdateNote}/>
+
+      
     
       </>
 
