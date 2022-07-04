@@ -45,4 +45,9 @@ public class PageService {
         oldPage.setBackground(updatedPageInfo.getBackground());
         return pageRepository.save(oldPage);
     }
+
+    public Long getCategoryId(Long pageId){
+        Long categoryId = pageRepository.getCategoryId(pageId).get();
+        return categoryId;
+    }
 }

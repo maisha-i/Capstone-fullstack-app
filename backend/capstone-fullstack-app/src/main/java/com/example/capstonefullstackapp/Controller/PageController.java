@@ -65,4 +65,10 @@ public class PageController {
         return ResponseEntity.ok().body(updatedPage);
     }
 
+    @GetMapping("/getCategoryId/{pageId}")
+    public ResponseEntity<Long> getCategoryId(@PathVariable Long pageId){
+        Long categoryId = pageService.getCategoryId(pageId);
+        return ResponseEntity.ok().body(categoryId);
+    }
+
 }

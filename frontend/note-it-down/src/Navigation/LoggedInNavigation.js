@@ -4,30 +4,33 @@ import { useEffect, useRef, useState } from 'react';
 
 const LoggedInNavigation = ({ logout}) => {
 
-//     const userId = useRef("");
+    useEffect(() => {
+        setTimeout(() => {sessionStorage.removeItem("doesAnimation")}, 3000)
+    })
 
-//     useEffect(() => {fetch(`http://localhost:8080/user/email/${userEmail.current}`)
-//     .then(response => response.json())
-//     .then(result => {userId.current = result; console.log("User id : " + userId.current); 
-// console.log(sessionStorage.getItem("jwt"))})}, [userId])
-
-    const [selectedPageId, setSelectedPageId] = useState(null);
+    const [pageSelected, setPageSelected] = useState(sessionStorage.getItem("currentPage"));
 
     const selectPage = (event) => {
-        setSelectedPageId(event.target.id);
-        console.log(selectedPageId);
+        sessionStorage.setItem("currentCategory", event.target.dataset.category)
+        sessionStorage.setItem("currentCategoryName", event.target.dataset.title)
+        sessionStorage.setItem("currentPage", event.target.id)
+        setPageSelected(true);
     }
 
     const returnToContents = () => {
-        setSelectedPageId(null);
+        sessionStorage.removeItem("currentPage")
+        sessionStorage.removeItem("currentCategory")
+        sessionStorage.removeItem("currentCategoryName")
+        setPageSelected(false);
     }
+
 
 
 
  return(
      <> 
         <button onClick={logout}>Logout</button>
-        {selectedPageId ? <Notes selectedPageId={selectedPageId} returnToContents={returnToContents} /> 
+        {pageSelected ? <Notes returnToContents={returnToContents} /> 
         : <ContentPage selectPage={selectPage} />}
      </>
  )

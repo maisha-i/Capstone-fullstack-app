@@ -8,6 +8,9 @@ import LoginDummyFile from "../Animation/LoginDummyFile"
 
 const ContentPage = ({selectPage}) => {
 
+    const doesAnimation = sessionStorage.getItem("doesAnimation")  //True or False
+    // const doesAnimation = false;
+
     const currentUserId = sessionStorage.getItem("userId");
     const [categories, setCategories] = useState([]);
 
@@ -17,11 +20,11 @@ const ContentPage = ({selectPage}) => {
             .then(data => setCategories(data))
     }, [])
 
+    
     const dummyCover = <div  className="cover dummy">
-        <h1>noteItDown</h1>
+        <h1 style={{textAlign: "center"}}>noteItDown</h1>
         <LoginDummyFile />
         </div>
-
 
 
 
@@ -76,12 +79,16 @@ const ContentPage = ({selectPage}) => {
     })
 
 
+    // document.addEventListener("click", () => {
+    //     sessionStorage.setItem("doesAnimation", false)
+    //     // console.log(sessionStorage)
+    // })
 
     return(
 
         <div className="contentPage--container">
             
-            {dummyCover}
+            {doesAnimation && dummyCover}
 
             {/* To Do List */}
             {toDoListComponent}

@@ -69,7 +69,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
     }
 
     const pageListItem = pages.map(page => { return(
-                    <li className="contents-page--list-item" key={page.id} id={page.id} onClick={selectPage}>{page.title}</li>
+                    <li className="contents-page--list-item" data-title={page.category.title} data-category = {page.category.id} key={page.id} id={page.id} onClick={selectPage}>{page.title}</li>
                 )
 
                 })
