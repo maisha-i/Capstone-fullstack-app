@@ -1,22 +1,26 @@
+import { useEffect, useState } from "react";
 import "./Notes.css"
 
 function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
+    const [title, setTitle] = useState("")
+
+    useEffect(() => {
+        if(notes.length !== 0){
+            setTitle(notes[0].category.title)
+        }},[notes])
+
     return (
         <div className="sidebar">
           <div className="sidebar-header">
-            <h1>Notes</h1>
-            </div>
+            <h1>{title}</h1>
 
-            
-
-            <div>
             <button className ='add-note-button' onClick={onAddNote}>Add New Note</button>
         </div>
 
         <div className="sidebar-notes"> 
             {notes.map((note) => (
 
-                 <div className={`sidebar-note ${note.id === noteShown && "active"} `}
+                 <div key={note.id} className={`sidebar-note ${note.id == noteShown && "active"} `}
                  onClick={() => setNoteShown(note.id)}> 
             
             <div className="sidebar-note-title"> 

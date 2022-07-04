@@ -4,23 +4,18 @@ import { useEffect, useRef, useState } from 'react';
 
 const LoggedInNavigation = ({ logout}) => {
 
-//     const userId = useRef("");
-
-//     useEffect(() => {fetch(`http://localhost:8080/user/email/${userEmail.current}`)
-//     .then(response => response.json())
-//     .then(result => {userId.current = result; console.log("User id : " + userId.current); 
-// console.log(sessionStorage.getItem("jwt"))})}, [userId])
-
-    const [selectedPageId, setSelectedPageId] = useState(null);
+    const [selectedPageId, setSelectedPageId] = useState(sessionStorage.getItem("currentPage"));
 
     const selectPage = (event) => {
+        sessionStorage.setItem("currentPage", event.target.id)
         setSelectedPageId(event.target.id);
-        console.log(selectedPageId);
     }
 
     const returnToContents = () => {
+        sessionStorage.removeItem("currentPage")
         setSelectedPageId(null);
     }
+
 
 
 

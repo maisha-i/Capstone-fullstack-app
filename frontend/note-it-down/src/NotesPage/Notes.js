@@ -1,26 +1,38 @@
 import NotesMain from "./NotesMain";
 import NotesSide from "./NotesSide";
-import { useState } from 'react';
-import uuid from 'react-uuid';
+import { useEffect, useState } from 'react';
 import NotesSearch from "./NotesSearch";
+import { MdOutlineSignalWifiStatusbarConnectedNoInternet4 } from "react-icons/md";
 
 const Notes = ({selectedPageId, returnToContents}) => {
 
+const [categoryId, setCategoryId] = useState(null);
 
+
+
+useEffect(() => {fetch(`http://localhost:8080/page/getCategoryId/${selectedPageId}`)
+.then(response => response.json())
+.then(result => setCategoryId(result))},[])
+
+useEffect(() => {if (categoryId !== null) {fetch(`http://localhost:8080/category/${categoryId}/pages`)
+.then(response => response.json())
+.then(result => setNotes(result))}}, [categoryId])
 
 const [notes, setNotes] = useState([])
 
-  const [noteShown, setNoteShown] = useState(false);
+const [noteShown, setNoteShown] = useState(selectedPageId);
+
+useEffect(() => {setNoteShown(selectedPageId)}, [notes])
+
+// useEffect(() => console.log("note shown: "+noteShown), [noteShown])
 
   const onAddNote = () => {
-    
-    const newNote = {
-      id: uuid(),
-      title: "new note",
-      content:"",
-    };
 
-    setNotes([newNote, ...notes])
+    fetch(`http://localhost:8080/page/createpage?title=new%20note&content=%20&background=WHITE&category_id=${categoryId}`, {method: "POST"})
+
+    console.log(notes)
+    document.location.reload();
+    
   };
 
 
@@ -48,36 +60,35 @@ const [notes, setNotes] = useState([])
     setNotes(notes.filter((note)=> note.id !== idToDelete));
   };
 
-  const getNoteShown = () => {
-    return notes.find((note) => note.id === noteShown);
-  };
 
+  const notesSide = <NotesSide 
+
+  //filter searchnotes
+  notes = {notes}  
+  
+  onAddNote={onAddNote}  
+  onDeleteNote={onDeleteNote} 
+  noteShown={noteShown} 
+  setNoteShown={setNoteShown} />
+
+  const notesMain = <NotesMain
+  notes = {notes}
+  noteShown={noteShown} 
+  // getNoteShown={getNoteShown}
+  onUpdateNote={onUpdateNote}/>
 
   return(
       <>
 
       
 
-      <button class = 'back-to-contents' onClick={returnToContents}>Back to Contents</button>
+      <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
 
       <NotesSearch handleSearchNote={setSearchNote} />  
     
-      <NotesSide 
+      {notesSide}
 
-      //filter searchnotes
-      notes = {notes.map((note) => note.title)}  
-      
-      onAddNote={onAddNote}  
-      onDeleteNote={onDeleteNote} 
-      noteShown={noteShown} 
-      setNoteShown={setNoteShown} />
-
-
-      <NotesMain 
-      noteShown={getNoteShown()}
-      onUpdateNote={onUpdateNote}/>
-
-      
+      {notesMain}
     
       </>
 
