@@ -58,14 +58,14 @@ const [notes, setNotes] = useState([])
 
       
 
-      <button className = 'back-to-contents' onClick={returnToContents}>Back to Contents</button>
+      <button class = 'back-to-contents' onClick={returnToContents}>Back to Contents</button>
 
       <NotesSearch handleSearchNote={setSearchNote} />  
     
       <NotesSide 
 
       //filter searchnotes
-      notes = {notes.filter((note) => notes.title)}  
+      notes = {notes.map((note) => note.title)}  
       
       onAddNote={onAddNote}  
       onDeleteNote={onDeleteNote} 
