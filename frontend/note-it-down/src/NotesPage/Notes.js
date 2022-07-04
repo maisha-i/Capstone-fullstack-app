@@ -62,6 +62,7 @@ const [notes, setNotes] = useState([])
 
       <NotesSearch handleSearchNote={setSearchNote} />  
       
+      <button className = 'back-to-contents' onClick={returnToContents}>Back to Contents</button>
       <NotesSide 
 
       //filter searchnotes

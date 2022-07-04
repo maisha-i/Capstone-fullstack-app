@@ -6,7 +6,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
 
     const {id, title, pages} = category;
 
-    const [newTitle, setNewTitle] = useState(title);
+    const [newTitle, setNewTitle] = useState("");
 
     useEffect(() => {
         document.addEventListener("click", offClick)
@@ -16,14 +16,20 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
         })
     }, [newTitle])
 
+    useEffect(() => {
+        document.removeEventListener("click", offClick)
+    }, [])
+
+
     const handleDoubleClick = (event) => {
+        setNewTitle(event.target.innerText)
         const heading = event.target
-        event.target.innerText = "";
         const newInput = document.createElement("input")
         newInput.type = "text";
-        newInput.value = newTitle;
+        newInput.value = event.target.innerText;
         newInput.id="newEditInput"
         newInput.addEventListener("keyup", (event) => setNewTitle(event.target.value))
+        heading.innerText = "";
         heading.appendChild(newInput);
 
         // document.addEventListener("click", offClick)

@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   perspective: 1000px;
   background-color: rgb(245, 245, 245);
   height: 1180px;
@@ -21,6 +21,7 @@
   top: 50px;
   left: 80px;
   box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
+  z-index: 2;
 
 }
 
