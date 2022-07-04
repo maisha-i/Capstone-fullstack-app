@@ -8,7 +8,13 @@ import LoginDummyFile from "../Animation/LoginDummyFile"
 
 const ContentPage = ({selectPage}) => {
 
-    const doesAnimation = sessionStorage.getItem("doesAnimation")  //True or False
+    const [doesAnimation, setDoesAnimation] = useState();
+
+    useEffect(() => {
+        setDoesAnimation(sessionStorage.getItem("doesAnimation")) //True or False
+
+    }, [])
+
 
     const currentUserId = sessionStorage.getItem("userId");
     const [categories, setCategories] = useState([]);
@@ -19,12 +25,19 @@ const ContentPage = ({selectPage}) => {
             .then(data => setCategories(data))
     }, [])
 
+    useEffect(() => {
+        setTimeout(() => {
+            sessionStorage.setItem("doesAnimation", false)
+        }, 3000)
+    }, [])
+
     
     const dummyCover = <div  className="cover dummy">
         <h1 style={{textAlign: "center"}}>noteItDown</h1>
         <LoginDummyFile />
         </div>
 
+    const displayedCover = doesAnimation ? dummyCover: <div></div>
 
 
     const addNewCategoryToState = (title) => {
@@ -78,16 +91,12 @@ const ContentPage = ({selectPage}) => {
     })
 
 
-    document.addEventListener("click", () => {
-        sessionStorage.setItem("doesAnimation", false)
-        console.log(sessionStorage)
-    })
 
     return(
 
         <div className="contentPage--container">
             
-            {doesAnimation && dummyCover}
+            {displayedCover}
 
             {/* To Do List */}
             {toDoListComponent}
