@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
 
+
 .container-settings{
     height: 1000px;
     width: 700px;
     position: relative;
     background-color: #f2e5d9;
+    /* background-image: url(/Users/maisha/capstone-fullstack-app/frontend/note-it-down/src/Images/settings3.png); */
     top: 50px;
     left: 80px;
     box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
     overflow-x: hidden;
+    
   }
 
   .container-box{
@@ -28,7 +31,7 @@
    position: absolute;
    width: 25%;
    height: 110%;
-   background: rgb(173, 214, 173);
+   background: rgb(154, 177, 154);
    box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
    border: -1em solid white;
   }
@@ -43,7 +46,7 @@
   }
 
   nav a:hover{
-      color: #10ac84;
+      color: #563e3e70;
       cursor: pointer;
       transform: scale(1.2);
   }
@@ -68,7 +71,7 @@
 
   h1 {
     font-family: 'Square Peg', cursive, sans-serif, monospace;
-    font-size: 3.1rem;
+    font-size: 3.5rem;
     margin-top: 40px;
     margin-bottom: 35px;
   }
@@ -76,9 +79,9 @@
   h2{
     font-family: 'Times New Roman', serif;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 5px;
-    margin-top: 10px;
+    margin-top: 30px;
   }
 
   .input,p {
@@ -86,9 +89,14 @@
       border-bottom: 1px solid #c9b6b8;
       width: 80%;
       font-family: 'montserrate', sans-serif;
-      font-size: .6em;
+      font-size: 20px;
       color: #070707;
       outline: none;
+  }
+
+  p{
+    margin-left: 5px;
+    margin-top: 10px;
   }
 
   button{
@@ -96,7 +104,7 @@
       text-transform: uppercase;
       font-size: 15px;
       border: 0;
-      background: rgb(170, 236, 170);
+      background: rgb(161, 199, 161);
       padding: 7px 15px;
       box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .2);
       cursor: pointer;
