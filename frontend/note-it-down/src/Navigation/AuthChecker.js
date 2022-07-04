@@ -24,7 +24,7 @@ const AuthChecker = () => {
             const jwtToken = result.headers.get('Authorization');
             if (jwtToken !== null){
                 sessionStorage.setItem("jwt", jwtToken);
-                sessionStorage.setItem("doesAnimation", true)
+                sessionStorage.setItem("doesAnimation", true);
                 fetch(`http://localhost:8080/user/email/${user.email}`)
                 .then(response => response.json())
                 .then(result => {sessionStorage.setItem("userId", result);
@@ -43,6 +43,7 @@ const AuthChecker = () => {
     const logout = () => {
         sessionStorage.removeItem("jwt");
         sessionStorage.removeItem("userId");
+        sessionStorage.setItem("doesAnimation", true)
         setUser({
             email: '',
             password: ''
@@ -51,7 +52,7 @@ const AuthChecker = () => {
     }
 
     if (isAuthenticated){
-        return <LoggedInNavigation logout={logout}/>
+        return <LoggedInNavigation  logout={logout}/>
     } else {
         return (
             <>

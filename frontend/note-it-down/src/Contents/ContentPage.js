@@ -9,6 +9,7 @@ import LoginDummyFile from "../Animation/LoginDummyFile"
 const ContentPage = ({selectPage}) => {
 
     const doesAnimation = sessionStorage.getItem("doesAnimation")  //True or False
+    // const doesAnimation = false;
 
     const currentUserId = sessionStorage.getItem("userId");
     const [categories, setCategories] = useState([]);

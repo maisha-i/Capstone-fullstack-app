@@ -4,6 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 
 const LoggedInNavigation = ({ logout}) => {
 
+    useEffect(() => {
+        setTimeout(() => {sessionStorage.removeItem("doesAnimation")}, 3000)
+    })
+
     const [pageSelected, setPageSelected] = useState(sessionStorage.getItem("currentPage"));
 
     const selectPage = (event) => {
