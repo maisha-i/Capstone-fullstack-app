@@ -24,6 +24,7 @@ const AuthChecker = () => {
             const jwtToken = result.headers.get('Authorization');
             if (jwtToken !== null){
                 sessionStorage.setItem("jwt", jwtToken);
+                sessionStorage.setItem("doesAnimation", true)
                 fetch(`http://localhost:8080/user/email/${user.email}`)
                 .then(response => response.json())
                 .then(result => {sessionStorage.setItem("userId", result);
