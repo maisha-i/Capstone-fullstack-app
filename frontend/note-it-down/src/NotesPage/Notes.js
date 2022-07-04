@@ -58,7 +58,7 @@ const [notes, setNotes] = useState([])
 
       
 
-      <button class = 'back-to-contents' onClick={returnToContents}>Back to Contents</button>
+      <button className = 'back-to-contents' onClick={returnToContents}>Back to Contents</button>
 
       <NotesSearch handleSearchNote={setSearchNote} />  
     
