@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import "./Notes.css"
 
 function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
-    const [title, setTitle] = useState("")
 
-    useEffect(() => {
-        if(notes.length !== 0){
-            setTitle(notes[0].category.title)
-        }},[notes])
+    // useEffect(() => {
+    //     if(notes.length !== 0){
+    //         setTitle(notes[0].category.title)
+    //     }},[notes])
+
+    // console.log(sessionStorage.getItem("currentCategoryName"))
 
     return (
         <div className="sidebar">
           <div className="sidebar-header">
-            <h1>{title}</h1>
+            <h1>{sessionStorage.getItem("currentCategoryName")}</h1>
 
             <button className ='add-note-button' onClick={onAddNote}>Add New Note</button>
         </div>
@@ -21,13 +22,19 @@ function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
             {notes.map((note) => (
 
                  <div key={note.id} className={`sidebar-note ${note.id == noteShown && "active"} `}
-                 onClick={() => setNoteShown(note.id)}> 
+                 onClick={(event) => {
+                    if(event.target.id !== "deleteButton"){
+                    sessionStorage.setItem("currentPage", noteShown)
+                    setNoteShown(note.id)
+                }}}> 
             
             <div className="sidebar-note-title"> 
             
             <strong>{note.title}</strong>
 
-            <button onClick={() => onDeleteNote(note.id)}>Delete</button>
+            <button id="deleteButton" onClick={() => {
+                onDeleteNote(note.id)
+            }}>Delete</button>
 
             </div>
 

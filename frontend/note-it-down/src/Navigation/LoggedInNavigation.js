@@ -4,16 +4,20 @@ import { useEffect, useRef, useState } from 'react';
 
 const LoggedInNavigation = ({ logout}) => {
 
-    const [selectedPageId, setSelectedPageId] = useState(sessionStorage.getItem("currentPage"));
+    const [pageSelected, setPageSelected] = useState(sessionStorage.getItem("currentPage"));
 
     const selectPage = (event) => {
+        sessionStorage.setItem("currentCategory", event.target.dataset.category)
+        sessionStorage.setItem("currentCategoryName", event.target.dataset.title)
         sessionStorage.setItem("currentPage", event.target.id)
-        setSelectedPageId(event.target.id);
+        setPageSelected(true);
     }
 
     const returnToContents = () => {
         sessionStorage.removeItem("currentPage")
-        setSelectedPageId(null);
+        sessionStorage.removeItem("currentCategory")
+        sessionStorage.removeItem("currentCategoryName")
+        setPageSelected(false);
     }
 
 
@@ -22,7 +26,7 @@ const LoggedInNavigation = ({ logout}) => {
  return(
      <> 
         <button onClick={logout}>Logout</button>
-        {selectedPageId ? <Notes selectedPageId={selectedPageId} returnToContents={returnToContents} /> 
+        {pageSelected ? <Notes returnToContents={returnToContents} /> 
         : <ContentPage selectPage={selectPage} />}
      </>
  )

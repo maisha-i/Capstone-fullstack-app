@@ -78,10 +78,10 @@ const ContentPage = ({selectPage}) => {
     })
 
 
-    document.addEventListener("click", () => {
-        sessionStorage.setItem("doesAnimation", false)
-        console.log(sessionStorage)
-    })
+    // document.addEventListener("click", () => {
+    //     sessionStorage.setItem("doesAnimation", false)
+    //     // console.log(sessionStorage)
+    // })
 
     return(
 

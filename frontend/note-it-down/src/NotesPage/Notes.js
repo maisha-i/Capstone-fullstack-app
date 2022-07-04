@@ -2,17 +2,14 @@ import NotesMain from "./NotesMain";
 import NotesSide from "./NotesSide";
 import { useEffect, useState } from 'react';
 import NotesSearch from "./NotesSearch";
-import { MdOutlineSignalWifiStatusbarConnectedNoInternet4 } from "react-icons/md";
 
-const Notes = ({selectedPageId, returnToContents}) => {
+const Notes = ({returnToContents}) => {
 
-const [categoryId, setCategoryId] = useState(null);
+  const categoryId = sessionStorage.getItem("currentCategory");
 
-
-
-useEffect(() => {fetch(`http://localhost:8080/page/getCategoryId/${selectedPageId}`)
-.then(response => response.json())
-.then(result => setCategoryId(result))},[])
+// useEffect(() => {fetch(`http://localhost:8080/page/getCategoryId/${selectedPageId}`)
+// .then(response => response.json())
+// .then(result => {sessionStorage.setItem("currentCategory",result); setCategoryId(result)})},[])
 
 useEffect(() => {if (categoryId !== null) {fetch(`http://localhost:8080/category/${categoryId}/pages`)
 .then(response => response.json())
@@ -20,9 +17,9 @@ useEffect(() => {if (categoryId !== null) {fetch(`http://localhost:8080/category
 
 const [notes, setNotes] = useState([])
 
-const [noteShown, setNoteShown] = useState(selectedPageId);
+const [noteShown, setNoteShown] = useState(sessionStorage.getItem("currentPage"));
 
-useEffect(() => {setNoteShown(selectedPageId)}, [notes])
+// useEffect(() => {setNoteShown(sessionStorage.getItem("currentPage"))}, [notes])
 
 // useEffect(() => console.log("note shown: "+noteShown), [noteShown])
 
@@ -30,7 +27,7 @@ useEffect(() => {setNoteShown(selectedPageId)}, [notes])
 
     fetch(`http://localhost:8080/page/createpage?title=new%20note&content=%20&background=WHITE&category_id=${categoryId}`, {method: "POST"})
 
-    console.log(notes)
+    // console.log(notes)
     document.location.reload();
     
   };
@@ -44,7 +41,7 @@ useEffect(() => {setNoteShown(selectedPageId)}, [notes])
 
     const updatedNotesArray = notes.map((note) => {
 
-      if(note.id === noteShown){
+      if(note.id == noteShown){
         return updatedNote;
       }
 
@@ -57,6 +54,8 @@ useEffect(() => {setNoteShown(selectedPageId)}, [notes])
   }
 
   const onDeleteNote = (idToDelete) => {
+    fetch(`http://localhost:8080/page/deletePage/${idToDelete}`, {method: "DELETE"})
+    setNoteShown(null)
     setNotes(notes.filter((note)=> note.id !== idToDelete));
   };
 
