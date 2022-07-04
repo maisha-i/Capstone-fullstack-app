@@ -63,7 +63,8 @@ const [noteShown, setNoteShown] = useState(sessionStorage.getItem("currentPage")
   const notesSide = <NotesSide 
 
   //filter searchnotes
-  notes = {notes}  
+  notes = {notes.filter((note) => note.title.toLowerCase().includes(searchNote)
+    )}  
   
   onAddNote={onAddNote}  
   onDeleteNote={onDeleteNote} 
