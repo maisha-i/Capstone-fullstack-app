@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+.container-settings{
+    height: 1000px;
+    width: 700px;
+    position: relative;
+    background-color: #f2e5d9;
+    top: 50px;
+    left: 80px;
+    box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
+    overflow-x: hidden;
+  }
+
+  .container-box{
+      background: white;
+      width: 540px;
+      height: 850px;
+      margin: 0 auto;
+      position: relative;
+      margin-top: 10%;
+      box-shadow: 2px 5px 20px rgba(119, 119, 119, .5)
+  }
+
+  .leftbox{
+   float: left;
+   top: -5%;
+   left: 5%; 
+   position: absolute;
+   width: 25%;
+   height: 110%;
+   background: rgb(173, 214, 173);
+   box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
+   border: -1em solid white;
+  }
+
+  nav a {
+      margin-top: 80px;
+      list-style:none;
+      padding: 50px;
+      font-size: 2.1em;
+      display: block;
+      transition: all .3s ease-in-out;
+  }
+
+  nav a:hover{
+      color: #10ac84;
+      cursor: pointer;
+      transform: scale(1.2);
+  }
+
+  nav a:first-child{
+    margin-top: 7px;  
+  }
+
+  /* nav a.tab-active{
+      color: #10ac84;
+  } */
+
+  .rightbox{
+      width: 60%;
+      margin-left: 37%;
+  }
+
+  .tabShow{
+      transition: all .5s ease-in;
+      width: 80%;
+  }
+
+  h1 {
+    font-family: 'Square Peg', cursive, sans-serif, monospace;
+    font-size: 3.1rem;
+    margin-top: 40px;
+    margin-bottom: 35px;
+  }
+
+  h2{
+    font-family: 'Times New Roman', serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+
+  .input,p {
+      border: 0;
+      border-bottom: 1px solid #c9b6b8;
+      width: 80%;
+      font-family: 'montserrate', sans-serif;
+      font-size: .6em;
+      color: #070707;
+      outline: none;
+  }
+
+  button{
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-size: 15px;
+      border: 0;
+      background: rgb(170, 236, 170);
+      padding: 7px 15px;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .2);
+      cursor: pointer;
+      margin-top: 15px;
+  }
+
+.tabShow{
+    display: none;
+}
+
+
+
+  
