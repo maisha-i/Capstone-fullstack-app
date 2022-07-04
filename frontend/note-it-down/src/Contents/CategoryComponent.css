@@ -4,12 +4,12 @@
     flex-wrap: wrap;
     -webkit-column-count: 2;
     column-count: 2;
+    overflow: hidden;
+    list-style: none;
 }
 
 .contents-page--list-item{
-    padding: 10px;
     margin: 5px;
-    height: 30px;
 }
 
 .cross-symbol{

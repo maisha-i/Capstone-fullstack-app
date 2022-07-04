@@ -85,3 +85,15 @@
     font-size: 40px;
     margin-left: 140px;
   }
+
+  .back-to-contents{
+    display: block;
+  }
+
+  .search{
+    display: flex;
+    align-items: center;
+    
+    padding: 5px;
+   
+  }

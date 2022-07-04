@@ -6,8 +6,11 @@ function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
           <div className="sidebar-header">
             <h1>Notes</h1>
             </div>
+
+            
+
             <div>
-            <button class ='add-note-button' onClick={onAddNote}>Add New Note</button>
+            <button className ='add-note-button' onClick={onAddNote}>Add New Note</button>
         </div>
 
         <div className="sidebar-notes"> 
