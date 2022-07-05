@@ -9,9 +9,9 @@ function App() {
       <> 
     <div className='App'>
 
-      <Notes />
+      {/* <Notes /> */}
        
-      {/* <AuthChecker />     */}
+      <AuthChecker />    
 
      {/* <Footer /> */}
 
