@@ -4,7 +4,7 @@
 .container-settings{
     height: 1000px;
     width: 700px;
-    position: relative;
+    position: absolute;
     background-color: #f2e5d9;
     /* background-image: url(/Users/maisha/capstone-fullstack-app/frontend/note-it-down/src/Images/settings3.png); */
     top: 50px;

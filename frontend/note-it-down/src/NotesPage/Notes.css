@@ -1,15 +1,30 @@
+.notesContainer {
+  position: absolute;
+  height: 1000px;
+  width: 700px;
+  background-color: #f2e5d9;
+  top: 50px;
+  left: 80px;
+  box-shadow: 40px 0 100px rgba(0, 0, 0, .2);  
+}
+
+.notesContainer button {
+  background: #d8bac0ab;
+}
+
 .sidebar{
+  position: absolute;
     border: solid black 2px;
-    width: 230px;
-    height: 1000px;
+    width: 220px;
+    height: 948px;
     display: inline-block;
     overflow-y: auto;
 }
 
 .notes-main{
     border: solid black 2px;
-    width: 550px;
-    height: 1000px;
+    width: 473px;
+    height: 948px;
    
     float: right;
     word-break: break-all;
@@ -18,23 +33,26 @@
 }
 
 
-
 .sidebar-notes{
+  width: 220px;
   overflow-y: scroll;
 }
 
 .sidebar-header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 10px;
   }
 
+.sidebar-header h1 {
+  margin: 10px auto;
+}
+
   .add-note-button{
-    display: block;
     height: 70px;
     width: 130px;
-    margin-bottom: 10px;
-    margin-left: 50px;
+    margin: 5px auto;
   
   }
 
@@ -45,6 +63,7 @@
   
   .sidebar-note {
     padding: 25px;
+    width: auto;
     cursor: pointer;
   }
   .sidebar-note-title {
@@ -52,8 +71,10 @@
     justify-content: space-between;
   }
   .sidebar-note button {
+    background: #d8bac0ab;
     color: red;
   }
+
   .sidebar-note p {
     margin: 10px 0;
   }
@@ -90,9 +111,17 @@
   }
 
   .no-note-shown{
-    display: inline-block;
     font-size: 40px;
     margin-left: 140px;
+    border: solid black 2px;
+    width: 473px;
+    height: 948px;
+    float: right;
+    display: flex;
+  }
+
+  .no-note-shown h2 {
+    margin: 200px auto;
   }
 
   .back-to-contents{
@@ -108,6 +137,7 @@
     padding: 5px;
     margin-bottom: 10px;
     margin-top: 10px;
+    height: 20px;
   }
   
   .search input {
@@ -115,10 +145,13 @@
     background-color: rgb(233, 233, 233);
    
   }
+
+  .search input::placeholder {
+    font-size: 15px;
+  }
   
   .search input:focus {
     outline: none;
   }
-
 
  
