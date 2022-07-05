@@ -49,6 +49,14 @@ const ContentPage = ({selectPage, goToSettings}) => {
             .then(console.log("Got here"))
     }
 
+//Delete category
+
+    const onDeleteCategory = (idToDeleteCategory) => {
+        fetch(`http://localhost:8080/category/${idToDeleteCategory}`, {method: "DELETE"})
+        
+        setCategories(categories.filter((category) => category.id !== idToDeleteCategory));
+      };
+
 
     const addNewPageToState = (categoryId, title) => {
         if(title === "") return;
@@ -107,6 +115,8 @@ const ContentPage = ({selectPage, goToSettings}) => {
             <div className="addNewCategory--component">
                 <AddNewCategory addNewCategoryToState={addNewCategoryToState}/>
             </div>
+
+        
 
         
          </div >
