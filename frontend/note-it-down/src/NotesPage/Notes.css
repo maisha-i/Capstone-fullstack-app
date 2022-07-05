@@ -15,6 +15,10 @@
    
 }
 
+.sidebar-notes{
+  overflow-y: scroll;
+}
+
 .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -23,7 +27,7 @@
 
   .add-note-button{
     display: block;
-    height: 50px;
+    height: 70px;
     width: 130px;
     margin-bottom: 10px;
     margin-left: 50px;
@@ -88,21 +92,30 @@
   }
 
   .back-to-contents{
-    display: block;
+    display: inline-block;
+    
   }
 
-  .search{
+
+  .search {
     display: flex;
     align-items: center;
-    
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
     padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .search input {
+    border: none;
+    background-color: rgb(233, 233, 233);
    
+  }
+  
+  .search input:focus {
+    outline: none;
   }
 
 
-  .sidebar-notes{
-    height: calc(1000px - 78px);
-    overflow-y: scroll;
-   
-
-  }
+ 
