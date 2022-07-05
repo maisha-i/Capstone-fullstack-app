@@ -27,6 +27,12 @@ public class UserController {
         return ResponseEntity.ok().body(users);
     }
 
+    @GetMapping("/{userId}")
+    public ResponseEntity<User> getUserById(Long id) {
+        User user = userService.getUser(id);
+        return ResponseEntity.ok().body(user);
+    }
+
     @GetMapping("/{userId}/categories")
     public ResponseEntity<List<Category>> getAllCategoriesByUser(@PathVariable Long userId){
         List<Category> categories = userService.getCategoriesByUser(userId);
