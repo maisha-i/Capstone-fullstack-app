@@ -14,7 +14,7 @@ public class Page {
     private Long id;
     @Column
     private String title;
-    @Column
+    @Column(length=65535)
     private String content;
     @Column
     @Enumerated
