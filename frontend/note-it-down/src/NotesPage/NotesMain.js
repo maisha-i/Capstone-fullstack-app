@@ -10,7 +10,7 @@ function NotesMain({notes, noteShown, onUpdateNote}){
     
     const currentPage = getNoteShown();
 
-
+    const [inEditMode, setInEditMode] = useState(false);
 
     useEffect(() => {getNoteShown()}, [noteShown])
 
@@ -42,22 +42,30 @@ function NotesMain({notes, noteShown, onUpdateNote}){
         console.log(options)
         
         fetch(`http://localhost:8080/page/updatePage/${noteShown}`, options)
+        setInEditMode(false);
     }
 
-    if(!currentPage)
-    return <div className="no-note-shown">No note shown</div>
+    const handleEditButtonClick = () => {
+        setInEditMode(true);
+    }
 
-    return <div className="notes-main">
-        <div className="main-note-edit">
+    
 
+    if(!currentPage){
+    return <div className="no-note-shown">No note shown</div>}
+    else{
+    const editForm = (<div className="main-note-edit">
         <form onSubmit={handleFormSubmit}>
 
-            <input className='title-input' type="text" id="title" value={currentPage.title} onChange={(e) => onEditField("title", e.target.value)} autoFocus />
-            <textarea className='content-input'id="body" placeholder="Write your note here..." value={currentPage.content} onChange={(e) => onEditField("content", e.target.value)}/>
-            <input type="submit" value="Save"/>
+        <input className='title-input' type="text" id="title" value={currentPage.title} onChange={(e) => onEditField("title", e.target.value)} autoFocus />
+        <textarea className='content-input'id="body" placeholder="Write your note here..." value={currentPage.content} onChange={(e) => onEditField("content", e.target.value)}/>
+        <input type="submit" value="Save"/>
 
-        </form>
-        </div>
+         </form>
+    </div>)
+    return <div className="notes-main">
+        
+        {inEditMode ? editForm : <button onClick={handleEditButtonClick}>Edit Note</button>}
 
         <div className="main-note-preview">
 
@@ -66,7 +74,7 @@ function NotesMain({notes, noteShown, onUpdateNote}){
             <div className="preview-content">{currentPage.content}</div>
 
         </div>
-    </div>
+    </div>}
 
 }
 

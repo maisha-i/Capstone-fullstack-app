@@ -24,7 +24,7 @@ function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
                  <div key={note.id} className={`sidebar-note ${note.id == noteShown && "active"} `}
                  onClick={(event) => {
                     if(event.target.id !== "deleteButton"){
-                    sessionStorage.setItem("currentPage", noteShown)
+                    sessionStorage.setItem("currentPage", note.id)
                     setNoteShown(note.id)
                 }}}> 
             
