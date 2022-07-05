@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
- 
+
  body{
   margin: 0;
   display: flex;
@@ -12,6 +12,8 @@
   width: 100vw;
 }
 
+  
+
 .cover{
   height: 1000px;
   width: 700px;
@@ -22,6 +24,8 @@
   left: 80px;
   box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
   z-index: 2;
+  transition: 1s ease-in-out;
+
 
 }
 
@@ -38,3 +42,32 @@ h1{
     font-family: 'Square Peg', cursive, sans-serif, monospace;
     font-size: 60px;
   }
+
+  #light{
+    background-color: white;
+  }
+
+/* Dark Theme  */
+ #dark .cover{
+    height: 1000px;
+    width: 700px;
+    background-image: url(./Images/dark.png);
+    background-size: 710px;
+    transition:1s ease-in-out;
+    background-size: cover;
+
+    /* filter: brightness(60%); */
+  }
+
+  #dark h1{
+    color: #f2e5d9;
+  }
+
+  .switch-toggle{
+    display: flex;
+    width: 100vw;
+    height: 100px;
+    justify-content: center;
+  }
+
+  

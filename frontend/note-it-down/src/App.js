@@ -1,24 +1,38 @@
 import './App.css';
 import Footer from './Footer/Footer';
 import AuthChecker from './Navigation/AuthChecker';
+import { createContext, useState } from 'react';
+import ReactSwitch from 'react-switch';
 
-import Settings from './Settings/Settings';
+
+export const ThemeContext = createContext(null)
 
 function App() {
-    return (
-      <> 
-    <div className='App'>
 
-      
-       
-      <AuthChecker />    
+  const [theme, setTheme] = useState("light");
 
-     {/* <Footer /> */}
+  const toggleTheme = () => {
+  // if theme is light set to dark and vice versa
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  }
 
-     {/* <Settings/> */}
+  return (
+    <> 
+      <ThemeContext.Provider value={{theme, toggleTheme}}> 
+        <div className='App' id={theme}>
 
-   
-    </div>
+            <AuthChecker />  
+            <div className="switch-toggle"> 
+            <label> {theme === "light" ? "Light Mode" : "Dark Mode"} </label>
+            <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/>
+            </div> 
+
+            {/* <Footer /> */}
+
+            {/* <Settings/> */}
+
+        </div>
+      </ThemeContext.Provider>
     </>
   );
 }

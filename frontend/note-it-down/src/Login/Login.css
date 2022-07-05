@@ -181,7 +181,6 @@ input::placeholder{
     font-size: 18px;
 }
 
-/* btn not defined in each component- each component have their own button*/
 #btn-signup{
     padding: 5px 25px;
     background: linear-gradient(45deg,#d8bac0ab, #a14758ab);
@@ -207,4 +206,34 @@ input::placeholder{
 #btn:active{
     transform: scale(1.01);
 }
+
+/* Dark Theme */
+
+#dark #btn-login{
+    padding: 5px 25px;
+    background: linear-gradient(45deg,#b8bad9, #313d5b);
+    border-radius: 50px;
+    font-size: 25px;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+
+#dark .login{
+    padding: 5px 12px;
+    background: linear-gradient(45deg,#b8bad9, #313d5b);
+    margin-bottom: 10px;
+    border-radius: 50px;
+    text-align: right;
+    margin-left: 4px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+
+
+
 
