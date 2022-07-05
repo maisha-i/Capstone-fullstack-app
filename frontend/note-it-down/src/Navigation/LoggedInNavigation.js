@@ -28,6 +28,7 @@ const LoggedInNavigation = ({ logout}) => {
         setPageSelected(false);
         sessionStorage.removeItem("settingsPage");
         setSettingsSelected(false);
+        setCategoryId(null);
     }
 
     const goToSettings = () => {
@@ -50,7 +51,7 @@ const LoggedInNavigation = ({ logout}) => {
         {settingsSelected ? <Settings returnToContents={returnToContents}/> : null}
         {!pageSelected && !settingsSelected ? 
             <ContentPage selectPage={selectPage} goToSettings={goToSettings} /> : null}
-        <TabContainer clickTab={clickTab} />
+        <TabContainer clickTab={clickTab} categoryId={categoryId} />
         <button onClick={logout}>Logout</button>
      </>
  )
