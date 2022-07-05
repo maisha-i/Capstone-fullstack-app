@@ -3,6 +3,7 @@
     width: 230px;
     height: 1000px;
     display: inline-block;
+    overflow-y: auto;
 }
 
 .notes-main{
@@ -96,4 +97,12 @@
     
     padding: 5px;
    
+  }
+
+
+  .sidebar-notes{
+    height: calc(1000px - 78px);
+    overflow-y: scroll;
+   
+
   }
