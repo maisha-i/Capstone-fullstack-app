@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { unstable_HistoryRouter } from "react-router-dom";
 import UserLogin from "../Login/UserLogin";
