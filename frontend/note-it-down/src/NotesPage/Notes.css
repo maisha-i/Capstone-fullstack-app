@@ -12,8 +12,12 @@
     height: 1000px;
    
     float: right;
+    word-break: break-all;
+    overflow-y: auto;
    
 }
+
+
 
 .sidebar-notes{
   overflow-y: scroll;
