@@ -43,7 +43,10 @@ const AuthChecker = () => {
     const logout = () => {
         sessionStorage.removeItem("jwt");
         sessionStorage.removeItem("userId");
-        sessionStorage.setItem("doesAnimation", true)
+        sessionStorage.setItem("doesAnimation", true);
+        sessionStorage.removeItem("currentPage");
+        sessionStorage.removeItem("currentCategory");
+        sessionStorage.removeItem("currentCategoryName");
         setUser({
             email: '',
             password: ''

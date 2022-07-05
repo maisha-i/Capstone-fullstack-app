@@ -65,3 +65,10 @@
         z-index: -2;
     }
 }
+
+.contentPage--container svg{
+    height: 2.5em;
+    width: 2.5em;
+    margin: 5px;
+    position:fixed;
+}

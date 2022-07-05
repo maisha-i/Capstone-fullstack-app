@@ -4,9 +4,10 @@ import CategoryComponent from "./CategoryComponent";
 import ToDoList from "./ToDoList";
 import "./ContentPage.css"
 import LoginDummyFile from "../Animation/LoginDummyFile"
+import { AiFillSetting } from "react-icons/ai";
 
 
-const ContentPage = ({selectPage}) => {
+const ContentPage = ({selectPage, goToSettings}) => {
 
     const doesAnimation = sessionStorage.getItem("doesAnimation")  //True or False
     // const doesAnimation = false;
@@ -87,6 +88,10 @@ const ContentPage = ({selectPage}) => {
     return(
 
         <div className="contentPage--container">
+
+            <a onClick={goToSettings}>
+                <AiFillSetting />
+            </a>
             
             {doesAnimation && dummyCover}
 

@@ -80,15 +80,13 @@ const [noteShown, setNoteShown] = useState(sessionStorage.getItem("currentPage")
   return(
       <>
 
-      
-
-      <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
-
       <NotesSearch handleSearchNote={setSearchNote} />  
     
       {notesSide}
 
       {notesMain}
+
+      <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
     
       </>
 
