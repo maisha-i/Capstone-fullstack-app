@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+.tabContainer{
+    height: 1000px;
+    width: 75px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    left: 780px;
+}
+
+.tabContainer .tab{
+    background-color: #c0dcb5;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+}
+
+.tabContainer .tab.active{
+    background-color: #a14758ab;
+}
+
+.tabTriangleBefore {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0 0 75px;
+    border-color: transparent transparent transparent #c0dcb5 ;
+}
+
+.tabTriangleBefore.active{
+    border-color: transparent transparent transparent #a14758ab;
+}
+
+.tabTriangleAfter {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 75px 0 0;
+    border-color: #c0dcb5 transparent transparent transparent;
+}
+
+.tabTriangleAfter.active{
+    border-color: #a14758ab transparent transparent transparent;
+}
+
+.indivdualTabContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: 400px;
+}
+
+.indivdualTabContainer.active{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: 400px;
+}
+
+.tabContainer p{
+    text-align: center;
+    font-family: 'Square Peg', cursive, sans-serif, monospace;
+    font-size: 2.5em;
+    transform: rotate(90deg);
+    font-weight: bolder;
+    border-bottom: none;
+}

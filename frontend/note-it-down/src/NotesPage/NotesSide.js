@@ -40,6 +40,8 @@ function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
 
             <p>{note.content && note.content.substr(0, 22)+ "..."}</p>
 
+           
+
             </div>
             ))}
 

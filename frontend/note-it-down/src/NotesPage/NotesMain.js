@@ -52,7 +52,7 @@ function NotesMain({notes, noteShown, onUpdateNote}){
     
 
     if(!currentPage){
-    return <div className="no-note-shown">No note shown</div>}
+    return <div className="no-note-shown"><h2>No note selected</h2></div>}
     else{
     const editForm = (<div className="main-note-edit">
         <form onSubmit={handleFormSubmit}>

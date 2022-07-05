@@ -3,39 +3,26 @@ import NotesSide from "./NotesSide";
 import { useEffect, useState } from 'react';
 import NotesSearch from "./NotesSearch";
 
-const Notes = ({returnToContents}) => {
+const Notes = ({returnToContents, categoryId}) => {
 
-  const categoryId = sessionStorage.getItem("currentCategory");
 
-// useEffect(() => {fetch(`http://localhost:8080/page/getCategoryId/${selectedPageId}`)
-// .then(response => response.json())
-// .then(result => {sessionStorage.setItem("currentCategory",result); setCategoryId(result)})},[])
+  useEffect(() => {if (categoryId !== null) {fetch(`http://localhost:8080/category/${categoryId}/pages`)
+  .then(response => response.json())
+  .then(result => setNotes(result))}}, [categoryId])
 
-useEffect(() => {if (categoryId !== null) {fetch(`http://localhost:8080/category/${categoryId}/pages`)
-.then(response => response.json())
-.then(result => setNotes(result))}}, [categoryId])
+  const [notes, setNotes] = useState([])
 
-const [notes, setNotes] = useState([])
-
-const [noteShown, setNoteShown] = useState(sessionStorage.getItem("currentPage"));
-
-// useEffect(() => {setNoteShown(sessionStorage.getItem("currentPage"))}, [notes])
-
-// useEffect(() => console.log("note shown: "+noteShown), [noteShown])
+  const [noteShown, setNoteShown] = useState(sessionStorage.getItem("currentPage"));
 
   const onAddNote = () => {
 
     fetch(`http://localhost:8080/page/createpage?title=new%20note&content=%20&background=WHITE&category_id=${categoryId}`, {method: "POST"})
 
-    // console.log(notes)
     document.location.reload();
     
   };
 
-
-
   const [searchNote, setSearchNote] = useState('');
-
 
   const onUpdateNote = (updatedNote) => {
 
@@ -74,11 +61,11 @@ const [noteShown, setNoteShown] = useState(sessionStorage.getItem("currentPage")
   const notesMain = <NotesMain
   notes = {notes}
   noteShown={noteShown} 
-  // getNoteShown={getNoteShown}
   onUpdateNote={onUpdateNote}/>
 
   return(
-      <>
+    <>
+      <div className="notesContainer">
 
       <NotesSearch handleSearchNote={setSearchNote} />  
     
@@ -86,10 +73,10 @@ const [noteShown, setNoteShown] = useState(sessionStorage.getItem("currentPage")
 
       {notesMain}
 
-      <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
-    
-      </>
+      </div>
 
+      <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
+    </>
   )
 }
 
