@@ -64,7 +64,6 @@ const AuthChecker = () => {
                     <Login handleChange={handleChange} loginFunction={loginFunction}/>
                 </div>
                 <div className="cover page1"></div>
-              console.log(sessionStorage.getItem(userId))
 
             </>
         )
