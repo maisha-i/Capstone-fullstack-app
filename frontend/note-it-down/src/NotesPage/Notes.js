@@ -3,9 +3,9 @@ import NotesSide from "./NotesSide";
 import { useEffect, useState } from 'react';
 import NotesSearch from "./NotesSearch";
 
-const Notes = ({returnToContents}) => {
+const Notes = ({returnToContents, categoryId}) => {
 
-  const categoryId = sessionStorage.getItem("currentCategory");
+// const categoryId = sessionStorage.getItem("currentCategory");
 
 // useEffect(() => {fetch(`http://localhost:8080/page/getCategoryId/${selectedPageId}`)
 // .then(response => response.json())

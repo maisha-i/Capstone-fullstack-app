@@ -1,6 +1,7 @@
 import ContentPage from '../Contents/ContentPage'
 import Notes from '../NotesPage/Notes';
 import Settings from '../Settings/Settings';
+import TabContainer from '../Tabs/TabContainer';
 import { useEffect, useRef, useState } from 'react';
 
 const LoggedInNavigation = ({ logout}) => {
@@ -9,8 +10,9 @@ const LoggedInNavigation = ({ logout}) => {
         setTimeout(() => {sessionStorage.removeItem("doesAnimation")}, 3000)
     })
 
-    const [pageSelected, setPageSelected] = useState(sessionStorage.getItem("currentPage"));
+    const [pageSelected, setPageSelected] = useState(sessionStorage.getItem("currentCategory"));
     const [settingsSelected, setSettingsSelected] = useState(sessionStorage.getItem("settingsPage"));
+    const [categoryId, setCategoryId] = useState(sessionStorage.getItem("currentCategory"));
 
     const selectPage = (event) => {
         sessionStorage.setItem("currentCategory", event.target.dataset.category)
@@ -33,14 +35,21 @@ const LoggedInNavigation = ({ logout}) => {
         setSettingsSelected(true);
     }
 
+    const clickTab = (event) => {
+        sessionStorage.setItem("currentCategory", event.target.id)
+        sessionStorage.setItem("currentCategoryName", event.target.dataset.title)
+        setCategoryId(event.target.id)
+        setPageSelected(true)
+    }
+
 
  return(
      <> 
-        {pageSelected ? <Notes returnToContents={returnToContents} /> : null}
+        {pageSelected ? <Notes returnToContents={returnToContents} categoryId={categoryId} /> : null}
         {settingsSelected ? <Settings returnToContents={returnToContents}/> : null}
         {!pageSelected && !settingsSelected ? 
             <ContentPage selectPage={selectPage} goToSettings={goToSettings} /> : null}
-
+        <TabContainer clickTab={clickTab} />
         <button onClick={logout}>Logout</button>
      </>
  )

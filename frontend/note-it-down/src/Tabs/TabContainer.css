@@ -1,0 +1,16 @@
+.tabContainer{
+    border: 1px dotted black;
+    height: 1000px;
+    width: 100px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    left: 780px;
+}
+
+.tabContainer .tab{
+    border: 1px solid black;
+    width: 100px;
+    height: 400px;
+}
