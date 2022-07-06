@@ -14,18 +14,18 @@
 
 .sidebar{
   position: absolute;
-    border: solid black 2px;
+  background-color: #a14758ab;
     width: 220px;
-    height: 948px;
+    height: 898px;
+  
     display: inline-block;
     overflow-y: auto;
 }
 
 .notes-main{
-    border: solid black 2px;
+    /* border: solid black 2px; */
     width: 473px;
-    height: 948px;
-   
+    height: 898px;
     float: right;
     word-break: break-all;
     overflow-y: auto;
@@ -50,9 +50,10 @@
 }
 
   .add-note-button{
-    height: 70px;
-    width: 130px;
+    height: 50px;
+    width: 180px;
     margin: 5px auto;
+    border-radius: 25px;
   
   }
 
@@ -71,6 +72,7 @@
     justify-content: space-between;
   }
   .sidebar-note button {
+    border-radius: 20px;
     background: #d8bac0ab;
     color: red;
   }
@@ -113,7 +115,7 @@
   .no-note-shown{
     font-size: 40px;
     margin-left: 140px;
-    border: solid black 2px;
+    /* border: solid black 2px; */
     width: 473px;
     height: 948px;
     float: right;
@@ -125,24 +127,29 @@
   }
 
   .back-to-contents{
-    display: inline-block;
+    position: absolute;
+    right: 15px;
+    /* display: inline-block; */
     
   }
 
   .search {
     display: flex;
     align-items: center;
-    background-color: rgb(233, 233, 233);
+    background-color: white;
     border-radius: 10px;
     padding: 5px;
     margin-bottom: 10px;
     margin-top: 10px;
+    margin-left: 5px;
     height: 20px;
+    width: 200px;
+    border: solid black 1px;
   }
   
   .search input {
     border: none;
-    background-color: rgb(233, 233, 233);
+    
    
   }
 
@@ -154,4 +161,18 @@
     outline: none;
   }
 
+  .content-input{
+    width: 430px;
+  }
+
+  .title-input{
+    width: 430px;
+  }
+
+  #dark .notesContainer{
+    background-color: rgb(0, 0, 153);
+    
+  }
+
+  
  

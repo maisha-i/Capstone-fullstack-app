@@ -23,6 +23,7 @@ const LoggedInNavigation = ({ logout}) => {
         sessionStorage.setItem("currentCategoryName", event.target.dataset.title)
         sessionStorage.setItem("doesNotesAnimation", true);
         sessionStorage.setItem("currentPage", event.target.id)
+        setCategoryId(event.target.dataset.category);
         setPageSelected(true);
     }
 

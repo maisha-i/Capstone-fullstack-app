@@ -49,13 +49,12 @@ const ContentPage = ({selectPage, goToSettings}) => {
             .then(console.log("Got here"))
     }
 
-//Delete category
-
-    const onDeleteCategory = (idToDeleteCategory) => {
+    const handleDeleteCategory = (idToDeleteCategory) => {
         fetch(`http://localhost:8080/category/${idToDeleteCategory}`, {method: "DELETE"})
         
         setCategories(categories.filter((category) => category.id !== idToDeleteCategory));
       };
+
 
 
     const addNewPageToState = (categoryId, title) => {
@@ -83,7 +82,7 @@ const ContentPage = ({selectPage, goToSettings}) => {
 
     const categoriesSection = categories.filter(category => category.title !== "To Do List").map( category => {
         return(
-            <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState} selectPage={selectPage}/>
+            <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState} selectPage={selectPage} handleDeleteCategory={handleDeleteCategory}/>
         )
     })
 

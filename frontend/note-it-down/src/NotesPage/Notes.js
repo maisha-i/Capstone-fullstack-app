@@ -52,7 +52,7 @@ const Notes = ({returnToContents, categoryId}) => {
   const notesSide = <NotesSide 
 
   //filter searchnotes
-  notes = {notes.filter((note) => note.title.toLowerCase().includes(searchNote)
+  notes = {notes.filter((note) => note.title.toLowerCase().includes(searchNote) 
     )}  
   
   onAddNote={onAddNote}  
@@ -72,15 +72,21 @@ const Notes = ({returnToContents, categoryId}) => {
       {sessionStorage.getItem("doesNotesAnimation") && <div className="forwards pageCover"></div>}
       <div className="notesContainer">
 
+      <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
+
       <NotesSearch handleSearchNote={setSearchNote} />  
+
+      
     
       {notesSide}
 
       {notesMain}
 
+      
+
       </div>
 
-      <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
+     
     </>
   )
 }
