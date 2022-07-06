@@ -65,7 +65,7 @@ function NotesMain({notes, noteShown, onUpdateNote}){
     </div>)
     return <div className="notes-main">
         
-        {inEditMode ? editForm : <button onClick={handleEditButtonClick}>Edit Note</button>}
+        {inEditMode ? editForm : <button className="edit-button" onClick={handleEditButtonClick}>Edit Note</button>}
 
         <div className="main-note-preview">
 

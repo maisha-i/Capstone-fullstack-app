@@ -106,6 +106,7 @@ const ToDoList = ({list, addNewPageToState, categoryId}) => {
 
     return(
         <>
+            <div className="to-do-container"> 
             <h1 className="toDoList--title">To Do List</h1>
             <ul className="toDoList--content">
                 {toDoItem}
@@ -115,7 +116,7 @@ const ToDoList = ({list, addNewPageToState, categoryId}) => {
             <AddNewPage name = {"Add new ToDo"} category={list} addNewPageToState={addNewPageToState}/>
         
         
-        
+        </div>
         </>
     )
 

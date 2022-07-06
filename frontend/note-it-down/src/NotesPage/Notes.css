@@ -20,7 +20,7 @@
   position: absolute;
   background-color: #a14758ab;
     width: 220px;
-    height: 898px;
+    height: 901px;
   
     display: inline-block;
     overflow-y: auto;
@@ -33,7 +33,7 @@
 .notes-main{
     /* border: solid black 2px; */
     width: 473px;
-    height: 898px;
+    height: 901px;
     float: right;
     word-break: break-all;
     overflow-y: auto;
@@ -99,7 +99,7 @@
   }
 
   .sidebar-note:hover {
-    background: white;
+    background: #d8bac0ab;
   }
   .sidebar-note.active{
     background: rgb(71, 120, 227);
@@ -137,6 +137,7 @@
   .back-to-contents{
     position: absolute;
     right: 15px;
+    border-radius: 25px;
     /* display: inline-block; */
     
   }
@@ -177,10 +178,22 @@
     width: 430px;
   }
 
+
+  .edit-button{
+    border-radius: 25px;
+  }
+
+  /* DARK MODE */
+
   #dark .notesContainer{
-    background-color: rgb(0, 0, 153);
+    background-color: rgb(0, 34, 102)
     
   }
 
+  #dark .preview-content{
+    color: white;
+  }
+
+  
   
  

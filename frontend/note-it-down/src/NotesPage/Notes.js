@@ -5,6 +5,8 @@ import NotesSearch from "./NotesSearch";
 
 const Notes = ({returnToContents, categoryId}) => {
 
+  // let doesAnimation = sessionStorage.getItem("doesAnimation")
+
 
   useEffect(() => {if (categoryId !== null) {fetch(`http://localhost:8080/category/${categoryId}/pages`)
   .then(response => response.json())
@@ -58,13 +60,16 @@ const Notes = ({returnToContents, categoryId}) => {
   noteShown={noteShown} 
   setNoteShown={setNoteShown} />
 
-  const notesMain = <NotesMain
+  const notesMain = <> 
+   <NotesMain
   notes = {notes}
   noteShown={noteShown} 
   onUpdateNote={onUpdateNote}/>
+  </>
 
   return(
     <>
+      {sessionStorage.getItem("doesNotesAnimation") && <div className="forwards pageCover"></div>}
       <div className="notesContainer">
 
       <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>

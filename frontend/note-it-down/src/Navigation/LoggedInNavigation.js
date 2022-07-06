@@ -2,12 +2,16 @@ import ContentPage from '../Contents/ContentPage'
 import Notes from '../NotesPage/Notes';
 import Settings from '../Settings/Settings';
 import TabContainer from '../Tabs/TabContainer';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const LoggedInNavigation = ({ logout}) => {
 
     useEffect(() => {
         setTimeout(() => {sessionStorage.removeItem("doesAnimation")}, 3000)
+    })
+
+    useEffect(() => {
+        setTimeout(() => {sessionStorage.removeItem("doesNotesAnimation")}, 3000)
     })
 
     const [pageSelected, setPageSelected] = useState(sessionStorage.getItem("currentCategory"));
@@ -17,12 +21,14 @@ const LoggedInNavigation = ({ logout}) => {
     const selectPage = (event) => {
         sessionStorage.setItem("currentCategory", event.target.dataset.category)
         sessionStorage.setItem("currentCategoryName", event.target.dataset.title)
+        sessionStorage.setItem("doesNotesAnimation", true);
         sessionStorage.setItem("currentPage", event.target.id)
         setCategoryId(event.target.dataset.category);
         setPageSelected(true);
     }
 
     const returnToContents = () => {
+        sessionStorage.setItem("doesNotesAnimation", true)
         sessionStorage.removeItem("currentPage")
         sessionStorage.removeItem("currentCategory")
         sessionStorage.removeItem("currentCategoryName")
@@ -34,16 +40,21 @@ const LoggedInNavigation = ({ logout}) => {
 
     const goToSettings = () => {
         sessionStorage.setItem("settingsPage", true);
+        sessionStorage.setItem("doesNotesAnimation", true);
         setSettingsSelected(true);
     }
 
     const clickTab = (event) => {
-        sessionStorage.setItem("currentCategory", event.target.id)
-        sessionStorage.setItem("currentCategoryName", event.target.dataset.title)
-        sessionStorage.removeItem("settingsPage")
-        setCategoryId(event.target.id)
-        setPageSelected(true)
-        setSettingsSelected(false)
+        window.location.reload();
+        sessionStorage.setItem("doesNotesAnimation", true);
+            sessionStorage.setItem("currentCategory", event.target.id);
+            sessionStorage.setItem("currentCategoryName", event.target.dataset.title);
+            sessionStorage.removeItem("settingsPage")
+            setCategoryId(event.target.id)
+            setPageSelected(true)
+            setSettingsSelected(false)
+
+
     }
 
 
