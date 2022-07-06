@@ -166,4 +166,8 @@
   .title-input{
     width: 430px;
   }
+
+  #dark .notesContainer{
+    background-color: blue;
+  }
  
