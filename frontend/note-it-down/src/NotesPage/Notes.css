@@ -127,7 +127,9 @@
   }
 
   .back-to-contents{
-    display: inline-block;
+    position: absolute;
+    right: 15px;
+    /* display: inline-block; */
     
   }
 

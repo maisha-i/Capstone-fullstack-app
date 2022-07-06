@@ -32,6 +32,7 @@ const Settings = ({returnToContents, logout}) => {
     return(
         <>
             <div className="container-settings">
+            <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
                 <div className="container-box">
                     <div className="leftbox">
                         <nav>
@@ -70,7 +71,7 @@ const Settings = ({returnToContents, logout}) => {
                 </div>
             </div>
 
-        <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
+        
         </>
     )
 }
