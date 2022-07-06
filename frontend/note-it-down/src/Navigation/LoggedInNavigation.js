@@ -39,6 +39,7 @@ const LoggedInNavigation = ({ logout}) => {
     const clickTab = (event) => {
         sessionStorage.setItem("currentCategory", event.target.id)
         sessionStorage.setItem("currentCategoryName", event.target.dataset.title)
+        sessionStorage.removeItem("settingsPage")
         setCategoryId(event.target.id)
         setPageSelected(true)
         setSettingsSelected(false)
