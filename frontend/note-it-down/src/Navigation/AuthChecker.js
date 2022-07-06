@@ -47,6 +47,7 @@ const AuthChecker = () => {
         sessionStorage.removeItem("currentPage");
         sessionStorage.removeItem("currentCategory");
         sessionStorage.removeItem("currentCategoryName");
+        sessionStorage.removeItem("settingsPage");
         setUser({
             email: '',
             password: ''
