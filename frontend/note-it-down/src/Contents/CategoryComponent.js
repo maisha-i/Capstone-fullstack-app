@@ -76,7 +76,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
                 })
         
     return(
-        <section>
+        <section className='category-content'>
 
 <button id="deleteCategoryButton" onClick={() => {
                 handleDeleteCategory(category.id)

@@ -22,12 +22,11 @@ const AddNewCategory = ({addNewCategoryToState}) => {
     return(
         <>
             <div onClick={handleCoverClick} className="form-cover">
-                <p><strong>+</strong></p>
-                <p>Add New Category </p>   
+                <p id="category-text"><strong>+</strong>Add New Category </p>   
             </div>
 
             <form className="addNewCategory-form" onSubmit={handleCategoryAdd}>
-                <input className="title-input" type="text" onChange={(event) => setNewTitle(event.target.value)} value={newTitle}/>
+                <input className="title-input-category" type="text" onChange={(event) => setNewTitle(event.target.value)} value={newTitle}/>
                 <input type="submit" value="Add Category" />
             </form>
         
