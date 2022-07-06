@@ -14,9 +14,10 @@
 
 .sidebar{
   position: absolute;
-  border-right: solid black 2px;
+
     width: 220px;
-    height: 948px;
+    height: 898px;
+  
     display: inline-block;
     overflow-y: auto;
 }
@@ -24,7 +25,7 @@
 .notes-main{
     /* border: solid black 2px; */
     width: 473px;
-    height: 948px;
+    height: 898px;
     float: right;
     word-break: break-all;
     overflow-y: auto;
