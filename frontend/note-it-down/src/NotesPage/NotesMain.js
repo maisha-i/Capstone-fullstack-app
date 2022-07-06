@@ -71,7 +71,7 @@ function NotesMain({notes, noteShown, onUpdateNote}){
 
             <h1 className="preview-title">{currentPage.title}</h1>
 
-            <div className="preview-content">{currentPage.content}</div>
+            <div className="preview-content"><p>{currentPage.content}</p></div>
 
         </div>
     </div>}

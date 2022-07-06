@@ -12,6 +12,10 @@
   background: #d8bac0ab;
 }
 
+.notesContainer p {
+  border-bottom: none;
+}
+
 .sidebar{
   position: absolute;
   background-color: #a14758ab;
@@ -20,6 +24,10 @@
   
     display: inline-block;
     overflow-y: auto;
+}
+
+.sidebar p {
+  font-size: medium;
 }
 
 .notes-main{

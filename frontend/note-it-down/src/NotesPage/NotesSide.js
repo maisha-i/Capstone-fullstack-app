@@ -30,11 +30,11 @@ function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
             
             <div className="sidebar-note-title"> 
             
-            <strong>{note.title}</strong>
+            <h3><strong>{note.title}</strong></h3>
 
             <button id="deleteButton" onClick={() => {
                 onDeleteNote(note.id)
-            }}>Delete</button>
+            }}>DELETE</button>
 
             </div>
 
