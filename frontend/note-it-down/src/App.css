@@ -20,11 +20,12 @@
   position: absolute;
   background-color: #f2e5d9;
   background-image: url(./Images/background.png);
+  background-size: 100%;
   top: 50px;
   left: 80px;
   box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
   z-index: 2;
-  transition: 1s ease-in-out;
+  transition: background-image 1s ease-in-out;
 
 
 }
@@ -53,7 +54,7 @@ h1{
     width: 700px;
     background-image: url(./Images/dark.png);
     background-size: 710px;
-    transition:1s ease-in-out;
+    transition: background-image 1s ease-in-out;
     background-size: cover;
 
     /* filter: brightness(60%); */
@@ -68,6 +69,8 @@ h1{
     width: 100vw;
     height: 100px;
     justify-content: center;
+    /* position: absolute; */
+
   }
 
   
