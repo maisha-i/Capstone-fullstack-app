@@ -91,7 +91,7 @@
   }
 
   .sidebar-note:hover {
-    background: white;
+    background: #d8bac0ab;
   }
   .sidebar-note.active{
     background: rgb(71, 120, 227);
@@ -129,6 +129,7 @@
   .back-to-contents{
     position: absolute;
     right: 15px;
+    border-radius: 25px;
     /* display: inline-block; */
     
   }
@@ -167,6 +168,11 @@
 
   .title-input{
     width: 430px;
+  }
+
+
+  .edit-button{
+    border-radius: 25px;
   }
 
   /* DARK MODE */
