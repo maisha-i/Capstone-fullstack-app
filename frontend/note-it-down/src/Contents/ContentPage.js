@@ -100,7 +100,8 @@ const ContentPage = ({selectPage, goToSettings}) => {
             <a onClick={goToSettings} className="settingsIcon" >
                 <AiFillSetting />
             </a>
-            
+                        <div className="container-box-content"> 
+
             {doesAnimation && dummyCover}
 
             {/* To Do List */}
@@ -116,9 +117,7 @@ const ContentPage = ({selectPage, goToSettings}) => {
                 <AddNewCategory addNewCategoryToState={addNewCategoryToState}/>
             </div>
 
-        
-
-        
+            </div>
          </div >
     );
 

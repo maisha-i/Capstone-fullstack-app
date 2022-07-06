@@ -17,3 +17,7 @@
 .cross-symbol{
     display: inline;
 }
+
+h1 #Category--heading{
+margin-top: 0;
+}

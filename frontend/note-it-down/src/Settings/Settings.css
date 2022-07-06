@@ -6,7 +6,8 @@
     width: 700px;
     position: absolute;
     background-color: #f2e5d9;
-    /* background-image: url(/Users/maisha/capstone-fullstack-app/frontend/note-it-down/src/Images/settings3.png); */
+    background-image: url(/Users/maisha/capstone-fullstack-app/frontend/note-it-down/src/Images/settings.png);
+    background-size: 710px;
     top: 50px;
     left: 80px;
     box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
@@ -15,7 +16,7 @@
   }
 
   .container-box{
-      background: white;
+      background: rgba(255, 255, 255, 0.701);
       width: 540px;
       height: 850px;
       margin: 0 auto;
@@ -60,7 +61,7 @@
   } */
 
   .rightbox{
-      width: 60%;
+      width: 75%;
       margin-left: 37%;
   }
 

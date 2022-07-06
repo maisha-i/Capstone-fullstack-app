@@ -75,7 +75,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
                 })
         
     return(
-        <section>
+        <section className='category-content'>
 
             <h1 onDoubleClick={handleDoubleClick} id={`Category--heading${id}`}>{title}</h1>
             <ul className="contents-page--page-list">
