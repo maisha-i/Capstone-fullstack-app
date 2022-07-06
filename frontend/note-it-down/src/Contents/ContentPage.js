@@ -5,12 +5,12 @@ import ToDoList from "./ToDoList";
 import "./ContentPage.css"
 import LoginDummyFile from "../Animation/LoginDummyFile"
 import { AiFillSetting } from "react-icons/ai";
+import Settings from "../Settings/Settings";
 
 
 const ContentPage = ({selectPage, goToSettings}) => {
 
     const doesAnimation = sessionStorage.getItem("doesAnimation")  //True or False
-    // const doesAnimation = false;
 
     const currentUserId = sessionStorage.getItem("userId");
     const [categories, setCategories] = useState([]);
@@ -94,8 +94,17 @@ const ContentPage = ({selectPage, goToSettings}) => {
     // })
 
     return(
-
+        <>
+        {sessionStorage.getItem("doesNotesAnimation") && <div className="backwards pageCover"></div>}
+        {sessionStorage.getItem("doesNotesAnimation") && <div className="container-settings dummySettings">
+                <div className="container-box "></div>
+                <div className="leftBox "></div>
+                <div className="rightBox "></div>
+            
+            </div>}
+        
         <div className="contentPage--container">
+
 
             <a onClick={goToSettings} className="settingsIcon" >
                 <AiFillSetting />
@@ -120,6 +129,7 @@ const ContentPage = ({selectPage, goToSettings}) => {
 
         
          </div >
+        </>
     );
 
 

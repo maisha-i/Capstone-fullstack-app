@@ -11,7 +11,7 @@ const TabContainer = ({clickTab, categoryId}) => {
         fetch(`http://127.0.0.1:8080/user/${currentUserId}/categories`)
             .then(response => response.json())
             .then(data => setCategories(data))
-    }, [categories])
+    }, [])
 
     const tabList = categories.filter(category => category.title !== "To Do List").map( category => {
         return(

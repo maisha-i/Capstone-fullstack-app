@@ -31,6 +31,8 @@ const Settings = ({returnToContents, logout}) => {
 
     return(
         <>
+      {sessionStorage.getItem("doesNotesAnimation") && <div className="forwards pageCover"></div>}
+      
             <div className="container-settings">
                 <div className="container-box">
                     <div className="leftbox">

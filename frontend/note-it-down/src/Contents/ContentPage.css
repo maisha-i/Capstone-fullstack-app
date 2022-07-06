@@ -58,18 +58,15 @@
 
 
 
-@keyframes flip {
-    from{
-    }
-    to{
-        transform: rotateY(-360deg);
-        z-index: -2;
-    }
-}
-
 .settingsIcon svg{
     height: 2.5em;
     width: 2.5em;
     margin: 5px;
     position:fixed;
+}
+
+@keyframes comeForward {
+    from{z-index: 0;}
+    to{z-index: 3}
+    
 }

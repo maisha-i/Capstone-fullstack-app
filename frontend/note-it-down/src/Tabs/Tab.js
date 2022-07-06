@@ -9,6 +9,8 @@ const Tab = ({title, id, clickTab, categoryId}) => {
 
     useEffect(() => {setCurrentTab(id == categoryId)}, [categoryId])
 
+    
+
     return(
         <div className='indivdualTabContainer'>
         <div className={currentTab? 'tabTriangleBefore active':'tabTriangleBefore'} 

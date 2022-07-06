@@ -71,3 +71,63 @@ h1{
   }
 
   
+
+  /* Animations */
+
+  .pageCover{
+    position: absolute;
+    width: 700px;
+    height: 1000px;
+    top: 50px;
+    left: 80px;
+    background-color: #f2e5d9;
+    transform-origin: -30px;
+  }
+
+  .backwards{
+    animation: back 1s;
+    animation-fill-mode: backwards;
+  }
+
+  .forwards{
+    animation: flip 1s;
+    animation-fill-mode: forwards;
+
+  }
+
+  .dummySettings{
+    z-index: 2;
+    animation: hide .1s 1s;
+    animation-fill-mode: forwards;
+    transform-origin: left;
+    
+  }
+
+ 
+
+  @keyframes flip {
+    from{
+      z-index: 2;
+    }
+    to{
+        transform: rotateY(-360deg);
+        z-index: -3;
+    }
+}
+
+@keyframes back {
+  from{
+    z-index: -2
+  }
+  to{
+      transform: rotateY(360deg);
+      z-index: 3;
+  }
+}
+
+@keyframes hide {
+  from{z-index: 3s;}
+  to{
+    /* transform: rotateY(30deg); */
+  z-index: -3}
+}
