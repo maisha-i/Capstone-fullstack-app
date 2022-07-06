@@ -14,7 +14,7 @@
 
 .sidebar{
   position: absolute;
-
+  background-color: #a14758ab;
     width: 220px;
     height: 898px;
   
@@ -170,6 +170,9 @@
   }
 
   #dark .notesContainer{
-    background-color: blue;
+    background-color: rgb(0, 0, 153);
+    
   }
+
+  
  
