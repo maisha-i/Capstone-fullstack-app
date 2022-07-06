@@ -3,13 +3,17 @@ import { RiUser3Fill} from "react-icons/ri";
 import { CgDisplaySpacing } from "react-icons/cg";
 import { MdPrivacyTip } from "react-icons/md";
 import { AiFillSetting } from "react-icons/ai";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Appearance from "./Appearance";
 import Privacy from "./Privacy";
 import Account from "./Account";
 import Profile from "./Profile";
 
 const Settings = ({returnToContents, logout}) => {
+
+    useEffect(() => {
+        setTimeout(() => tabs(0), 100)
+    }, [])
 
     const profileRef = useRef();
     const appearanceRef = useRef();
@@ -26,7 +30,7 @@ const Settings = ({returnToContents, logout}) => {
         tab[panelIndex].current.style.display = "block";
     }
 
-
+    
        
 
     return(
