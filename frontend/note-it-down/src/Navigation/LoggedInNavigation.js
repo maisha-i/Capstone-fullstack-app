@@ -18,6 +18,7 @@ const LoggedInNavigation = ({ logout}) => {
         sessionStorage.setItem("currentCategory", event.target.dataset.category)
         sessionStorage.setItem("currentCategoryName", event.target.dataset.title)
         sessionStorage.setItem("currentPage", event.target.id)
+        setCategoryId(event.target.dataset.category);
         setPageSelected(true);
     }
 
