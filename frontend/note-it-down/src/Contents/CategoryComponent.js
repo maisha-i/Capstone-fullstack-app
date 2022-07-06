@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import AddNewPage from './AddNewPage';
 import './CategoryComponent.css'
 
-const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage}) => {
+const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage, handleDeleteCategory}) => {
 
     const {id, title, pages} = category;
 
@@ -35,7 +35,8 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
         // document.addEventListener("click", offClick)
         
     }
-
+ 
+  
     
     const offClick = (event) => {
         if(event.target.id !== "newEditInput"){
@@ -76,6 +77,10 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
         
     return(
         <section className='category-content'>
+
+<button id="deleteCategoryButton" onClick={() => {
+                handleDeleteCategory(category.id)
+            }}>Delete</button>
 
             <h1 onDoubleClick={handleDoubleClick} id={`Category--heading${id}`}>{title}</h1>
             <ul className="contents-page--page-list">

@@ -9,6 +9,8 @@
   top: 50px;
   left: 80px;
   box-shadow: 40px 0 100px rgba(0, 0, 0, 0.886);
+  overflow-y: auto;
+
 
 }
 
@@ -114,15 +116,6 @@
 
 
 
-@keyframes flip {
-    from{
-    }
-    to{
-        transform: rotateY(-360deg);
-        z-index: -2;
-    }
-}
-
 .settingsIcon svg{
     height: 2.5em;
     width: 2.5em;
@@ -131,3 +124,8 @@
     position:fixed;
 }
 
+@keyframes comeForward {
+    from{z-index: 0;}
+    to{z-index: 3}
+    
+}

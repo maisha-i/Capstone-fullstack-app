@@ -5,12 +5,12 @@ import ToDoList from "./ToDoList";
 import "./ContentPage.css"
 import LoginDummyFile from "../Animation/LoginDummyFile"
 import { AiFillSetting } from "react-icons/ai";
+import Settings from "../Settings/Settings";
 
 
 const ContentPage = ({selectPage, goToSettings}) => {
 
     const doesAnimation = sessionStorage.getItem("doesAnimation")  //True or False
-    // const doesAnimation = false;
 
     const currentUserId = sessionStorage.getItem("userId");
     const [categories, setCategories] = useState([]);
@@ -49,13 +49,12 @@ const ContentPage = ({selectPage, goToSettings}) => {
             .then(console.log("Got here"))
     }
 
-//Delete category
-
-    const onDeleteCategory = (idToDeleteCategory) => {
+    const handleDeleteCategory = (idToDeleteCategory) => {
         fetch(`http://localhost:8080/category/${idToDeleteCategory}`, {method: "DELETE"})
         
         setCategories(categories.filter((category) => category.id !== idToDeleteCategory));
       };
+
 
 
     const addNewPageToState = (categoryId, title) => {
@@ -83,7 +82,7 @@ const ContentPage = ({selectPage, goToSettings}) => {
 
     const categoriesSection = categories.filter(category => category.title !== "To Do List").map( category => {
         return(
-            <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState} selectPage={selectPage}/>
+            <CategoryComponent updateTitle={updateTitle} key={category.id} category={category} addNewPageToState={addNewPageToState} selectPage={selectPage} handleDeleteCategory={handleDeleteCategory}/>
         )
     })
 
@@ -94,8 +93,17 @@ const ContentPage = ({selectPage, goToSettings}) => {
     // })
 
     return(
-
+        <>
+        {sessionStorage.getItem("doesNotesAnimation") && <div className="backwards pageCover"></div>}
+        {sessionStorage.getItem("doesNotesAnimation") && <div className="container-settings dummySettings">
+                <div className="container-box "></div>
+                <div className="leftBox "></div>
+                <div className="rightBox "></div>
+            
+            </div>}
+        
         <div className="contentPage--container">
+
 
             <a onClick={goToSettings} className="settingsIcon" >
                 <AiFillSetting />
@@ -119,6 +127,7 @@ const ContentPage = ({selectPage, goToSettings}) => {
 
             </div>
          </div >
+        </>
     );
 
 

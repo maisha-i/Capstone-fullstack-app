@@ -15,10 +15,12 @@
     width: 100%;
     height: 100%;
     border-radius: 0 5px 5px 0;
+    box-shadow: 40px 100px 100px rgba(0, 0, 0, .25);
 }
 
 .tabContainer .tab.active{
     background-color: #ce8c8cab;
+    box-shadow: none;
 }
 
 .tabTriangleBefore {
@@ -32,7 +34,11 @@
 
 .tabTriangleBefore.active{
     border-color: transparent transparent transparent #ce8c8cab;
+    border-color: transparent transparent transparent #ce8c8cab ;
+    box-shadow: 40px 100px 100px rgba(0, 0, 0, .2);
 }
+
+
 
 .tabTriangleAfter {
     width: 0;
@@ -44,6 +50,13 @@
 
 .tabTriangleAfter.active{
     border-color: #ce8c8cab transparent transparent transparent;
+    border-color: #c0dcb5 transparent transparent transparent;
+    box-shadow: 40px 100px 100px rgba(0, 0, 0, .2);
+}
+
+.tabTriangleAfter.active{
+    border-color: #ce8c8cab transparent transparent transparent;
+    box-shadow: none;
 }
 
 .indivdualTabContainer{
@@ -65,8 +78,38 @@
 .tabContainer p{
     text-align: center;
     font-family: 'Square Peg', cursive, sans-serif, monospace;
-    font-size: 2.5em;
+    font-size: 3em;
     transform: rotate(90deg);
     font-weight: bolder;
     border-bottom: none;
+}
+
+/* Dark Theme  */
+
+#dark .tabContainer .tab {
+    background-color: #050c41;
+}
+
+#dark .tabTriangleBefore {
+    border-color: transparent transparent transparent #050c41;
+}
+
+#dark .tabTriangleAfter {
+    border-color: #050c41 transparent transparent transparent ;
+}
+
+#dark .tabContainer .tab.active {
+    background-color: #411840;
+}
+
+#dark .tabTriangleBefore.active {
+    border-color: transparent transparent transparent #411840;
+}
+
+#dark .tabTriangleAfter.active {
+    border-color: #411840 transparent transparent transparent ;
+}
+
+#dark .tabContainer p {
+    color: #f2e5d9;
 }
