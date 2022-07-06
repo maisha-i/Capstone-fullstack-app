@@ -9,7 +9,7 @@ import Privacy from "./Privacy";
 import Account from "./Account";
 import Profile from "./Profile";
 
-const Settings = ({returnToContents}) => {
+const Settings = ({returnToContents, logout}) => {
 
     const profileRef = useRef();
     const appearanceRef = useRef();
@@ -24,7 +24,7 @@ const Settings = ({returnToContents}) => {
             node.current.style.display = "none";
         });
         tab[panelIndex].current.style.display = "block";
-    } 
+    }
 
 
        
@@ -64,7 +64,7 @@ const Settings = ({returnToContents}) => {
                         </div>   
 
                         <div ref={accountRef} className="account tabShow">
-                            <Account/>
+                            <Account logout={logout}/>
                         </div>  
                     </div>
                 </div>

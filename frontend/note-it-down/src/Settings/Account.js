@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 
-const Account = () => {
+const Account = ({logout}) => {
 
     const currentUserId = sessionStorage.getItem("userId");
     const [DeletedUser, setDeletedUser] = useState("");
@@ -15,10 +15,11 @@ const Account = () => {
                 }
         }
 
-        if (window.confirm("Are you sure you want to delete your account?") ) {
+        if (window.confirm("Are you sure you want to delete your account? This will permentantly delete your acccount and erase all your notes.") ) {
             fetch(`http://127.0.0.1:8080/user/delete/${currentUserId}`, options)
-            .then(response => window.location.replace("https://www.w3schools.com"))
-            .catch(err => console.log(err)) 
+            .catch(err => console.log(err))             
+            .then(() => logout())
+
         }
     }
 

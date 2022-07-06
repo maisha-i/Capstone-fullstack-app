@@ -48,7 +48,7 @@ const LoggedInNavigation = ({ logout}) => {
  return(
      <> 
         {pageSelected ? <Notes returnToContents={returnToContents} categoryId={categoryId} /> : null}
-        {settingsSelected ? <Settings returnToContents={returnToContents}/> : null}
+        {settingsSelected ? <Settings returnToContents={returnToContents} logout={logout}/> : null}
         {!pageSelected && !settingsSelected ? 
             <ContentPage selectPage={selectPage} goToSettings={goToSettings} /> : null}
         <TabContainer clickTab={clickTab} categoryId={categoryId} />
