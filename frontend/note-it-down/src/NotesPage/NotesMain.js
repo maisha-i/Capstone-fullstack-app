@@ -57,9 +57,9 @@ function NotesMain({notes, noteShown, onUpdateNote}){
     const editForm = (<div className="main-note-edit">
         <form onSubmit={handleFormSubmit}>
 
-        <input className='title-input' type="text" id="title" value={currentPage.title} onChange={(e) => onEditField("title", e.target.value)} autoFocus />
-        <textarea className='content-input'id="body" placeholder="Write your note here..." value={currentPage.content} onChange={(e) => onEditField("content", e.target.value)}/>
-        <input type="submit" value="Save"/>
+        <input className='title-input' type="text" value={currentPage.title} onChange={(e) => onEditField("title", e.target.value)} autoFocus />
+        <textarea className='content-input' placeholder="Write your note here..." value={currentPage.content} onChange={(e) => onEditField("content", e.target.value)}/>
+        <input type="submit" value="Save" id="note-save-btn"/>
 
          </form>
     </div>)

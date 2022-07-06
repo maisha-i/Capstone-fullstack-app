@@ -9,10 +9,13 @@ export const ThemeContext = createContext(null)
 
 function App() {
 
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(sessionStorage.getItem("mode"));
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
+    if(sessionStorage.getItem("mode") == "dark"){
+      sessionStorage.setItem("mode", "light")
+    } else{sessionStorage.setItem("mode", "dark")}
   }
 
   return (

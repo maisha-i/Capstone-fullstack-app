@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Notes.css"
+import { ImBin2 } from "react-icons/im";
+
 
 function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
 
@@ -34,7 +36,7 @@ function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
 
             <button id="deleteButton" onClick={() => {
                 onDeleteNote(note.id)
-            }}>DELETE</button>
+            }}><ImBin2/></button>
 
             </div>
 

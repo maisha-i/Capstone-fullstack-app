@@ -10,7 +10,7 @@
     align-items: center;
     text-align: center;
     margin-bottom: 40px;
-    margin-left: 100px;
+    margin-left: 120px;
 }
 
 #category-text{
@@ -52,4 +52,19 @@
 
     ;
 
+}
+
+#dark .form-cover{
+    height: 50px;
+    width: 50%;
+    background: linear-gradient(45deg,#7f5f75a9, #d675a4b9);
+    border-radius: 20px;
+    border: 1px solid rgba(101, 77, 82, 0.557);
+    box-shadow: 9px 9px 20px rgba(134, 84, 84, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-left: 120px;
 }

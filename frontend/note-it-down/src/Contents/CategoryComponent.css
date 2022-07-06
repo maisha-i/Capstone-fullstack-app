@@ -11,7 +11,10 @@
 
 
 .contents-page--list-item{
-    margin: 5px;
+    margin: 1px;
+    font-family: 'Square Peg', cursive, sans-serif, monospace;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .cross-symbol{
@@ -20,4 +23,9 @@
 
 h1 #Category--heading{
 margin-top: 0;
+}
+
+.category-content button{
+    background: rgba(105, 123, 105, 0.454);
+
 }

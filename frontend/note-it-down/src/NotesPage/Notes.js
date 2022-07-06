@@ -75,13 +75,10 @@ const Notes = ({returnToContents, categoryId}) => {
       <button className='back-to-contents' onClick={returnToContents}>Back to Contents</button>
 
       <NotesSearch handleSearchNote={setSearchNote} />  
-
-      
-    
-      {notesSide}
-
-      {notesMain}
-
+        <div className="container-box-notes">
+          {notesSide}
+          {notesMain}
+        </div>
       
 
       </div>

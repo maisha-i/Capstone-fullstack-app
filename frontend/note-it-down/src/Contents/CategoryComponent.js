@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import AddNewPage from './AddNewPage';
 import './CategoryComponent.css'
+import { ImBin2 } from "react-icons/im";
+
 
 const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage, handleDeleteCategory}) => {
 
@@ -77,20 +79,17 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
         
     return(
         <section className='category-content'>
-
-<button id="deleteCategoryButton" onClick={() => {
-                handleDeleteCategory(category.id)
-            }}>Delete</button>
-
+        
             <h1 onDoubleClick={handleDoubleClick} id={`Category--heading${id}`}>{title}</h1>
+            
             <ul className="contents-page--page-list">
                 {pageListItem}
                 <AddNewPage name={"Add new page"} category={category} addNewPageToState={addNewPageToState}/>
             </ul>
-        
-        
-        
-        
+            
+            <button id="deleteCategoryButton" onClick={() => {
+                handleDeleteCategory(category.id)
+            }}><ImBin2/></button>
          </section>
     )
 }

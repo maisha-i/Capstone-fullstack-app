@@ -1,24 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
 .notesContainer {
-  position: absolute;
   height: 1000px;
   width: 700px;
+  position: absolute;
+  background-image: url(/Users/maisha/capstone-fullstack-app/frontend/note-it-down/src/Images/settings.png);
   background-color: #f2e5d9;
+  background-size: 710px;
   top: 50px;
   left: 80px;
-  box-shadow: 40px 0 100px rgba(0, 0, 0, .2);  
+  box-shadow: 40px 0 100px rgba(0, 0, 0, 0.886);
+  /* overflow-y: auto; */
+  
+}
+
+.container-box-notes{
+  background: rgba(255, 255, 255, 0.844);
+  width: 600px;
+  height: 900px;
+  margin: 0 auto;
+  margin-top: 3%; 
+  box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.583) 
 }
 
 .notesContainer button {
-  background: #d8bac0ab;
+  background: #b2744191;
 }
 
 .notesContainer p {
   border-bottom: none;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  width: 75%;
+
 }
 
 .sidebar{
   position: absolute;
-  background-color: #a14758ab;
+  background-color: #b2744191;
     width: 220px;
     height: 901px;
   
@@ -32,12 +51,11 @@
 
 .notes-main{
     /* border: solid black 2px; */
-    width: 473px;
+    width: 380px;
     height: 901px;
     float: right;
     word-break: break-all;
-    overflow-y: auto;
-   
+    /* overflow-y: auto; */
 }
 
 
@@ -61,8 +79,7 @@
     height: 50px;
     width: 180px;
     margin: 5px auto;
-    border-radius: 25px;
-  
+    border-radius: 25px;  
   }
 
   .app-sidebar-header h1 {
@@ -78,11 +95,13 @@
   .sidebar-note-title {
     display: flex;
     justify-content: space-between;
+    font-family: 'Square Peg', cursive, sans-serif, monospace;
+
   }
   .sidebar-note button {
     border-radius: 20px;
-    background: #d8bac0ab;
-    color: red;
+    background: #b2744191;
+    color: black;
   }
 
   .sidebar-note p {
@@ -91,33 +110,56 @@
   
   .title-input{
       display: block;
-      width: 500px;
+      width: 300px;
       margin-top: 20px;
-      margin-left: 20px;
+      margin-left: 40px;
       margin-bottom: 20px;
+
+      border-radius: 20px;
+      background: #e8ddddb9;
+      border: 1px solid #948484;
+      padding-left: 20px;
+      padding-top: 5px;
+      font-size: 30px;
+      letter-spacing: 1px;
+      width: 300px;
+      font-family: 'Square Peg', cursive, sans-serif, monospace;
       
   }
 
   .sidebar-note:hover {
-    background: #d8bac0ab;
+    background: #e8dddd86;
   }
   .sidebar-note.active{
-    background: rgb(71, 120, 227);
+    background: #d69f72ab;
+
     color: white;
   }
 
   .content-input{
-    margin-left: 20px;
-    width: 500px;
-    height: 300px
+    margin-left: 40px;
+    width: 300px;
+    height: 300px;
+    
+    border-radius: 20px;
+    background: #e8ddddb9;
+    border: 1px solid #948484;
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    width: 300px;
+    font-family: 'Square Peg', cursive, sans-serif, monospace;
+    
   }
 
+
   .preview-title{
-    margin-left: 20px;
+    margin-left: 30px;
   }
 
   .preview-content{
-    margin-left: 20px;
+    margin-left: 30px;
   }
 
   .no-note-shown{
@@ -131,7 +173,11 @@
   }
 
   .no-note-shown h2 {
-    margin: 200px auto;
+    margin-left: 150px;  
+    margin-top: 200px;  
+    color: #b2744191;
+    
+
   }
 
   .back-to-contents{
@@ -170,18 +216,16 @@
     outline: none;
   }
 
-  .content-input{
-    width: 430px;
-  }
-
-  .title-input{
-    width: 430px;
-  }
 
 
   .edit-button{
     border-radius: 25px;
-  }
+    margin-bottom: 50px;
+    margin-left: 100px;}
+    
+#note-save-btn{
+  margin-left: 200px;
+}
 
   /* DARK MODE */
 

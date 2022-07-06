@@ -104,7 +104,6 @@ const ContentPage = ({selectPage, goToSettings}) => {
         
         <div className="contentPage--container">
 
-
             <a onClick={goToSettings} className="settingsIcon" >
                 <AiFillSetting />
             </a>
