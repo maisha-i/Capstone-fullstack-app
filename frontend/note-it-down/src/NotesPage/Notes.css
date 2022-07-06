@@ -132,17 +132,19 @@
   .search {
     display: flex;
     align-items: center;
-    background-color: rgb(233, 233, 233);
+    background-color: white;
     border-radius: 10px;
     padding: 5px;
     margin-bottom: 10px;
     margin-top: 10px;
+    margin-left: 5px;
     height: 20px;
+    width: 200px;
   }
   
   .search input {
     border: none;
-    background-color: rgb(233, 233, 233);
+    
    
   }
 
@@ -154,4 +156,11 @@
     outline: none;
   }
 
+  .content-input{
+    width: 430px;
+  }
+
+  .title-input{
+    width: 430px;
+  }
  
