@@ -2,7 +2,7 @@
 -- passwords are all name123 but need to be saved encrypted to work
 INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'James Stillman', 'james@hotmail.com', '$2a$10$N5BtVlBRMXsoM.Q.WQfpWuGBa8yYspDj7ecfIjBLLxLtkirGHqsV.');
 INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Katya Grenier', 'katya@hotmail.com', '$2a$10$WCGeZXm6jek.tLU9Q825G.hmB0izX9E9o3.flKL3iRrXgwlh3xsiC');
-INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Maisha Islam', 'maisha@hotmail.com', '$2a$10$HhACZIvSF1U60QMMR1UJg.Tl3tYcVNrxqxXQZFRETudA738xDYeue');
+INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Maisha Islam', 'maisha@hotmail.com', '$2a$10$8HxymBKK.k0nzvbHzubJReqkKkA4urH4amvN1/kB2t7zNtDp6IIai');
 INSERT INTO USERS (NAME, EMAIL, PASSWORD) VALUES ( 'Nikesh Mistri', 'nikesh@hotmail.com', '$2a$10$g6LrF0be3/lghJ0HsowGUu4eMvnJU6SLt9.CHhuwj92JhuGJ/z6zu');
 
 
