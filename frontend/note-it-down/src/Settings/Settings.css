@@ -95,6 +95,10 @@
       outline: none;
   }
 
+  .container-settings p{
+    color: black;
+  }
+
   p{
     margin-left: 5px;
     margin-top: 10px;
@@ -199,3 +203,7 @@
 #dark .tab svg{
   fill: white;  
 } 
+
+#dark .container-settings p{
+  color: antiquewhite;
+}

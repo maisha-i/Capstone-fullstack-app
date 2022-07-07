@@ -55,6 +55,7 @@
 
 .sidebar p {
   font-size: medium;
+  color: black;
 }
  #dark .sidebar p {
   font-size: medium;
@@ -173,8 +174,9 @@
     margin-left: 30px;
   }
 
-  .preview-content{
+  .preview-content p{
     margin-left: 30px;
+    color: black;
   }
 
   .no-note-shown{
