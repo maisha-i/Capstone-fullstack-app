@@ -52,6 +52,7 @@ const ContentPage = ({selectPage, goToSettings}) => {
         fetch(`http://localhost:8080/category/${idToDeleteCategory}`, {method: "DELETE"})
         
         setCategories(categories.filter((category) => category.id !== idToDeleteCategory));
+        window.location.reload()
       };
 
 

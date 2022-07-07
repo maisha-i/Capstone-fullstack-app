@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# noteItDown
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Organise your day, organise your life!
 
-## Available Scripts
+noteItDown is an app that lets you keep all your notes organised in a digital notebook to store, create and categorise your notes.
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+ noteItDown is created using:
+ - Spring/Spring Security
+ - React
+ - Swagger-ui
+ - H2 
+ and languages
+ - HTML
+ - CSS
+ - Java
+ - JavaScript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to use/run the application
+- Clone the project from https://github.com/maisha-i/Capstone-fullstack-app
+- Open the terminal and run 'npm install'
+- Next run 'npm start' and React will open up the application in a web browser
+- View it on http://localhost:3000 and sign up to log in
+- When logged in, a contents page will be shown where the user can add categories and add notes within those categories
+- User can connect to swagger-ui via http://localhost:8080/swagger-ui/index.html#/ to view GET, POST, PUT, DELETE mappings
+- User can view relations between the objects using the h2 console via http://localhost:8080/h2. Here they can connect to the database and view the tables generated from the application and filter by using SELECT queries.
 
-### `npm test`
+## UML diagrams
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![UML diagram](planning/UML.png)
 
-### `npm run build`
+## Entity Relationship diagrams
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Entity Relationship Diagram](planning/ERD.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Wireframe
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Project Wireframe](planning/Wireframe.png)
 
-### `npm run eject`
+## Functionality
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Login/Register
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The first page of the application is the login page which checks if a user is authenticated using a jwt token. If not, the user is able to login to an existing account or create a new account on the register page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Contents Page
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Once logged in, the user is taken to the contents page where they can see a list of all the categories and notes that they have. They can add/delete categories or add new notes, as well as add, checkoff or delete items from their toDo list. Double clicking on the name of a category allows the user to update the category name. Clicking on a note takes the user to the notes page with that note selected. They are also able to access the settings pages from here.
 
-## Learn More
+### Notes Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+On the notes page, a side bar displays all the notes within the chosen category and add new notes. The main page will display the content of the selected note if there is one. If a note is selected, the user is able to edit and save the content of the note.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Tabs
 
-### Code Splitting
+Once the user is logged in, tabs appear along the side of the notebook which show the names of the note categories the user has. These remain here until the user logs out and allow extra ease of navigation as they allow access directly to the notes page for that category with no note selected.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Settings Page
 
-### Analyzing the Bundle Size
+Via the cog icon you can access the settings page, here you will be able to view and update your profile information as well as delete your account (can't be undone!)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Find us on GitHub:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Katya Grenier](https://github.com/katyagr)
+- [Maisha Islam](https://github.com/maisha-i/)
+- [Nikesh Mistri](https://github.com/nikesh-mistri)
+- [James Stillman](https://github.com/JStillman1)
