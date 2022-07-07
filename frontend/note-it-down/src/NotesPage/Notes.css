@@ -128,7 +128,7 @@
   }
 
   .sidebar-note:hover {
-    background: #e8dddd86;
+    background: #5d4b4b86;
   }
   .sidebar-note.active{
     background: #d69f72ab;
@@ -176,9 +176,6 @@
     margin-left: 150px;  
     margin-top: 200px;  
     color: rgba(140, 177, 140, 0.619);
-
-    
-
   }
 
   .back-to-contents{
@@ -231,14 +228,86 @@
   /* DARK MODE */
 
   #dark .notesContainer{
-    background-color: rgb(0, 34, 102)
+    background-color: rgb(0, 34, 102);
+    background-image: url(../Images/34.jpeg);
     
   }
 
-  #dark .preview-content{
-    color: white;
+  #dark .container-box-notes{
+    background: rgba(37, 38, 57, 0.941);
+    width: 600px;
+    height: 900px;
+    margin: 0 auto;
+    margin-top: 3%; 
+    box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.583); 
+    border: -1em solid white;
   }
 
+ #dark .notesContainer button {
+    background: linear-gradient(45deg,#796d45b9, #cebd838d);
+    border: 1px solid #948484;
+    box-shadow: 9px 9px 20px rgba(134, 84, 84, 0.5);  
+    color: antiquewhite;
+  }
   
+  #dark .notesContainer p {
+    border-bottom: none;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    width: 75%;
+    color: antiquewhite;
+  }
+
+  #dark .sidebar{
+    position: absolute;
+    background: rgba(84, 98, 134, 0.454);
+    box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
+    width: 220px;
+    height: 901px;
+    display: inline-block;
+    overflow-y: auto;
+    border: -1em solid white;
+  }
   
- 
+  #dark .sidebar p {
+    font-size: medium;
+    color: antiquewhite;
+  }
+
+  #dark .title-input{
+    display: block;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background: #453c42a9;
+    border: 1px solid #948484;
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    width: 300px;
+    font-family: 'Square Peg', cursive, sans-serif, monospace;
+    
+}
+  
+#dark .no-note-shown h2 {
+  margin-left: 150px;  
+  margin-top: 400px;  
+  color: #cebd8364;
+}
+
+#dark .sidebar-note-title h3{
+  color: antiquewhite;
+}
+
+#dark .sidebar-note.active{
+  background: #d8bd655c;
+
+  color: white;
+}
+
+#dark .sidebar-note:hover {
+  background: #8381bf47;
+}

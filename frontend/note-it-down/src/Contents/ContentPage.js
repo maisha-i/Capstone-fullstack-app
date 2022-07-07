@@ -107,7 +107,7 @@ const ContentPage = ({selectPage, goToSettings}) => {
             <a onClick={goToSettings} className="settingsIcon" >
                 <AiFillSetting />
             </a>
-                        <div className="container-box-content"> 
+            <div className="container-box-content"> 
 
             {doesAnimation && dummyCover}
 

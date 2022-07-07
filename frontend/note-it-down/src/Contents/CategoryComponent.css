@@ -27,5 +27,25 @@ margin-top: 0;
 
 .category-content button{
     background: rgba(105, 123, 105, 0.454);
+    background: linear-gradient(45deg,#7f5f75a9, #804563b9);
+    border: 1px solid #948484;
+    box-shadow: 9px 9px 20px rgba(134, 84, 84, 0.5); 
+    border-radius: 20px;
+    box-shadow: 9px 9px 20px rgba(134, 84, 84, 0.5);
+}
 
+/* Dark Mode */
+
+#dark #deleteCategoryButton svg{
+    fill: white;
+
+}
+
+#dark .category-content button{
+    background: rgba(105, 123, 105, 0.454);
+    background: linear-gradient(45deg,#7f5f75a9, #804563b9);
+    border: 1px solid #948484;
+    box-shadow: 9px 9px 20px rgba(134, 84, 84, 0.5); 
+    border-radius: 20px;
+    box-shadow: 9px 9px 20px rgba(134, 84, 84, 0.5);
 }
