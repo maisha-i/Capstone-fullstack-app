@@ -53,6 +53,7 @@ h1{
     width: 700px;
     background-image: url(./Images/dark.png);
     background-size: 710px;
+    background-color: darkblue;
     transition: background-image 1s ease-in-out;
     background-size: cover;
 
@@ -84,6 +85,10 @@ h1{
     left: 80px;
     background-color: #f2e5d9;
     transform-origin: -30px;
+  }
+
+  #dark .pageCover{
+    background-color: rgba(40, 40, 56, 0.716);
   }
 
   .backwards{
