@@ -11,11 +11,6 @@
   box-shadow: 40px 0 100px rgba(0, 0, 0, 0.886);
 }
 
-.contentPage--container h1{
-    margin:8px;
-}
-
-
 .container-box-content{
     background: rgba(255, 255, 255, 0.577);
     width: 600px;
@@ -41,6 +36,12 @@
 }
 
 .contentPage--container h1{
+    margin:8px;
+    text-align:left;
+}
+
+#dark .contentPage--container h1{
+    margin:8px;
     text-align:left;
 }
 
@@ -84,7 +85,13 @@ overflow-y: auto;
     margin-top: 0;
 }
 
+
+
 .category-content li{
+    padding: 2px;
+}
+
+#dark .category-content li{
     padding: 2px;
 }
 
@@ -114,6 +121,10 @@ overflow-y: auto;
     grid-area: 1/1;
 }
 .to-do-container h1{
+    margin: 0;
+}
+
+#dark .to-do-container h1{
     margin: 0;
 }
 .toDoList--content{
@@ -168,6 +179,11 @@ overflow-y: auto;
 }
 
 .cover.dummy h1{
+    padding-bottom: 65px;
+    padding-top: 25px;
+}
+
+#dark .cover.dummy h1{
     padding-bottom: 65px;
     padding-top: 25px;
 }
