@@ -22,12 +22,12 @@
     align-items: center;
     padding: 20px 30px;
     width: 400px;
-    border-color: rgba(193, 173, 173, 0.508);
-    background-color: #f6f5f4;
+    border-color: rgba(193, 173, 173, 0.539);
+    background-color: #f6f5f4f2;
     box-shadow: whitesmoke;
     border-radius: 5%;
     border-style: inset;
-    margin-bottom: 350px;
+    margin-bottom: 150px;
 
 }
 
@@ -209,6 +209,61 @@ input::placeholder{
 
 /* Dark Theme */
 
+#dark .container{
+    position: relative;
+    align-items: center;
+    padding: 20px 30px;
+    width: 400px;
+    border-color: rgba(193, 173, 173, 0.755);
+    background-color: #a4adbef5;
+    box-shadow: whitesmoke;
+    border-radius: 5%;
+    border-style: inset;
+    margin-bottom: 150px;
+
+}
+
+#dark .switch{
+    position: absolute;
+    right: 30px;
+    display: flex;
+    border-bottom: 1px solid #313d5b;
+
+}
+
+#dark .switch.active{
+    border-bottom: 1px solid #a14758ab;
+}
+
+#dark .switch:after{
+    content: '';
+    height: 6px;
+    width: 60px;
+    background: #313d5b;
+    border-radius: 60px 60px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    transform: 0.3s ease;
+}
+#dark .switch.active:after{
+    left: 82px;
+    width: 70px;
+    background: #a14758ab;
+}
+
+#dark .login{
+    padding: 5px 12px;
+    background: linear-gradient(45deg,#b8bad9, #313d5b);
+    margin-bottom: 10px;
+    border-radius: 50px;
+    text-align: right;
+    margin-left: 4px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
 #dark #btn-login{
     padding: 5px 25px;
     background: linear-gradient(45deg,#b8bad9, #313d5b);
@@ -221,9 +276,11 @@ input::placeholder{
     transition: 1s ease-in-out;
 }
 
-#dark .login{
+
+
+#dark .signup{
     padding: 5px 12px;
-    background: linear-gradient(45deg,#b8bad9, #313d5b);
+    /* background: linear-gradient(45deg,#d0e6de, #336247); */
     margin-bottom: 10px;
     border-radius: 50px;
     text-align: right;
