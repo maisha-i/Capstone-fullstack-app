@@ -93,13 +93,13 @@ const ContentPage = ({selectPage, goToSettings}) => {
 
     return(
         <>
-        {sessionStorage.getItem("doesNotesAnimation") && <div className="backwards pageCover"></div>}
-        {sessionStorage.getItem("doesNotesAnimation") && <div className="container-settings dummySettings">
-                <div className="container-box "></div>
+        {/* {sessionStorage.getItem("doesNotesAnimation") && <div className="backwards pageCover"></div>} */}
+        {/* {sessionStorage.getItem("doesNotesAnimation") && <div className="container-settings dummySettings"> */}
+                {/* <div className="container-box "></div>
                 <div className="leftBox "></div>
                 <div className="rightBox "></div>
             
-            </div>}
+            </div>} */}
         
         <div className="contentPage--container">
 

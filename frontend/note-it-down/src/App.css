@@ -53,6 +53,7 @@ h1{
     width: 700px;
     background-image: url(./Images/dark.png);
     background-size: 710px;
+    background-color: darkblue;
     transition: background-image 1s ease-in-out;
     background-size: cover;
 
@@ -64,14 +65,35 @@ h1{
   }
 
   .switch-toggle{
-    display: flex;
+    /* display: flex; */
     width: 100vw;
-    height: 100px;
-    justify-content: center;
+    position: absolute;
+    /* height: 100px; */
+    /* justify-content: center; */
+    background-color: transparent;
     /* position: absolute; */
-
+    top:0;
+    left: 0;
+  }
+  .switch-toggle label{
+    position: absolute;
+    top: 5px;
+    left: 300px;
   }
 
+  .switch-toggle .darkmode-switch {
+    position: absolute;
+    top: 10px;
+    left: 480px;
+    
+  }
+
+  .logout-button{
+    position: absolute;
+    z-index: 1;
+    left:400px;
+    top: 1000px;
+  }
   
 
   /* Animations */
@@ -84,6 +106,10 @@ h1{
     left: 80px;
     background-color: #f2e5d9;
     transform-origin: -30px;
+  }
+
+  #dark .pageCover{
+    background-color: rgba(40, 40, 56, 0.716);
   }
 
   .backwards{

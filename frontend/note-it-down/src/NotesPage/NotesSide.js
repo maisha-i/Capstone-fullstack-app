@@ -5,13 +5,6 @@ import { ImBin2 } from "react-icons/im";
 
 function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
 
-    // useEffect(() => {
-    //     if(notes.length !== 0){
-    //         setTitle(notes[0].category.title)
-    //     }},[notes])
-
-    // console.log(sessionStorage.getItem("currentCategoryName"))
-
     return (
         <div className="sidebar">
           <div className="sidebar-header">
@@ -42,12 +35,9 @@ function NotesSide({notes, onAddNote, onDeleteNote, noteShown, setNoteShown}){
 
             <p>{note.content && note.content.substr(0, 22)+ "..."}</p>
 
-           
-
             </div>
             ))}
 
-           
         </div>
         </div>
 

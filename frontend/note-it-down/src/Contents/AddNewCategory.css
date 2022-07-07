@@ -61,18 +61,18 @@
 }
 
 #dark .form-cover{
-    height: 50px;
-    width: 50%;
+    /* height: 50px;
+    width: 50%; */
     background: linear-gradient(45deg,#796d45b9, #cebd838d);
     border: 1px solid #948484;
     box-shadow: 9px 9px 20px rgba(134, 84, 84, 0.5);  
-    border-radius: 20px;
+    /* border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
-    margin-left: 120px;
+    text-align: center; */
+    /* margin-bottom: 40px;
+    margin-left: 120px; */
 }
 
 

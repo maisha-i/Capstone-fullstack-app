@@ -5,9 +5,6 @@ import NotesSearch from "./NotesSearch";
 
 const Notes = ({returnToContents, categoryId}) => {
 
-  // let doesAnimation = sessionStorage.getItem("doesAnimation")
-
-
   useEffect(() => {if (categoryId !== null) {fetch(`http://localhost:8080/category/${categoryId}/pages`)
   .then(response => response.json())
   .then(result => setNotes(result))}}, [categoryId])

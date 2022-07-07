@@ -65,7 +65,7 @@ const LoggedInNavigation = ({ logout}) => {
         {!pageSelected && !settingsSelected ? 
             <ContentPage selectPage={selectPage} goToSettings={goToSettings} /> : null}
         <TabContainer clickTab={clickTab} categoryId={categoryId} />
-        <button onClick={logout}>Logout</button>
+        <button className="logout-button" onClick={logout}>Logout</button>
      </>
  )
 }

@@ -31,8 +31,6 @@ const AuthChecker = () => {
                 console.log("id in storage:" + sessionStorage.getItem("userId"));
                 setIsAuthenticated(true)})
                 .catch(err => console.log(err));
-                
-                ;
             } else {
                 alert("Login failed, please check your details and try again");
             }
