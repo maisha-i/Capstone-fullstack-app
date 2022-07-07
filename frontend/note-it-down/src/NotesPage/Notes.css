@@ -35,6 +35,14 @@
 
 }
 
+#dark .notesContainer p {
+  border-bottom: none;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  width: 75%;
+
+}
+
 .sidebar{
   position: absolute;
   background-color: #b2744191;
@@ -46,6 +54,9 @@
 }
 
 .sidebar p {
+  font-size: medium;
+}
+ #dark .sidebar p {
   font-size: medium;
 }
 
@@ -72,6 +83,10 @@
   }
 
 .sidebar-header h1 {
+  margin: 10px auto;
+}
+
+#dark .sidebar-header h1 {
   margin: 10px auto;
 }
 
