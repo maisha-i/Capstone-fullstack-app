@@ -1,5 +1,4 @@
 import './App.css';
-import Footer from './Footer/Footer';
 import AuthChecker from './Navigation/AuthChecker';
 import { createContext, useState } from 'react';
 import ReactSwitch from 'react-switch';
@@ -29,11 +28,7 @@ function App() {
             <div className='darkmode-switch'>
             <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/>
             </div>
-            </div> 
-
-            {/* <Footer /> */}
-
-            {/* <Settings/> */}
+            </div>
 
         </div>
       </ThemeContext.Provider>

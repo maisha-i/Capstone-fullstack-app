@@ -28,7 +28,7 @@ const Account = ({logout}) => {
          <div >
                 <h1>Account</h1>
                 <h2>Delete Account</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque? </p>                        
+                <p>Click here if you want to delete your account: WARNING this is permenant and cannot be undone.</p>                        
                 
                 <button onClick={deleteUser}>Delete Account</button>
 

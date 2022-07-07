@@ -28,10 +28,8 @@ public class LoginController {
                         credentials.getEmail(),
                         credentials.getPassword());
 
-        //authenticate details passed in
         Authentication auth = authenticationManager.authenticate(creds);
 
-        // create token
         String jwts = jwtService.getToken(auth.getName());
 
         return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, "Bearer " + jwts)
