@@ -15,7 +15,7 @@ const Account = ({logout}) => {
                 }
         }
 
-        if (window.confirm("Are you sure you want to delete your account? This will permentantly delete your acccount and erase all your notes.") ) {
+        if (window.confirm("Are you sure you want to delete your account? This will permenantly delete your acccount and erase all your notes.") ) {
             fetch(`http://127.0.0.1:8080/user/delete/${currentUserId}`, options)
             .catch(err => console.log(err))             
             .then(() => logout())
