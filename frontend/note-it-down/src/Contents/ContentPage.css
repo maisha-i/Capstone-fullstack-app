@@ -167,6 +167,11 @@ overflow-y: auto;
     z-index: 1;
 }
 
+.cover.dummy h1{
+    padding-bottom: 65px;
+    padding-top: 25px;
+}
+
 #dark .cover.dummy{
     background-color: darkblue;
 }
