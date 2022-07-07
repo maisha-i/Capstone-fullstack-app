@@ -117,5 +117,85 @@
 }
 
 
-
+/* Dark Mode */
+#dark .container-settings{
+  height: 1000px;
+  width: 700px;
+  position: absolute;
+  background-color: #f2e5d9;
+  background-image: url(../Images/34.jpeg);
+  transition: background-image 1s ease-in-out;  
+  background-size: 710px;
+  top: 50px;
+  left: 80px;
+  box-shadow: 40px 0 100px rgba(0, 0, 0, .2);
+  overflow-x: hidden;
   
+}
+
+#dark .container-box{
+  background: rgba(37, 38, 57, 0.941);
+  width: 540px;
+  height: 850px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 10%;
+  box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.583); 
+  transition: 1s ease-in-out;
+}
+
+#dark .leftbox{
+  float: left;
+  top: -5%;
+  left: 5%; 
+  position: absolute;
+  width: 25%;
+  height: 110%;
+  background: rgba(84, 98, 134, 0.933);
+  box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
+  border: -1em solid white;
+ }
+
+ #dark h1 {
+  font-family: 'Square Peg', cursive, sans-serif, monospace;
+  font-size: 3.5rem;
+  margin-top: 40px;
+  margin-bottom: 35px;
+  color: antiquewhite;
+}
+
+#dark h2{
+  font-family: 'Times New Roman', serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-left: 5px;
+  margin-top: 30px;
+  color: antiquewhite;
+}
+
+#dark .input,p {
+  border: 0;
+  border-bottom: 1px solid #c9b6b8;
+  width: 80%;
+  font-family: 'montserrate', sans-serif;
+  font-size: 20px;
+  color: antiquewhite;
+  outline: none;
+}
+
+
+  #dark button{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  border: 0;
+  background: rgba(84, 98, 134, 0.933);
+  padding: 7px 15px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#dark .tab svg{
+  fill: white;  
+} 

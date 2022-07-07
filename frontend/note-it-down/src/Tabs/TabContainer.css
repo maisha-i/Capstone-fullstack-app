@@ -80,6 +80,7 @@
     transform: rotate(90deg);
     font-weight: bolder;
     border-bottom: none;
+    color: black;
 }
 
 /* Dark Theme  */
