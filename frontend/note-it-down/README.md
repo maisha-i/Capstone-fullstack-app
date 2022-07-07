@@ -29,15 +29,15 @@ noteItDown is an app that lets you keep all your notes organised in a digital no
 
 ## UML diagrams
 
-![UML diagram](Wireframe.png)
+![UML diagram](planning/UML.png)
 
 ## Entity Relationship diagrams
 
-![Entity Relationship Diagram]()
+![Entity Relationship Diagram](planning/ERD.png)
 
 ## Wireframe
 
-![Project Wireframe]()
+![Project Wireframe](planning/Wireframe.png)
 
 ## Functionality
 
