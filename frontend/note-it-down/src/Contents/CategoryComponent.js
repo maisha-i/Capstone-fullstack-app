@@ -84,7 +84,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
             
             <ul className="contents-page--page-list">
                 {pageListItem}
-                <AddNewPage name={"Add new page"} category={category} addNewPageToState={addNewPageToState}/>
+                <AddNewPage name={"+"} category={category} addNewPageToState={addNewPageToState}/>
             </ul>
             
             <button id="deleteCategoryButton" onClick={() => {

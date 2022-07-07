@@ -27,7 +27,7 @@ const AddNewCategory = ({addNewCategoryToState}) => {
 
             <form className="addNewCategory-form" onSubmit={handleCategoryAdd}>
                 <input className="title-input-category" type="text" onChange={(event) => setNewTitle(event.target.value)} value={newTitle}/>
-                <input type="submit" value="Add Category" />
+                <input className="addCategory-submit" type="submit" value="Add Category" />
             </form>
         
         

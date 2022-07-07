@@ -12,7 +12,7 @@
 }
 
 .contentPage--container h1{
-    margin:0;
+    margin:8px;
 }
 
 
@@ -28,7 +28,8 @@
 .categoriesSection{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(auto-fill, 250px);
+    /* grid-template-rows: repeat(auto-fill, 300px); */
+    grid-template-rows: auto;
     
 }
 
@@ -49,12 +50,16 @@
     left: 15%; 
     position: absolute;
     width: 70%;
-    height:25%;
+    height:20%;
     background: #b274418e;
     box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
     border: -1em solid white;
-    margin-top: 170px;
+    margin-top: 155px;
     border-radius: 4px;
+    overflow-y: auto;
+    display: grid;
+    grid-row: auto auto auto;
+    grid-column: 1;
 }
 
 .categoriesSection{
@@ -63,11 +68,11 @@
     left: 15%; 
     position: absolute;
     width: 70%;
-    height:49%;
+    height: 53%;
     background: rgba(138, 159, 138, 0.473);
     box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
     border: -1em solid white;
-    margin-top: 450px;
+    margin-top: 390px;
     border-radius: 4px;
 overflow-y: auto;
 }
@@ -78,6 +83,16 @@ overflow-y: auto;
     margin-bottom: 0;
     margin-top: 0;
 }
+
+.category-content li{
+    padding: 2px;
+}
+
+.category-content button{
+    position: relative;
+    left: 50px;
+}
+
 
 .toDoList--label{
     text-align: left;
@@ -96,19 +111,49 @@ overflow-y: auto;
 .toDoList--title{
     text-align: center !important;
     margin-top: 0;
+    grid-area: 1/1;
 }
-
+.to-do-container h1{
+    margin: 0;
+}
 .toDoList--content{
     margin-left: 50px;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(auto-fill, 1.5em);
+    grid-area: 2/1;
 }
 .page-title--input{
+    position: relative;
     list-style: none;
+    padding: 2px;
+    height: 18px;
     /* margin-top: 100px; */
     /* margin-left: 135px; */
+}
+.addNewPage--submit{
+    position: relative;
+    left: 10px;
+    width: 26px;
+    height: 26px;
+    font-size: 1em;
+}
+
+.to-do-container input{
+    position: absolute;
+    bottom: 5px;
+    left: 110px;
+    grid-area: 3/1;
+}
+.to-do-container .addNewPage--submit{
+    position: absolute;
+    width: fit-content;
+    bottom: 5px;
+    left: auto;
+    right: 110px;
+    padding: 2px;
+    grid-area: 3/1;
 }
 
 
