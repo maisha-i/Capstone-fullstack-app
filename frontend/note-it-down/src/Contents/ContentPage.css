@@ -172,7 +172,8 @@ overflow-y: auto;
 .settingsIcon svg{
     height: 2.5em;
     width: 2.5em;
-    left: 650px;
+    top: 55px;
+    left: 715px;
     margin: 5px;
     position:fixed;
 }
