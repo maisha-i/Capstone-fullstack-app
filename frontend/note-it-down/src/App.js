@@ -26,7 +26,9 @@ function App() {
             <AuthChecker />  
             <div className="switch-toggle"> 
             <label> {theme === "light" ? "Light Mode" : "Dark Mode"} </label>
+            <div className='darkmode-switch'>
             <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/>
+            </div>
             </div> 
 
             {/* <Footer /> */}
