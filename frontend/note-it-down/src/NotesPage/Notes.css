@@ -4,7 +4,7 @@
   height: 1000px;
   width: 700px;
   position: absolute;
-  background-image: url(/Users/maisha/capstone-fullstack-app/frontend/note-it-down/src/Images/settings.png);
+  background-image: url(../Images/settings.png);
   background-color: #f2e5d9;
   background-size: 710px;
   top: 50px;
