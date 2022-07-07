@@ -13,6 +13,9 @@
     margin-left: 120px;
 }
 
+.form-cover p{
+    color: black;
+}
 
 #category-text{
     font-family: 'Square Peg', cursive, sans-serif, monospace;
