@@ -57,8 +57,6 @@ const ToDoList = ({list, addNewPageToState, categoryId}) => {
                 }
             })
 
-            // event.target.checked="false";
-
             const updatedPages = [...pages];
             for(let page of pages){
                 if(page.id === pageId){
@@ -66,7 +64,6 @@ const ToDoList = ({list, addNewPageToState, categoryId}) => {
                 }
             }
             setPages(updatedPages)
-
 
         }
     }

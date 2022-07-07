@@ -5,7 +5,6 @@ import ToDoList from "./ToDoList";
 import "./ContentPage.css"
 import LoginDummyFile from "../Animation/LoginDummyFile"
 import { AiFillSetting } from "react-icons/ai";
-import Settings from "../Settings/Settings";
 
 
 const ContentPage = ({selectPage, goToSettings}) => {
