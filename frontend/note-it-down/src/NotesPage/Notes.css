@@ -17,7 +17,7 @@
 .container-box-notes{
   background: rgba(255, 255, 255, 0.844);
   width: 600px;
-  height: 900px;
+  height: 890px;
   margin: 0 auto;
   margin-top: 3%; 
   box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.583) 
@@ -39,7 +39,7 @@
   position: absolute;
   background-color: #b2744191;
     width: 220px;
-    height: 901px;
+    height: 891px;
   
     display: inline-block;
     overflow-y: auto;
@@ -52,7 +52,7 @@
 .notes-main{
     /* border: solid black 2px; */
     width: 380px;
-    height: 901px;
+    height: 891px;
     float: right;
     word-break: break-all;
     /* overflow-y: auto; */

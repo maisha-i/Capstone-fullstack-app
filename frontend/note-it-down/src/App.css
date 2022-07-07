@@ -72,6 +72,12 @@ h1{
 
   }
 
+  .logout-button{
+    position: absolute;
+    z-index: 1;
+    left:400px;
+    top: 1000px;
+  }
   
 
   /* Animations */
