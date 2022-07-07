@@ -51,6 +51,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
                 const heading = document.querySelector(`#Category--heading${id}`);
                 heading.innerHTML = "";
                 heading.innerText = newTitle;
+                window.location.reload();
         }
     }
 
