@@ -97,15 +97,15 @@
 }
 
 #dark .tabContainer .tab.active {
-    background-color: #796d45b9;
+    background-color: #7f5f75a9;
 }
 
 #dark .tabTriangleBefore.active {
-    border-color: transparent transparent transparent #796d45b9;
+    border-color: transparent transparent transparent #7f5f75a9;
 }
 
 #dark .tabTriangleAfter.active {
-    border-color: #796d45b9 transparent transparent transparent ;
+    border-color: #7f5f75a9 transparent transparent transparent ;
 }
 
 #dark .tabContainer p {

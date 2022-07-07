@@ -51,6 +51,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
                 const heading = document.querySelector(`#Category--heading${id}`);
                 heading.innerHTML = "";
                 heading.innerText = newTitle;
+                window.location.reload();
         }
     }
 
@@ -84,7 +85,7 @@ const CategoryComponent = ({category, addNewPageToState, updateTitle, selectPage
             
             <ul className="contents-page--page-list">
                 {pageListItem}
-                <AddNewPage name={"Add new page"} category={category} addNewPageToState={addNewPageToState}/>
+                <AddNewPage name={"+"} category={category} addNewPageToState={addNewPageToState}/>
             </ul>
             
             <button id="deleteCategoryButton" onClick={() => {
